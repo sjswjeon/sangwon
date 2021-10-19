@@ -7,7 +7,7 @@
 spring:
   profiles: local
   datasource:
-    data: jdbc:mariadb://database-1.cwmns3xrahu0.ap-northeast-2.rds.amazonaws.com:3306/webservice
+    url: jdbc:mariadb://database-1.cwmns3xrahu0.ap-northeast-2.rds.amazonaws.com:3306/webservice
     username: admin
     password: tkddnjs2
     driver-class-name: org.mariadb.jdbc.Driver
