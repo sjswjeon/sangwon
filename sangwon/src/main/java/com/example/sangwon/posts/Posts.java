@@ -10,7 +10,6 @@ import javax.persistence.Id;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Getter
 @Entity
-@Data
 public class Posts {
 
     @Id
