@@ -5,7 +5,7 @@
 # local ??
 ---
 spring:
-  profiles: local
+  profiles:
   datasource:
     url: jdbc:mariadb://database-1.cwmns3xrahu0.ap-northeast-2.rds.amazonaws.com:3306/webservice
     username: admin
@@ -18,3 +18,6 @@ spring:
   h2:
     console:
       enabled: true
+
+server:
+  port: 8080
