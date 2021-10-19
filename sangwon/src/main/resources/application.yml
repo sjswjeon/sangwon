@@ -1,11 +1,12 @@
+#spring:
+#  profiles:
+#    active: local # ?? ?? ??
+#
+## local ??
+#---
 spring:
   profiles:
-    active: real-db # ?? ?? ??
-
-# local ??
----
-spring:
-  profiles: real-db
+    active: local
   datasource:
     url: jdbc:mariadb://database-1.cwmns3xrahu0.ap-northeast-2.rds.amazonaws.com:3306/webservice
     username: admin
