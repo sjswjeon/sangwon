@@ -1,13 +1,16 @@
 spring:
   profiles:
-    active: local # ?? ?? ??
+    active: real-db # ?? ?? ??
 
 # local ??
 ---
 spring:
-  profiles: local
+  profiles: real-db
   datasource:
-    data: classpath:data-h2.sql # ???? ???? script
+    url: jdbc:mariadb://database-1.cwmns3xrahu0.ap-northeast-2.rds.amazonaws.com:3306/webservice
+    username: admin
+    password: tkddnjs2
+    driver-class-name: org.mariadb.jdbc.Driver
     initialization-mode: never
   jpa:
     show-sql: true
