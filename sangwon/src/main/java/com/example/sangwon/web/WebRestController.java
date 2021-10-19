@@ -1,5 +1,6 @@
 package com.example.sangwon.web;
 
+import com.example.sangwon.posts.Posts;
 import com.example.sangwon.posts.PostsRepository;
 import com.example.sangwon.posts.PostsSaveRequestDto;
 import com.example.sangwon.service.PostsService;
@@ -21,7 +22,7 @@ public class WebRestController {
     }
 
     @PostMapping("/posts")
-    public void savePosts(@RequestBody PostsSaveRequestDto dto) {
-        postsService.save(dto);
+    public void savePosts(Posts posts) {
+        postsService.save(posts);
     }
 }
