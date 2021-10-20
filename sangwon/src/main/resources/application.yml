@@ -1,17 +1,40 @@
 spring:
   profiles:
-    active: local # ?? ?? ??
-  datasource:
-    url: jdbc:mariadb://database-1.cwmns3xrahu0.ap-northeast-2.rds.amazonaws.com:3306/webservice
-    username: admin
-    password: tkddnjs2
-    driver-class-name: org.mariadb.jdbc.Driver
+    active: sroom-db
   jpa:
-    database-platform: org.hibernate.dialect.H2Dialect
-    open-in-view: false
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+
+---
+spring:
+  profiles: local
+  jpa:
+    show-sql: true
     hibernate:
       ddl-auto: create-drop
-    porperties:
-      hibernate:
-        show-sql: true
-        format-sql: true
+  h2:
+    console:
+      enabled: true
+
+---
+spring.profiles: sroom-db
+spring.profiles.include: real-db
+
+server:
+  port: 8080
+
+#  datasource:
+#    url: jdbc:mariadb://database-1.cwmns3xrahu0.ap-northeast-2.rds.amazonaws.com:3306/webservice
+#    username: admin
+#    password: tkddnjs2
+#    driver-class-name: org.mariadb.jdbc.Driver
+#  jpa:
+#    database-platform: org.hibernate.dialect.H2Dialect
+#    open-in-view: false
+#    hibernate:
+#      ddl-auto: create-drop
+#    porperties:
+#      hibernate:
+#        show-sql: true
+#        format-sql: true
