@@ -1,6 +1,6 @@
 spring:
   profiles:
-    active: sroom-db
+    active: local
   jpa:
     properties:
       hibernate:
