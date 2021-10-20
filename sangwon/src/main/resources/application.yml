@@ -10,6 +10,7 @@ spring:
 #    data: classpath:data-h2.sql #시작할 때 실행시킬 script
   jpa:
     show-sql: true
+    open-in-view: false
     hibernate:
       ddl-auto: create-drop
   h2:
