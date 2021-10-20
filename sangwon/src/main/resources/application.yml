@@ -1,18 +1,31 @@
+#spring:
+#  profiles:
+#    active: local #기본 환경 선택
+
 spring:
-  profiles:
-    active: local #기본 환경 선택
+  config:
+    activate:
+      on-profile: prod
 
 # local 환경
 ---
 spring:
-  profiles: local
+  profiles:
+    activate: prod
   datasource:
-#    data: classpath:data-h2.sql #시작할 때 실행시킬 script
-  jpa:
-    show-sql: true
-    open-in-view: false
-    hibernate:
-      ddl-auto: create-drop
-  h2:
-    console:
-      enabled: true
+    url: jdbc:mariadb://database-1.cwmns3xrahu0.ap-northeast-2.rds.amazonaws.com:3306/webservice
+    username: admin
+    password: tkddnjs2
+    driver-class-name: org.mariadb.jdbc.Driver
+#spring:
+#  profiles: local
+#  datasource:
+##    data: classpath:data-h2.sql #시작할 때 실행시킬 script
+#  jpa:
+#    show-sql: true
+#    open-in-view: false
+#    hibernate:
+#      ddl-auto: create-drop
+#  h2:
+#    console:
+#      enabled: true
