@@ -19,6 +19,7 @@ spring:
     driver-class-name: org.mariadb.jdbc.Driver
     initialization-mode: always
   jpa:
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
     show-sql: true
     open-in-view: false
     hibernate:
