@@ -18,8 +18,13 @@ spring:
       enabled: true
 
 ---
-spring.profiles: sroom-db
-spring.profiles.include: real-db
+spring:
+  profiles: sroom-db
+  datasource:
+    url: jdbc:mariadb://database-1.cwmns3xrahu0.ap-northeast-2.rds.amazonaws.com:3306/webservice
+    username: admin
+    password: tkddnjs2
+    driver-class-name: org.mariadb.jdbc.Driver
 
 server:
   port: 8080
