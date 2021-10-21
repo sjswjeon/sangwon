@@ -1,0 +1,253 @@
+/* Main container */
+.main-container {
+    height: 500px;
+    position: absolute;
+    top: 260px;
+    background-color: blue;
+    width: 100%;
+}
+
+.main-container > .inner {
+   background-color: powderblue;
+   height: 100%;
+   width: 1100px;
+   left: 0;
+   right: 0;
+   margin: auto;
+   display: grid;
+   grid-template-columns: 0.3fr 0.7fr;
+}
+
+    /* Left Box */
+.main-container > .inner .left-box {
+    background-color: gray;
+    position: relative;
+    height: 500px;
+}
+
+.main-container > .inner .left-box .left-box__text {
+    margin-top: 130px;
+}
+
+.main-container > .inner .left-box .left-box__text span {
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.main-container > .inner .left-box .left-box__text div {
+    font-size: 12px;
+}
+
+.main-container > .inner .left-box .left-box__menu {
+    position: absolute;
+    top: 300px;
+}
+
+.main-container > .inner .left-box .left-box__menu div {
+    padding: 5px 0;
+    cursor: pointer;
+}
+        /* write button hover */
+.main-container > .inner .left-box .left-box__menu .write-btn:hover {
+    color: black;
+    font-weight: bold;
+}
+
+.main-container > .inner .left-box .left-box__menu .search {
+    background-color: orange;
+}
+
+.main-container > .inner .left-box .left-box__menu .search .material-icons {
+    position: absolute;
+    border: none;
+    background: none;
+    left: 0px;
+    transition: .4s;
+}
+
+        /* search box focused material icons */
+.main-container > .inner .left-box .left-box__menu .search.focused .material-icons {
+    transform: translateX(180px);
+}
+
+.main-container > .inner .left-box .left-box__menu .search input {
+    height: 30px;
+    width: 32px;
+    padding: 0 10px;
+    box-sizing: border-box;
+    border-style: none;
+    outline: none;
+    border-radius: 5px;
+    transition: .4s;
+}
+        /* search box focus */
+.main-container > .inner .left-box .left-box__menu .search input:focus {
+    width: 100%;
+}
+        /* pagination */
+.main-container > .inner .left-box .pagination {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+    width: 140px;
+    margin: auto;
+}
+
+.main-container > .inner .left-box .pagination > ul {
+    display: flex;
+}
+
+.main-container > .inner .left-box .pagination > ul li {
+    padding: 0 10px;
+    border: .5px solid black;
+    transition: .1s;
+    cursor: pointer;
+}
+
+        /* pagination hover */
+.main-container > .inner .left-box .pagination > ul li:hover {
+    transform: scale(1.1);
+    background-color: black;
+}
+
+.main-container > .inner .left-box .pagination > ul li a {
+    color: black;
+    font-size: 12px;
+}
+
+        /* pagination hover */
+.main-container > .inner .left-box .pagination > ul li:hover a {
+    color: white;
+}
+
+    /* right box */
+.main-container > .inner .right-box {
+    font-size: 12px;
+    position: relative;
+}
+    /* page number */
+.main-container > .inner .right-box .page-number {
+    position: absolute;
+    right: 5px;
+    top: 30px;
+}
+        /* right box__table */
+
+.main-container > .inner .right-box .table {
+    display: block;
+}
+
+.main-container > .inner .right-box > .table .thead {
+    display: flex;
+    margin-top: 10px;
+    border-bottom: .5px solid black;
+}
+
+.main-container > .inner .right-box > .table .tbody > a {
+    color: #333;
+    text-decoration: none;
+}
+
+.main-container > .inner .right-box > .table .tbody > a:visited {
+    color: #333;
+}
+
+.main-container > .inner .right-box > .table .trow {
+    display: grid;
+    grid-template-columns: 0.5fr 2.5fr 0.8fr 0.4fr 1fr;
+    padding: 5px 0;
+    border-top: .5px solid black;
+    height: 26.6px;
+    cursor: pointer;
+    box-sizing: border-box;
+    transition: .1s;
+}
+
+        /* first child */
+.main-container > .inner .right-box > .table .trow:first-child {
+    border: none;
+}
+
+        /* last child */
+.main-container > .inner .right-box > .table .trow:last-child {
+    border-bottom: .5px solid black;
+}
+        /* trow hover */
+.main-container > .inner .right-box > .table .trow:hover {
+    transform: scale(1.05);
+    border: .5px solid black;
+    border-radius: 10px;
+    background-color: black;
+    color: white;
+}
+
+.main-container > .inner .right-box > .table .trow div {
+    text-align: center;
+}
+
+.main-container > .inner .right-box > .table .trow .trow__title {
+    overflow: hidden;
+}
+
+.main-container > .inner .right-box > .table .trow .trow__title .like-comment {
+    color: rgb(80, 79, 79);
+}
+
+.main-container > .inner .right-box > .table .trow .trow__title .material-icons {
+    font-size: 10px;
+}
+
+        /* right box__board form */
+.main-container > .inner .right-box .board-form__container {
+    display: none;
+    position: relative;
+}
+
+.main-container > .inner .right-box .board-form {
+    background-color: pink;
+    font-size: 15px;
+    width: 730px;
+    height: 420px;
+    margin: 20px 20px 10px 20px;
+}
+
+.main-container > .inner .right-box .board-form {
+    position: relative;
+}
+
+.main-container > .inner .right-box .board-form > input {
+    border-radius: 10px;
+    border: .5px solid black;
+    background-color: lightgrey;
+    padding: 10px;
+    margin-bottom: 5px;
+    width: 100%;
+    box-sizing: border-box;
+    outline: none;
+}
+
+.main-container > .inner .right-box .board-form > textarea {
+    outline: none;
+    border: none;
+    width: 100%;
+    height: 345px;
+    resize: none;
+    box-sizing: border-box;
+    background-color: lightgrey;
+    border-radius: 10px;
+    border: .5px solid black;
+    padding: 10px;
+}
+
+.main-container > .inner .right-box .board-form > .btns {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+.main-container > .inner .right-box .board-form > .btns > button {
+    border: 1px solid black;
+    padding: 6px;
+    border-radius: 5px;
+}

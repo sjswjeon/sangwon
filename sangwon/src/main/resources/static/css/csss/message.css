@@ -1,0 +1,567 @@
+/* COMMON */
+html {
+    background-image: url(/image/main-background-image.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    color: #333;
+    font-size: 16px;
+    line-height: 1.4;
+    font-weight: 400;
+    font-family: 'Jost', sans-serif;
+    width: 100%;
+    height: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+    font-family: 'Jost', sans-serif;
+    cursor: pointer;
+}
+
+textarea {
+    resize: none;
+    border: none;
+    background-color: rgba(187,187,187, 0.5);
+    padding: 10px;
+    box-sizing: border-box;
+    outline: none;
+    font-family: 'Jost', sans-serif;
+}
+
+button {
+    font-family: 'Jost', sans-serif;
+}
+
+.inner {
+    /* width: 1260px; */
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.btn {
+    text-align: center;
+    border: 1px solid black;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.material-icons {
+    cursor: pointer;
+}
+
+input {
+    outline: none;
+    border: none;
+    padding: 10px;
+    color: #333;
+    box-sizing: border-box;
+    font-family: 'Jost', sans-serif;
+}
+
+/* Side Menu Bar */
+body .side-menu {
+    height: 100%;
+    width: 250px;
+    background-color: rgba(0,0,0,.8);
+    position: fixed;
+    left: -250px;
+    z-index: 10;
+    padding-top: 90px;
+    color:rgb(255, 232, 189);
+}
+
+body .side-menu .side-menu__inner {
+    /* background-color: rgba(187,187,187,.2); */
+    height: 100%;
+    width: 100%;
+}
+
+body .side-menu .side-menu__inner > ul > li {
+    padding: 20px 20px 20px 20px;
+
+}
+
+body .side-menu .side-menu__inner > ul > li .side-menu__container {
+    display: flex;
+    position: relative;
+}
+
+body .side-menu .side-menu__inner > ul > li .side-menu__container > a {
+    display: flex;
+    text-decoration: none;
+    color:rgb(255, 232, 189);
+}
+
+body .side-menu .side-menu__inner > ul > li .side-menu__container .material-icons {
+    margin-right: 20px;
+}
+
+body .side-menu .side-menu__inner > ul > li .side-menu__container .side-menu__name {
+    padding-right: 100%;
+}
+
+body .side-menu .side-menu__inner > ul > li .side-menu__container .side-menu__name.mypage {
+    padding-right: 80px;
+}
+
+body .side-menu .side-menu__inner > ul > li .side-menu__container .side-menu__name.sign-in {
+    padding-right: 30px;
+}
+
+body .side-menu .side-menu__inner > ul > li .side-menu__container .toggle-btn {
+    position: absolute;
+    height: 24px;
+    width: 24px;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    right: 0;
+}
+
+/* Top Nav */
+
+    /* website-name */
+body .main-page .top-nav .website-name {
+    z-index: 100;
+    position: fixed;
+    left: 20px;
+    top: 20px;
+    color: rgb(41, 85, 28);
+}
+
+body .main-page .top-nav .website-name .website-name__title {
+   position: relative;
+}
+
+body .main-page .top-nav .website-name .website-name__title .creativity {
+    font-size: 25px;
+    font-family: 'Archivo Black', sans-serif;
+    font-weight: bold;
+}
+
+body .main-page .top-nav .website-name .website-name__title .material-icons {
+    position: absolute;
+    top: 6px;
+    left: 135px;
+    cursor: auto;
+}
+
+
+body .main-page .top-nav .website-name .website-name__description {
+    font-size: 12px;
+    font-weight: bold;
+    padding-left: 30px;
+}
+
+    /* website-menu */
+body .main-page .top-nav .website-menu {
+    position: fixed;
+    top: 27px;
+    right: 20px;
+    z-index: 100;
+    color: rgb(255, 232, 189);
+}
+
+body .main-page .top-nav .website-menu .material-icons {
+    border-radius: 50%;
+    border: 1px solid rgb(255, 232, 189);
+    padding: 10px;
+}
+/* Third Page */
+body .third-page {
+    height: 100vh;
+}
+
+body .third-page .inner {
+    display: grid;
+    grid-template-columns: 1.5fr 2fr;
+    font-size: 13px;
+}
+
+    /* left container */
+body .third-page .left-container {
+    color: rgb(41, 85, 28);
+    background-color: rgba(255, 255, 255, 0.3);
+    padding: 25% 10% 10% 10%;
+    position: relative;
+    overflow: hidden;
+}
+
+body .third-page .left-container .btns {
+    position: absolute;
+    width: 79%;
+    top: 15%;
+    left: 10%;
+    display: flex;
+}
+
+body .third-page .left-container .btns .btns-group {
+    position: absolute;
+    right: -4%;
+}
+
+body .third-page .left-container .btns .material-icons {
+    margin-right: 10px;
+    padding: 5px;
+    border-radius: 5px;
+    transition: .2s;
+    background-color: transparent;
+}
+
+body .third-page .left-container .btns .material-icons:hover {
+    transform: rotate(720deg);
+    border: none;
+}
+
+body .third-page .left-container .btns .material-icons.received-message-btn:hover {
+    background-color: powderblue;
+}
+
+body .third-page .left-container .btns .material-icons.sent-message-btn:hover {
+    background-color: palevioletred;
+}
+
+body .third-page .left-container .btns .material-icons.write-message-btn:hover {
+    background-color: rgb(169, 109, 230);
+}
+
+body .third-page .left-container .btns .titles {
+    position: absolute;
+    width: 120px;
+    height: 20px;
+    overflow: hidden;
+    top: 10px;
+}
+
+body .third-page .left-container .btns .title {
+    font-weight: bold;
+    position: absolute;
+    width: 120px;
+}
+
+body .third-page .left-container .btns .sent {
+    left: 120px;
+}
+
+body .third-page .left-container .btns .new {
+    left: 240px;
+
+}
+
+body .third-page .left-container ul {
+    height: 70%;
+    width: 79%;
+    position: absolute;
+    opacity: 1;
+}
+
+body .third-page .left-container ul.sent-page {
+    left: 89%;
+    display: none;
+    opacity: 0;
+}
+
+body .third-page .left-container ul li {
+    margin-top: 5px;
+}
+
+body .third-page .left-container ul li .message-list__single-message {
+    display: grid;
+    grid-template-columns: .1fr .3fr 1fr .6fr;
+    border: 1px solid rgb(41, 85, 28);
+    padding: 3px 5px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    height: 27px;
+    overflow: hidden;
+    transition: .2s;
+    cursor: pointer;
+}
+
+body .third-page .left-container ul li .message-list__single-message:hover {
+    background-color: rgb(41, 85, 28);
+    color: white;
+}
+
+body .third-page .left-container ul li .message-list__single-message .user-photo {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #fff;
+    overflow: hidden;
+}
+
+body .third-page .left-container ul li .message-list__single-message .user-photo img {
+    width: 20px;
+    height: 20px;
+    object-fit: cover;
+}
+
+body .third-page .left-container ul li .message-list__single-message .username {
+    margin-left: 5px;
+}
+
+body .third-page .left-container ul li .message-list__single-message .content {
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+body .third-page .left-container ul.new-message-page {
+    left: 168%;
+    display: none;
+    opacity: 0;
+}
+
+body .third-page .left-container ul.new-message-page li .new-message-form {
+    position: relative;
+}
+
+body .third-page .left-container ul.new-message-page li form input {
+    display: block;
+    width: 100%;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #333;
+}
+
+body .third-page .left-container ul.new-message-page li form textarea {
+    display: block;
+    margin-top: 10px;
+    border-radius: 5px;
+    width: 100%;
+    height: 350px;
+    background-color: rgb(41, 85, 28, .5);
+    color: rgb(253, 255, 225);
+}
+
+body .third-page .left-container ul.new-message-page li form textarea::placeholder {
+    color: rgb(207, 245, 196);
+}
+
+body .third-page .left-container ul.new-message-page li form button {
+    display: block;
+    position: absolute;
+    bottom: -10%;
+    right: 0;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: .2s;
+    background-color: transparent;
+    color: rgb(41, 85, 28);
+    border: 1px solid rgb(41, 85, 28);
+}
+
+body .third-page .left-container ul.new-message-page li form button:hover {
+    border: 1px solid rgb(41, 85, 28);
+    background-color: rgb(41, 85, 28);
+    color: white;
+}
+
+    /* right container */
+body .third-page .right-container {
+    background-color: rgba(3, 37, 3, .8);
+    padding: 19% 5% 7% 5%;
+    position: relative;
+    color: rgb(41, 85, 28);
+}
+
+body .third-page .right-container .title {
+    font-size: 70px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    color: rgb(253, 255, 225);
+}
+
+body .third-page .right-container .right-container__messages {
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+
+body .third-page .right-container .right-container__messages ul {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+body .third-page .right-container .right-container__messages ul.received-message-page {
+    opacity: 1;
+    display: block;
+}
+
+body .third-page .right-container .right-container__messages ul.sent-message-page {
+    display: none;
+    opacity: 0;
+    
+}
+
+body .third-page .right-container .right-container__messages ul li {
+    height: 100%;
+    width: 300px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    transform: scale(0.5);
+    box-shadow: 5px 5px 500px 10px #3a3a3a;
+    border-radius: 10px;
+    opacity: 0;
+    cursor: pointer;
+    perspective: 600px;
+}
+
+body .third-page .right-container .right-container__messages ul li.clicked {
+    transform: scale(1.3);
+}
+
+body .third-page .right-container .right-container__messages ul li .single-message {
+    width: 300px;
+    height: 100%;
+    background-color: rgb(233, 235, 222);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    border-radius: 10px;
+    padding: 30px;
+    box-sizing: border-box;
+    font-size: 16px;
+    transition: 1s;
+    transform: rotateY(0);
+    backface-visibility: hidden;
+    z-index: 1;
+}
+
+body .third-page .right-container .right-container__messages ul li .single-message.rotate {
+    transform: rotateY(180deg);
+}
+
+body .third-page .right-container .right-container__messages ul li .single-message .user-photo {
+    display: grid;
+    grid-template-columns: .1fr 1fr;
+    width: 150px;
+    height: 30px;
+}
+
+body .third-page .right-container .right-container__messages ul li .single-message .user-photo img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+body .third-page .right-container .right-container__messages ul li .single-message .user-photo > div {
+    position: relative;
+    margin-left: 5px;
+}
+
+body .third-page .right-container .right-container__messages ul li .single-message .user-photo > div .username {
+    font-weight: bold;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+body .third-page .right-container .right-container__messages ul li .single-message .material-icons {
+    position: absolute;
+    top: 40px;
+    right: 30px;
+    transition: .4s;
+}
+
+body .third-page .right-container .right-container__messages ul li .single-message .material-icons:hover {
+    transform: rotate(-720deg);
+    font-weight: bold;
+    color:rgb(3, 37, 3);
+}
+
+body .third-page .right-container .right-container__messages ul li .single-message .content {
+    background-color: rgb(204, 206, 194);
+    width: 100%;
+    height: 80%;
+    margin-top: 20px;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    overflow: auto;
+    color: #333;
+}
+
+/* reply */
+
+body .third-page .right-container .right-container__messages ul .reply-container {
+    height: 60%;
+    width: 180px;
+    position: absolute;
+    top: 20%;
+    left: 0%;
+    right: 0;
+    margin: auto;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 12px;
+    text-align: center;
+
+    perspective: 600px;
+}
+
+body .third-page .right-container .right-container__messages ul .reply-container .reply-container-element {
+    padding: 20px;
+    width: 100%;
+    height: 100%;
+    transform: rotateY(-180deg);
+    backface-visibility: hidden;
+    transition: 1s;
+    background-color: #333;
+    box-sizing: border-box;
+    border-radius: 5px;
+    position: fixed;
+    z-index: 1;
+}
+
+body .third-page .right-container .reply-container .reply-container-element textarea {
+   margin-top: 10px;
+   border-radius: 5px;
+   width: 100%;
+   height: 77%;
+   font-size: 12px;
+}
+
+body .third-page .right-container .reply-container button {
+    width: 100%;
+    border-radius: 10px;
+    border: 1px solid #333;
+    font-size: 12px;
+    margin-top: 5px;
+    cursor: pointer;
+    transition: .2s;
+}
+
+body .third-page .right-container .reply-container button:hover {
+    background-color: #333;
+    color: white;
+}
+
+/* Darkening */
+body .darkening {
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    background-color: rgba(0,0,0,0.5);
+    opacity: 0;
+}

@@ -1,0 +1,1168 @@
+/* COMMON */
+html {
+    background-image: url(../image/main-background-image.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    color: #333;
+    font-size: 16px;
+    line-height: 1.4;
+    font-weight: 400;
+    font-family: 'Jost', sans-serif;
+    width: 100%;
+    height: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+    font-family: 'Jost', sans-serif;
+    cursor: pointer;
+}
+
+textarea {
+    resize: none;
+    border: none;
+    background-color: rgba(187,187,187, 0.5);
+    padding: 10px;
+    box-sizing: border-box;
+    outline: none;
+    font-family: 'Jost', sans-serif;
+}
+
+button {
+    font-family: 'Jost', sans-serif;
+}
+
+.inner {
+    /* width: 1260px; */
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.btn {
+    text-align: center;
+    border: 1px solid black;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.material-icons {
+    cursor: pointer;
+}
+
+input {
+    outline: none;
+    border: none;
+    padding: 10px;
+    color: #333;
+    box-sizing: border-box;
+    font-family: 'Jost', sans-serif;
+}
+
+/* Side Menu Bar */
+body .side-menu {
+    height: 100%;
+    width: 250px;
+    background-color: rgba(0,0,0,.8);
+    position: fixed;
+    left: -250px;
+    z-index: 10;
+    padding-top: 90px;
+    color:rgb(255, 232, 189);
+}
+
+body .side-menu .side-menu__inner {
+    /* background-color: rgba(187,187,187,.2); */
+    height: 100%;
+    width: 100%;
+}
+
+body .side-menu .side-menu__inner > ul > li {
+    padding: 20px 20px 20px 20px;
+
+}
+
+body .side-menu .side-menu__inner > ul > li .side-menu__container {
+    display: flex;
+    position: relative;
+}
+
+body .side-menu .side-menu__inner > ul > li .side-menu__container > a {
+    display: flex;
+    text-decoration: none;
+    color:rgb(255, 232, 189);
+}
+
+body .side-menu .side-menu__inner > ul > li .side-menu__container .material-icons {
+    margin-right: 20px;
+}
+
+body .side-menu .side-menu__inner > ul > li .side-menu__container .side-menu__name {
+    padding-right: 100%;
+}
+
+body .side-menu .side-menu__inner > ul > li .side-menu__container .side-menu__name.mypage {
+    padding-right: 80px;
+}
+
+body .side-menu .side-menu__inner > ul > li .side-menu__container .side-menu__name.sign-in {
+    padding-right: 30px;
+}
+
+body .side-menu .side-menu__inner > ul > li .side-menu__container .toggle-btn {
+    position: absolute;
+    height: 24px;
+    width: 24px;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    right: 0;
+}
+
+/* Login-page */
+body .login-page {
+    height: 100vh;
+    background-color: orange;
+    opacity: .5;
+}
+
+body .login-page .inner {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+}
+
+body .login-page .inner .left-container {
+    background-color: green;
+}
+
+body .login-page .inner .right-container {
+    background-color: powderblue;
+}
+
+/* Top Nav */
+
+body .main-page {
+    height: 100vh;
+    position: relative;
+}
+body .main-page .top-nav {
+    height: 100px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+    /* website-name */
+body .main-page .top-nav .website-name {
+    /* text-shadow: -.5px 0 rgb(255, 232, 189), 0 .5px rgb(255, 232, 189), .5px 0 rgb(255, 232, 189), 0 -.5px rgb(255, 232, 189); */
+    z-index: 100;
+    position: fixed;
+    left: 20px;
+    top: 20px;
+}
+
+body .main-page .top-nav .website-name .website-name__title {
+   position: relative;
+}
+
+body .main-page .top-nav .website-name .website-name__title .creativity {
+    font-size: 25px;
+    font-family: 'Archivo Black', sans-serif;
+    font-weight: bold;
+}
+
+body .main-page .top-nav .website-name .website-name__title .material-icons {
+    position: absolute;
+    top: 6px;
+    left: 135px;
+    cursor: auto;
+}
+
+
+body .main-page .top-nav .website-name .website-name__description {
+    font-size: 12px;
+    font-weight: bold;
+    padding-left: 30px;
+}
+
+    /* website-menu */
+body .main-page .top-nav .website-menu {
+    position: fixed;
+    top: 27px;
+    right: 20px;
+    z-index: 100;
+}
+
+body .main-page .top-nav .website-menu .material-icons {
+    border-radius: 50%;
+    border: 1px solid black;
+    padding: 10px;
+}
+
+/* Middle nav */
+body .main-page .middle-nav {
+    width: 100%;
+    height: 430px;
+    position: relative;
+}
+
+body .main-page .middle-nav .graphic {
+    width: 50%;
+    height: 350px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    left: 20%;
+}
+
+body .main-page .middle-nav .graphic .graphic__upper-line {
+    display: flex;
+    align-items: baseline;
+}
+
+body .main-page .middle-nav .graphic .the {
+    font-size: 110px;
+}
+
+body .main-page .middle-nav .graphic .world {
+    font-size: 110px;
+    font-weight: bold;
+}
+
+body .main-page .middle-nav .graphic .graphic__bottom-line {
+    display: flex;
+    align-items: baseline;
+    justify-content: end;
+    margin-top: -8%;
+    margin-right: -10%;
+}
+
+body .main-page .middle-nav .graphic .is {
+    font-size: 40px;
+    margin-right: 10px;
+}
+
+body .main-page .middle-nav .graphic .your {
+    font-size: 40px;
+}
+
+body .main-page .middle-nav .graphic .oyster {
+    font-size: 130px;
+}
+
+/* Bottom nav */
+body .main-page .bottom-nav {
+    height: 80px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    padding: 10px 20px;
+    box-sizing: border-box;
+}
+
+body .main-page .bottom-nav .bottom-nav__container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+body .main-page .bottom-nav .bottom-nav__container .bottom-nav__write-btn {
+    padding: 18px 40px;
+    color: black;
+    font-weight: bold;
+    box-sizing: border-box;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.6);
+    text-align: center;
+    position: absolute;
+    cursor: pointer;
+    right: 0;
+}
+
+/* Second Page */
+body .second-page {
+    height: 100vh;
+    background-color: black;
+    opacity: .5;
+}
+
+body .second-page .inner {
+    display: grid;
+    grid-template-columns: 1.5fr 2fr;
+}
+
+/* left container */
+body .second-page .board__left-container {
+    background-color: red;
+    padding: 20% 15% 10% 15%;
+    position: relative;
+}
+
+body .second-page .board__left-container > .left-container__inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+body .second-page .board__left-container > .left-container__inner > .graphic {
+    position: relative;
+}
+
+body .second-page .board__left-container > .left-container__inner > .graphic .hello {
+    font-size: 110px;
+    font-weight: bold;
+}
+
+body .second-page .board__left-container > .left-container__inner > .graphic .user-info {
+    display: flex;
+    font-size: 50px;
+    position: absolute;
+    right: 0;
+}
+
+body .second-page .board__left-container > .left-container__inner > .graphic .user-info .user-info__photo {
+    height: 90px;
+    width: 90px;
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+    overflow: hidden;
+    left: -100px;
+}
+
+body .second-page .board__left-container > .left-container__inner > .graphic .user-info .user-info__photo img {
+    height: 90px;
+    width: 90px;
+    object-fit: cover;
+}
+
+
+body .second-page .board__left-container > .left-container__inner > .graphic .user-info .bar {
+    height: 50px;
+    width: 5px;
+    background-color: #333;
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+body .second-page .board__left-container > .left-container__inner > .graphic .description {
+    position: absolute;
+    font-size: 13px;
+    top: 163%;
+}
+
+body .second-page .board__left-container > .left-container__inner .board__left-container__btn-group {
+    width: 40%;
+    position: absolute;
+    bottom: 0;
+}
+
+body .second-page .board__left-container > .left-container__inner .board__left-container__btn-group .board__write-btn {
+    margin-bottom: 5px;
+}
+
+body .second-page .board__left-container > .left-container__inner .board__left-container__btn-group .board__search {
+    position: relative;
+    margin-bottom: 5px;
+}
+
+body .second-page .board__left-container > .left-container__inner .board__left-container__btn-group .board__search input {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    transition: .4s;
+}
+
+body .second-page .board__left-container > .left-container__inner .board__left-container__btn-group .board__search input:focus {
+    width: 150px;
+    border-radius: 5px;
+    padding-right: 27px;
+}
+
+body .second-page .board__left-container > .left-container__inner .board__left-container__btn-group .board__search .material-icons {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    margin: auto;
+    background-color: transparent;
+    border: none;
+}
+
+body .second-page .board__left-container > .left-container__inner .board__left-container__btn-group .board__search div.material-icons {
+    left: 6px;
+    top: 2px;
+}
+
+body .second-page .board__left-container > .left-container__inner .board__left-container__btn-group .board__search button.material-icons {
+    display: none;
+}
+
+/* right container */
+body .second-page .board__right-container {
+    background-color: powderblue;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+body .second-page .board__right-container .board-list__container {
+    background-color: orange;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    padding: 20% 5% 10% 5%;
+    box-sizing: border-box;
+}
+
+body .second-page .board__right-container .board__right-container-title {
+    position: absolute;
+    top: 4%;
+    left: 5%;
+    font-weight: bold;
+    font-size: 70px;
+}
+
+body .second-page .board__right-container .board__page-number {
+    position: absolute;
+    top: 12%;
+    left: 32%;
+}
+
+body .second-page .board__right-container .board__right-container__inner {
+    background-color: orange;
+    height: 449px;
+    width: 100%;
+}
+
+body .second-page .board__right-container .board__right-container__inner .board__right-container__top {
+    display: flex;
+    position: relative;
+}
+
+body .second-page .board__right-container .board__right-container__inner .board__right-container__top div {
+    border: 1px solid black;
+    width: 15%;
+    text-align: center;
+    padding: 5px 20px;
+    border-radius: 5px;
+    font-size: 12px;
+}
+
+body .second-page .board__right-container .board__right-container__inner .board__list {
+    margin-top: 10px;
+}
+
+body .second-page .board__right-container .board__right-container__inner .board__list li .board-list__single-post {
+    border-radius: 5px;
+    border: 1px solid black;
+    margin-top: 5px;
+    padding: 5px;
+    display: grid;
+    grid-template-columns: .3fr 1.5fr .1fr .5fr .05fr .2fr .7fr;
+
+    transition: .1s;
+}
+
+    /* hover */
+body .second-page .board__right-container .board__right-container__inner .board__list li .board-list__single-post:hover {
+    transform: scale(1.1);
+    background-color: rgba(0,0,0,.8);
+    color: white;
+}
+    /*  */
+
+body .second-page .board__right-container .board__right-container__inner .board__list li .board-list__single-post > div {
+    text-align: center;
+    font-size: 12px;
+    height: 21px;
+}
+
+body .second-page .board__right-container .board__right-container__inner .board__list li .board-list__single-post > .material-icons {
+    font-size: 10px;
+    height: 10px;
+    width: 10px;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+body .second-page .board__right-container .board__right-container__inner .board__list li .board-list__single-post .board-list__title {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    cursor: pointer;
+}
+
+body .second-page .board__right-container .board__right-container__inner .board__list li .board-list__single-post .board-list__title .board-list__title-title {
+    text-align: start;
+    padding-right: 5px;
+    overflow: hidden;
+}
+
+body .second-page .board__right-container .board__right-container__inner .board__list li .board-list__single-post .board-list__title .icons {
+    display: grid;
+    grid-template-columns: .1fr .6fr .1fr .3fr;
+    font-size: 12px;
+}
+
+body .second-page .board__right-container .board__right-container__inner .board__list li .board-list__single-post .board-list__title .icons > div {
+    text-align: start;
+}
+
+body .second-page .board__right-container .board__right-container__inner .board__list li .board-list__single-post .board-list__title .icons > .material-icons {
+    font-size: 10px;
+    height: 10px;
+    width: 10px;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+body .second-page .board__right-container .board__right-container__inner .board__list li .board-list__single-post .board-list__title .icons > .material-icons.comment {
+    transform: translateX(-30px);
+}
+
+body .second-page .board__right-container .board__right-container__inner .board__list li .board-list__single-post .board-list__user-photo {
+    height: 18px;
+    width: 18px;
+    background-color: white;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+body .second-page .board__right-container .board__right-container__inner .board__list li .board-list__single-post .board-list__user-photo img {
+    height: 18px;
+    width: 18px;
+    object-fit: cover;
+}
+
+body .second-page .board__right-container .board__right-container__inner .board__list li .board-list__single-post .board-list__username {
+    text-align: start;
+    padding-left: 5px;
+    cursor: pointer;
+}
+
+body .second-page .board__right-container .board__right-container__inner .board__list li .board-list__single-post .board-list__view {
+    text-align: start;
+}
+
+body .second-page .board__right-container .board__right-container__inner .board__pagination {
+    background-color: gray;
+    display: flex;
+    justify-content: center;
+}
+
+body .second-page .board__right-container .board__right-container__inner .board__pagination ul {
+    display: flex;
+    font-size: 10px;
+    margin-top: 8px;
+}
+
+body .second-page .board__right-container .board__right-container__inner .board__pagination ul li {
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    text-align: center;
+    padding: 4px;
+    position: relative;
+    margin: 0 2px;
+    background-color: #333;
+    transition: .05s;
+}
+
+    /* hover */
+body .second-page .board__right-container .board__right-container__inner .board__pagination ul li:hover {
+    transform: scale(1.3);
+}
+    /*  */
+
+body .second-page .board__right-container .board__right-container__inner .board__pagination ul li a {
+    display: block;
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    top: 2px;
+    color: white;
+}
+
+/* Board Write Page */
+
+body .second-page .board__right-container .board-write__container {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: pink;
+    padding: 20% 5% 10% 5%;
+    opacity: 0.9;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    display: none;
+}
+
+body .second-page .board__right-container .board-write__container .board__right-container-title {
+    position: absolute;
+    top: 4%;
+    left: 5%;
+    font-weight: bold;
+    font-size: 70px;
+}
+
+body .second-page .board__right-container .board-write__container .board-write__inner {
+    background-color: orange;
+    height: 100%;
+    width: 100%;
+}
+
+body .second-page .board__right-container .board-write__container .board-write__inner form {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+body .second-page .board__right-container .board-write__container .board-write__inner form .board-write__title input {
+    width: 100%;
+    border-radius: 5px;
+}
+
+body .second-page .board__right-container .board-write__container .board-write__inner form .board-write__content {
+    margin-top: 10px;
+    width: 100%;
+    height: 100%;
+}
+
+body .second-page .board__right-container .board-write__container .board-write__inner form .board-write__content textarea {
+    border-radius: 5px;
+    width: 100%;
+    height: 80%;
+}
+
+body .second-page .board__right-container .board-write__container .board-write__inner form .board-write__btn-group {
+    background-color: white;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+body .second-page .board__right-container .board-write__container .board-write__inner form .board-write__btn-group .btn {
+    padding: 0px 15px;
+} 
+
+body .second-page .board__right-container .board-write__container .board-write__inner form .board-write__btn-group button {
+    padding: 0px 15px;
+    font-size: 15px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid black;
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+/* Read Single Post */
+
+body .second-page .inner .board__left-container .read-container__inner {
+    background-color: rgba(0,0,0,0.7);
+    position: absolute;
+    height: 75%;
+    width: 75%;
+    /* top: 120px; */
+    left: 70px;
+    top: -500px;
+    display: none;
+}
+
+    /* focused */
+/* body .second-page .inner .board__left-container .read-container__inner.focused {
+    transform: translateY(620px);
+    display: block;
+} */
+    
+
+body .second-page .inner .board__left-container .read-container__inner .close-btn {
+    position: absolute;
+    top: -10px;
+    height: 24px;
+    width: 24px;
+    left: 0;
+    right: 0;
+    border-radius: 50%;
+    background-color: rgba(0,0,0,.7);
+    color: white;
+    margin: auto;
+}
+
+body .second-page .inner .board__left-container .read-container__inner .read-container__user-info {
+    background-color: white;
+    display: grid;
+    grid-template-columns: 1fr .1fr .4fr .1fr;
+    height: 50px;
+}
+
+body .second-page .inner .board__left-container .read-container__inner .read-container__user-info .board-read__user-photo {
+    height: 24px;
+    width: 24px;
+    border-radius: 50%;
+    overflow: hidden;
+    top: 0;
+    margin: auto 0;
+}
+
+body .second-page .inner .board__left-container .read-container__inner .read-container__user-info .board-read__user-photo > img {
+    height: 24px;
+    width: 24px;
+    object-fit: cover;
+}
+
+body .second-page .inner .board__left-container .read-container__inner .read-container__user-info .board-read__username {
+    top: 0;
+    margin: auto 0;
+    width: 216px;
+    margin-left: 15px;
+    word-break: break-all;
+}
+
+body .second-page .inner .board__left-container .read-container__inner .read-container__user-info .board-read__date {
+    top: 0;
+    margin: auto 0;
+    padding-left: 5px;
+    width: 95px;
+}
+
+body .second-page .inner .board__left-container .read-container__inner .read-container__user-info .material-icons {
+    height: 24px;
+    width: 24px;
+    top: 0;
+    bottom: 0;
+    padding-right: 5px;
+    margin: auto 0;
+}
+
+body .second-page .inner .board__left-container .read-container__inner .read-container__content-inner {
+    opacity: .5;
+    height: 450px;
+    overflow: auto;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: pink;
+    font-size: 13px;
+    position: relative;
+}
+
+body .second-page .inner .board__left-container .read-container__inner .read-container__content-inner .material-icons.likes {
+    position: absolute;
+    right: 25px;
+    top: 65%;
+}
+
+body .second-page .inner .board__left-container .read-container__inner .read-container__content-inner .read-container__content {
+    height: 300px;
+    /* background-color: black; */
+    overflow: auto;
+}
+
+body .second-page .inner .board__left-container .read-container__inner .read-container__content-inner .bottom-container {
+    background-color: orange;
+    padding: 5px;
+    font-size: 11px;
+}
+
+
+body .second-page .inner .board__left-container .read-container__inner .read-container__content-inner .bottom-container > form {
+    position: relative;
+}
+
+body .second-page .inner .board__left-container .read-container__inner .read-container__content-inner .bottom-container > form > textarea{
+    font-size: 11px;
+    width: 94%;
+}
+
+body .second-page .inner .board__left-container .read-container__inner .read-container__content-inner .bottom-container > form > button {
+    border: none;
+    background-color: transparent;
+    font-size: 11px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+}
+
+body .second-page .inner .board__left-container .read-container__inner .read-container__content-inner .bottom-container ul li {
+    margin-bottom: 5px;
+}
+
+body .second-page .inner .board__left-container .read-container__inner .read-container__content-inner .bottom-container ul li .single-comment {
+    position: relative;
+}
+
+body .second-page .inner .board__left-container .read-container__inner .read-container__content-inner .bottom-container .upper-line {
+    font-size: 11px;
+    display: grid;
+    grid-template-columns: .1fr 3fr .1fr .1fr .1fr .1fr;
+}
+
+body .second-page .inner .board__left-container .read-container__inner .read-container__content-inner .bottom-container .upper-line .material-icons {
+    font-size: 13px;
+}
+
+body .second-page .inner .board__left-container .read-container__inner .read-container__content-inner .bottom-container .user-photo {
+    height: 18px;
+    width: 18px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+body .second-page .inner .board__left-container .read-container__inner .read-container__content-inner .bottom-container .user-photo > img {
+    height: 18px;
+    width: 18px;
+    object-fit: cover;
+}
+
+body .second-page .inner .board__left-container .read-container__inner .read-container__content-inner .bottom-container .like-count {
+    text-align: end;
+}
+
+body .second-page .inner .board__left-container .read-container__inner .read-container__content-inner .bottom-container .bottom-line {
+    position: relative;
+}
+
+body .second-page .inner .board__left-container .read-container__inner .read-container__content-inner .bottom-container .bottom-line .content {
+    width: 200px;
+    word-break: break-all;
+    position: relative;
+}
+
+body .second-page .inner .board__left-container .read-container__inner .read-container__content-inner .bottom-container .bottom-line .content .reply {
+    position: absolute;
+    width: 13px;
+    height: 13px;
+    top: 0;
+    bottom: 0;
+    left: 335px;
+    margin: auto;
+    font-size: 13px;
+}
+
+body .second-page .inner .board__left-container .read-container__inner .read-container__content-inner .bottom-container .bottom-line .comment-date {
+    position: absolute;
+    bottom: 0;
+    right: 23px;
+    color: rgb(73, 73, 73);
+}
+
+/* double comment */
+body .second-page .inner .board__left-container .read-container__inner .read-container__content-inner .bottom-container ul li .single-comment > form {
+    margin-top: 10px;
+    margin-left: 40px;
+    position: relative;
+}
+
+body .second-page .inner .board__left-container .read-container__inner .read-container__content-inner .bottom-container ul li .single-comment > form > textarea {
+    width: 285px;
+}
+
+body .second-page .inner .board__left-container .read-container__inner .read-container__content-inner .bottom-container ul li .single-comment > form > button {
+    background-color: transparent;
+    border: none;
+    position: absolute;
+    height: 15px;
+    width: 15px;
+    top: 14px;
+}
+
+body .second-page .inner .board__left-container .read-container__inner .read-container__content-inner .bottom-container ul li .single-comment ul li.second-comment {
+    margin-top: 10px;
+    margin-left: 40px;
+}
+
+body .second-page .inner .board__left-container .read-container__inner .read-container__content-inner .bottom-container ul li .single-comment ul li.second-comment .bottom-line .content {
+    width: 160px;
+}
+
+/* Third Page */
+body .third-page {
+    height: 100vh;
+    /* background-color: black; */
+    opacity: .7;
+}
+
+body .third-page .inner {
+    display: grid;
+    grid-template-columns: 1.5fr 2fr;
+    font-size: 13px;
+}
+
+    /* left container */
+body .third-page .left-container {
+    background-color: green;
+    padding: 25% 10% 10% 10%;
+    position: relative;
+    overflow: hidden;
+}
+
+body .third-page .left-container .btns {
+    position: absolute;
+    top: 15%;
+    right: 9%;
+    display: flex;
+}
+
+body .third-page .left-container .btns .material-icons {
+    background-color: white;
+    margin-right: 10px;
+    padding: 5px;
+    border-radius: 5px;
+    transition: .2s;
+    background-color: transparent;
+}
+
+body .third-page .left-container .btns .material-icons:hover {
+    transform: rotate(720deg);
+    border: none;
+}
+
+body .third-page .left-container .btns .material-icons.received-message-btn:hover {
+    background-color: powderblue;
+}
+
+body .third-page .left-container .btns .material-icons.sent-message-btn:hover {
+    background-color: palevioletred;
+}
+
+body .third-page .left-container .btns .material-icons.write-message-btn:hover {
+    background-color: rgb(169, 109, 230);
+}
+
+body .third-page .left-container .btns .title {
+    font-weight: bold;
+    position: absolute;
+    right: 243%;
+    top: 20%;
+    width: 120px;
+    background-color: white;
+}
+
+body .third-page .left-container ul {
+    height: 70%;
+    width: 79%;
+    /* background-color:rgb(255, 185, 185); */
+    position: absolute;
+    opacity: 1;
+}
+
+body .third-page .left-container ul.received-page {
+    /* background-color: white; */
+}
+
+body .third-page .left-container ul.sent-page {
+    left: 89%;
+    /* background-color: gray; */
+    display: none;
+    opacity: 0;
+}
+
+body .third-page .left-container ul li {
+    margin-top: 5px;
+}
+
+body .third-page .left-container ul li .message-list__single-message {
+    display: grid;
+    grid-template-columns: .1fr .3fr 1fr .6fr;
+    border: 1px solid black;
+    padding: 3px 5px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    height: 27px;
+    overflow: hidden;
+}
+
+body .third-page .left-container ul li .message-list__single-message .user-photo {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #fff;
+    overflow: hidden;
+}
+
+body .third-page .left-container ul li .message-list__single-message .user-photo img {
+    width: 20px;
+    height: 20px;
+    object-fit: cover;
+}
+
+body .third-page .left-container ul li .message-list__single-message .username {
+    margin-left: 5px;
+}
+
+body .third-page .left-container ul li .message-list__single-message .content {
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+body .third-page .left-container ul.new-message-page {
+    /* background-color: red; */
+    left: 168%;
+    display: none;
+    opacity: 0;
+}
+
+body .third-page .left-container ul.new-message-page li .new-message-form {
+    position: relative;
+    /* background-color: orange; */
+}
+
+body .third-page .left-container ul.new-message-page li form input {
+    display: block;
+    width: 100%;
+    border-radius: 5px;
+    padding: 10px 20px;
+}
+
+body .third-page .left-container ul.new-message-page li form textarea {
+    display: block;
+    margin-top: 10px;
+    border-radius: 5px;
+    width: 100%;
+    height: 350px;
+}
+
+body .third-page .left-container ul.new-message-page li form button {
+    display: block;
+    position: absolute;
+    bottom: -10%;
+    right: 0;
+    border-radius: 5px;
+    border: none;
+
+}
+
+    /* right container */
+body .third-page .right-container {
+    background-color: powderblue;
+    padding: 19% 5% 7% 5%;
+    position: relative;
+}
+
+body .third-page .right-container .title {
+    font-size: 70px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+}
+
+body .third-page .right-container .right-container__messages {
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+
+body .third-page .right-container .right-container__messages ul {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+body .third-page .right-container .right-container__messages ul.received-message-page {
+    opacity: 1;
+    display: block;
+}
+
+body .third-page .right-container .right-container__messages ul.sent-message-page {
+    display: none;
+    opacity: 0;
+}
+
+body .third-page .right-container .right-container__messages ul li {
+    height: 100%;
+    width: 300px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    transform: scale(0.5);
+    box-shadow: 5px 5px 50px 10px #474747;
+    border-radius: 10px;
+    opacity: 0;
+    cursor: pointer;
+}
+
+body .third-page .right-container .right-container__messages ul li .single-message {
+    width: 300px;
+    height: 100%;
+    background-color: white;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    border-radius: 10px;
+    padding: 30px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+body .third-page .right-container .right-container__messages ul li .single-message .user-photo {
+    display: grid;
+    grid-template-columns: .1fr 1fr;
+    width: 150px;
+    height: 30px;
+}
+
+body .third-page .right-container .right-container__messages ul li .single-message .user-photo img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+body .third-page .right-container .right-container__messages ul li .single-message .user-photo > div {
+    position: relative;
+    margin-left: 5px;
+}
+
+body .third-page .right-container .right-container__messages ul li .single-message .user-photo > div .username {
+    font-weight: bold;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+body .third-page .right-container .right-container__messages ul li .single-message .material-icons {
+    position: absolute;
+    top: 40px;
+    right: 30px;
+}
+
+body .third-page .right-container .right-container__messages ul li .single-message .content {
+    background-color: rgb(209, 209, 209);
+    width: 100%;
+    height: 80%;
+    margin-top: 20px;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    overflow: auto;
+}
+
+/* Darkening */
+body .darkening {
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    background-color: rgba(0,0,0,0.5);
+    opacity: 0;
+}

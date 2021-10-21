@@ -1,0 +1,369 @@
+/* Main container */
+.main-container {
+    position: relative;
+    min-height: 500px;
+    top: 260px;
+    background-color: blue;
+    width: 100%;
+}
+
+.main-container > .inner {
+   background-color: powderblue;
+   width: 1100px;
+   height: 100%;
+   left: 0;
+   right: 0;
+   margin: auto;
+   display: grid;
+   grid-template-columns: 0.3fr 0.7fr;
+}
+
+    /* Left Box */
+.main-container > .inner .left-box {
+    background-color: gray;
+}
+
+.main-container > .inner .left-box .left-box__text {
+    margin-top: 130px;
+}
+
+.main-container > .inner .left-box .left-box__text span {
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.main-container > .inner .left-box .left-box__text div {
+    font-size: 12px;
+}
+
+.main-container > .inner .left-box .left-box__menu {
+    position: absolute;
+    top: 300px;
+}
+
+.main-container > .inner .left-box .left-box__menu div {
+    padding: 5px 0;
+    cursor: pointer;
+}
+        /* write button hover */
+.main-container > .inner .left-box .left-box__menu .write-btn:hover {
+    color: black;
+    font-weight: bold;
+}
+
+.main-container > .inner .left-box .left-box__menu .search {
+    background-color: orange;
+}
+
+.main-container > .inner .left-box .left-box__menu .search .material-icons {
+    position: absolute;
+    left: 5px;
+    transition: .4s;
+}
+
+        /* search box focused material icons */
+.main-container > .inner .left-box .left-box__menu .search.focused .material-icons {
+    transform: translateX(180px);
+}
+
+.main-container > .inner .left-box .left-box__menu .search input {
+    height: 30px;
+    width: 32px;
+    padding: 0 10px;
+    box-sizing: border-box;
+    border-style: none;
+    outline: none;
+    border-radius: 5px;
+    transition: .4s;
+}
+        /* search box focus */
+.main-container > .inner .left-box .left-box__menu .search input:focus {
+    width: 100%;
+}
+
+    /* right box */
+.main-container > .inner .right-box {
+    font-size: 12px;
+    background-color: pink;
+}
+        /* right box__table */
+
+.main-container > .inner .right-box .table {
+    display: block;
+}
+
+.main-container > .inner .right-box > .table .thead {
+    display: flex;
+    margin-top: 10px;
+}
+
+.main-container > .inner .right-box > .table .trow {
+    display: grid;
+    grid-template-columns: 0.5fr 2.5fr 0.8fr 0.4fr 1fr;
+    padding: 5px 0;
+    border-top: .5px solid black;
+    border-bottom: .5px solid black;
+    height: 26.6px;
+    cursor: pointer;
+    box-sizing: border-box;
+    transition: .1s;
+}
+
+.main-container > .inner .right-box > .table .trow div {
+    text-align: center;
+}
+
+.main-container > .inner .right-box > .table .trow .trow__title {
+    overflow: hidden;
+}
+
+.main-container > .inner .right-box > .table .trow .trow__title .like-comment {
+    color: rgb(80, 79, 79);
+}
+
+.main-container > .inner .right-box > .table .trow .trow__title .material-icons {
+    font-size: 10px;
+}
+
+/* content-box */
+.main-container > .inner .right-box > .table .content-box {
+    background-color: white;
+    margin: 10px 20px;
+}
+
+.main-container > .inner .right-box > .table .content-box .content {
+    padding-bottom: 10px;
+    min-height: 300px;
+}
+
+/* Modify Btns */
+.main-container > .inner .right-box > .table .content-box .modify-btns {
+    margin-bottom: 10px;
+    text-align: end;
+}
+
+.main-container > .inner .right-box > .table .content-box .modify-btns .like-btn {
+    margin-right: 5px;
+    position: relative;
+}
+
+.main-container > .inner .right-box > .table .content-box .modify-btns .like-btn > .material-icons {
+    font-size: 17px;
+    width: 17px;
+    height: 17px;
+    position: absolute;
+    left: 2px;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+.main-container > .inner .right-box > .table .content-box .modify-btns .like-btn > span {
+    padding-left: 15px;
+}
+
+.main-container > .inner .right-box > .table .content-box .modify-btns > span{
+    border: .5px solid black;
+    padding: 5px;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+/* Comment box */
+.main-container > .inner .right-box > .table .content-box .comment-box {
+    min-height: 130px;
+    background-color: gray;
+    padding: 5px 0;
+    border-top: .5px solid black;
+    position: relative;
+}
+
+.main-container > .inner .right-box > .table .content-box .comment-box form {
+    height: 115px;
+}
+
+.main-container > .inner .right-box > .table .content-box .comment-box form > textarea {
+    margin: 5px;
+    width: 710px;
+    height: 60px;
+    font-size: 12px;
+}
+
+.main-container > .inner .right-box > .table .content-box .comment-box form > button {
+    margin: 10px;
+    position: absolute;
+    border: .5px solid black;
+    padding: 5px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    right: 0;
+    top: 90px;
+}
+
+    /* first-comment */
+.main-container > .inner .right-box > .table .content-box .comment-box .first-comment-box {
+    background-color: powderblue;
+    font-size: 11px;
+    border-top: .5px solid black;
+    border-bottom: .5px solid black;
+}
+
+.main-container > .inner .right-box > .table .content-box .comment-box .first-comment-box  > .comment {
+    background-color: orange;
+    width: 650px;
+    padding: 10px;
+    word-break: break-all;
+}
+
+.main-container > .inner .right-box > .table .content-box .comment-box .first-comment-box > .btns {
+    height: 35px;
+}
+
+.main-container > .inner .right-box > .table .content-box .comment-box .first-comment-box > .btns .reply-btns {
+    border: .5px solid black;
+    padding: 5px;
+    box-sizing: border-box;
+    position: absolute;
+    left: 10px;
+    cursor: pointer;
+}
+
+.main-container > .inner .right-box > .table .content-box .comment-box .first-comment-box > .btns .likes {
+    position: absolute;
+    right: 10px;
+    padding: 2px;
+    box-sizing: border-box;
+    border: .5px solid black;
+    cursor: pointer;
+}
+
+.main-container > .inner .right-box > .table .content-box .comment-box .first-comment-box > .btns .likes .material-icons {
+    font-size: 14px;
+}
+
+/* Second comment box */
+.main-container > .inner .right-box > .table .content-box .comment-box .second-comment-container {
+    display: none;
+    position: relative;
+}
+
+.main-container > .inner .right-box > .table .content-box .comment-box .second-comment-box {
+    background-color: lightgrey;
+    font-size: 11px;
+    border-top: .5px solid black;
+    border-bottom: .5px solid black;
+}
+
+.main-container > .inner .right-box > .table .content-box .comment-box .second-comment-box .comment {
+    background-color: white;
+    width: 590px;
+    padding: 10px 0 10px 80px;
+    word-break: break-all;
+}
+
+.main-container > .inner .right-box > .table .content-box .comment-box .second-comment-box .btns {
+    height: 35px;
+}
+
+.main-container > .inner .right-box > .table .content-box .comment-box .second-comment-box .btns .likes {
+    position: absolute;
+    right: 10px;
+    padding: 2px;
+    box-sizing: border-box;
+    border: .5px solid black;
+}
+
+.main-container > .inner .right-box > .table .content-box .comment-box .second-comment-box .btns .likes .material-icons {
+    font-size: 14px;
+}
+
+    /* reply container */
+.main-container > .inner .right-box > .table .content-box .comment-box .comment-container .first-comment-box .reply-container {
+    height: 100px;
+    background-color: white;
+    position: relative;
+}
+
+.main-container > .inner .right-box > .table .content-box .comment-box .comment-container .first-comment-box .reply-container form > textarea {
+    width: 585px;
+    height: 40px;
+    position: absolute;
+    top: -20px;
+    bottom: 0;
+    left: 80px;
+    margin: auto;
+}
+
+.main-container > .inner .right-box > .table .content-box .comment-box .comment-container .first-comment-box .reply-container form > .reply-submit-btn {
+    position: absolute;
+    width: 45px;
+    border: .5px solid black;
+    padding: 3px;
+    box-sizing: border-box;
+    right: 10px;
+    bottom: 36.5px;
+}
+
+.main-container > .inner .right-box > .table .content-box .comment-box .comment-container .first-comment-box .close-comment-btn {
+    height: 24px;
+    width: 24px;
+    position: absolute;
+    bottom: 5px;
+    right: 0;
+    left: 0;
+    margin: auto;
+    cursor: pointer;
+}
+        /* right box__board form */
+.main-container > .inner .right-box .board-form__container {
+    display: none;
+    position: relative;
+}
+
+.main-container > .inner .right-box .board-form {
+    background-color: pink;
+    font-size: 15px;
+    width: 730px;
+    height: 420px;
+    margin: 70px 20px 10px 20px;
+}
+
+.main-container > .inner .right-box .board-form {
+    position: relative;
+}
+
+.main-container > .inner .right-box .board-form > input {
+    border-radius: 10px;
+    border: .5px solid black;
+    background-color: lightgrey;
+    padding: 10px;
+    margin-bottom: 5px;
+    width: 100%;
+    box-sizing: border-box;
+    outline: none;
+}
+
+.main-container > .inner .right-box .board-form > textarea {
+    outline: none;
+    border: none;
+    width: 100%;
+    height: 345px;
+    resize: none;
+    box-sizing: border-box;
+    background-color: lightgrey;
+    border-radius: 10px;
+    border: .5px solid black;
+    padding: 10px;
+}
+
+.main-container > .inner .right-box .board-form > .btns {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+.main-container > .inner .right-box .board-form > .btns > button {
+    border: 1px solid black;
+    padding: 6px;
+    border-radius: 5px;
+}

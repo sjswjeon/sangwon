@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+  <body>
+  
+    <!-- Side Bar -->
+    <header th:fragment="side-bar">
+        <div class="side-bar">
+            <div class="side-bar__inner">
+
+                <div class="side-bar__top-container">
+                    <div class="logo"></div>
+                    <div class="website-name">SJSWJEON</div>
+                    <div class="material-icons" id="side-bar-close-btn">west</div>
+                </div>
+
+                <div class="side-bar__bottom-container">
+                    <div class="side-bar__container active">
+                        <div class="material-icons">home</div>
+                        <a class="menu-name" th:href="@{/}">Home</a>
+                        <div class="toggle-btn material-icons">arrow_drop_down</div>
+                    </div>
+                    <div class="side-bar__container">
+                        <div class="material-icons">assignment</div>
+                        <a class="menu-name" th:href="@{/board/list}">Board</a>
+                        <div class="toggle-btn material-icons">arrow_drop_down</div>
+                    </div>
+                    <div class="side-bar__container">
+                        <div class="material-icons">chat_bubble</div>
+                        <a class="menu-name" th:href="@{/message/list}">Message</a>
+                        <div class="toggle-btn material-icons">arrow_drop_down</div>
+                    </div>
+                    <div class="side-bar__container">
+                        <div class="material-icons">star</div>
+                        <div class="menu-name">Rewards</div>
+                        <div class="toggle-btn material-icons">arrow_drop_down</div>
+                    </div>
+                    <div class="side-bar__container">
+                        <div class="material-icons">account_circle</div>
+                        <div class="menu-name">My Page</div>
+                        <div class="toggle-btn material-icons">arrow_drop_down</div>
+                    </div>
+                    <div class="side-bar__container">
+                        <div class="material-icons">people</div>
+                        <div class="menu-name">Members</div>
+                        <div class="toggle-btn material-icons">arrow_drop_down</div>
+                    </div>
+                    <div class="side-bar__container">
+                        <a th:href="@{/account/login}">
+                            <div class="material-icons">login</div>
+                            <div class="menu-name">Log in / Register</div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Top Header -->
+    <header th:fragment="top-header">
+        <div class="top-header">
+            <div class="top-header__top-container">
+                <div class="website-name">SJSWJEON</div>
+            </div>
+            <div class="top-header__bottom-container">
+                <div class="left-box">
+                    <div class="website-name">SJSWJEON</div>
+                    <div class="website-name__add">CREATIVITY</div>
+                </div>
+                <div class="right-box">
+                    <div class="material-icons">stars</div>
+                    <div class="material-icons">stars</div>
+                    <div class="material-icons">stars</div>
+                    <div class="material-icons">stars</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Top nav bar -->
+    <nav th:fragment="top-navbar">
+        <div class="nav-inner">
+            <div class="nav__left-container">
+                <div class="nav__menu" id="nav-menu-btn">
+                    <div class="material-icons">menu</div>
+                    <div class="left-container__name">Menu</div>
+                </div>
+            </div>
+        </div>
+    </nav>
+  
+  </body>
+
+</html>

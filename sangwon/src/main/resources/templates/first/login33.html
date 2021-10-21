@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In</title>
+
+    <!-- Reset Css -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css">
+    <!-- Google Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" th:href="@{/css/account-login.css}">
+<!--    <link rel="stylesheet" href="/src/main/resources/static/css/account-login.css">-->
+
+    <!-- Gsap -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js" integrity="sha512-UxP+UhJaGRWuMG2YC6LPWYpFQnsSgnor0VUF3BHdD83PS/pOpN+FYbZmrYN+ISX8jnvgVUciqP/fILOXDjZSwg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- JS -->
+     <script defer th:src="@{/js/account-login.js}"></script>
+<!--     <script defer src="/src/main/resources/static/js/account-login.js"></script>-->
+
+</head>
+<body>
+    <main class="form-signin form">
+        <div class="inner">
+            <form th:action="@{/account/login}" method="post">
+                <div class="title">
+                    <h1 class="">Login</h1>
+                </div>
+            
+                <div class="container">
+                    <label for="floatingInput">Username</label>
+                    <div class="material-icons user-icon">perm_identity</div>
+                    <input type="text" class="" id="floatingInput" name="username" placeholder="Type your Username">
+                </div>
+                <div class="container">
+                    <label for="floatingPassword">Password</label>
+                    <div class="material-icons user-icon">lock</div>
+                    <input type="password" class="" id="floatingPassword" name="password" placeholder="Type your Password">
+                </div>
+                <div class="login-btn">
+                    <button class="" type="submit">LOGIN</button>
+                </div>
+                <p class="open-register-page-btn">Sign Up</p>
+            </form>
+        </div>
+    </main>
+
+    <main class="form-register form">
+        <div class="inner">
+            <form th:action="@{/account/register}" method="post">
+                <div class="title">
+                    <h1 class="">Create an account</h1>
+                </div>
+     
+                <div class="container">
+                    <label for="floatingUsername">Username</label>
+                    <div class="material-icons user-icon">account_circle</div>
+                    <input type="text" class="" id="floatingUsername" name="username" placeholder="Type your Username">
+                </div>
+
+                <div class="container">
+                    <label for="password">Password</label>
+                    <div class="material-icons user-icon">lock</div>
+                    <input type="password" class="" id="password" name="password" placeholder="Type your Password">
+                </div>
+
+                <div class="container">
+                    <label for="floatingName">Name</label>
+                    <div class="material-icons user-icon">account_circle</div>
+                    <input type="text" class="" id="floatingName" name="name" placeholder="Type your Name">
+                </div>
+
+                <div class="container">
+                    <label for="emailAddress">Email address</label>
+                    <div class="material-icons user-icon">perm_identity</div>
+                    <input type="email" class="" id="emailAddress" name="email" placeholder="Type your Email address">
+                </div>
+
+
+                <div class="register-btn">
+                    <button class="" type="submit">
+                        <span class="material-icons">lock</span>
+                        <span class="text">CREATE ACCOUNT</span>
+                    </button>
+                </div>
+
+                <p class="open-login-page-btn">Back to Login Page</p>
+            </form>
+        </div>
+    </main>
+</body>
+</html>

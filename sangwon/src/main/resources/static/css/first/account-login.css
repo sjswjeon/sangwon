@@ -1,0 +1,142 @@
+/* COMMON */
+body {
+    color: #333;
+    font-size: 16px;
+    line-height: 1.4;
+    font-weight: 400;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: pink;
+    height: 100vh;
+    position: relative;
+}
+
+/* Sign in */
+.form-signin {
+    opacity: 1;
+    z-index: 1;
+}
+
+.form {
+    width: 350px;
+    height: 450px;
+    background-color: white;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top:0;
+    margin: auto;
+    border-radius: 10px;
+}
+
+.inner {
+    background-color: white;
+    height: 350px;
+    width: 250px;
+    margin: 50px;
+}
+
+body main .inner form > .title {
+    font-size: 35px;
+    font-family: 'Righteous', cursive;
+    text-align: center;
+    color:rgb(68, 68, 68);
+    margin-bottom: 20px;
+}
+
+body main .inner form > .container {
+    font-size: 13px;
+    position: relative;
+    border-bottom: .5px solid gray;
+    margin-top: 20px;
+}
+
+body main .inner form > .container .material-icons {
+    position: absolute;
+    bottom: 9px;
+    left: 0;
+    color: gray;
+    font-size: 20px;
+}
+
+body main .inner form > .container input {
+    width: 170px;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    margin: 10px 30px;
+    font-size: 13px;
+    background-color: none;
+}
+
+body main .inner form > .login-btn {
+    text-align: center;
+    margin: 30px 0;
+}
+
+body main .inner form > .login-btn > button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 20px;
+    background-color: powderblue;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+body main .inner form > p {
+    text-align: center;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+/* Register */
+.form-register {
+    opacity: 0;
+    z-index: 0;
+}
+
+.form-register > .inner {
+    background-color: white;
+    height: 350px;
+    width: 250px;
+    margin: 20px 50px;
+}
+
+body main.form-register > .inner form > .title {
+    font-size: 28px;
+    font-family: 'Righteous', cursive;
+    text-align: center;
+    color:rgb(68, 68, 68);
+    margin-bottom: 20px;
+}
+
+body main .inner form > .register-btn {
+    text-align: center;
+    margin-top: 15px;
+}
+
+body main .inner form > .register-btn > button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 20px;
+    background-color: powderblue;
+    font-size: 13px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+}
+
+body main .inner form > .register-btn > button text {
+    display: block;
+    margin-top: 1px;
+}
+
+body main .inner form > .register-btn > button > .material-icons {
+    font-size: 16px;
+}
+
+.form-register > .inner form > p {
+    margin-top: 10px;
+}

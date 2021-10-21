@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- Reset Css -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css">
+    <!-- Google Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" th:href="@{/css/main.css}">
+<!--    <link rel="stylesheet" href="../static/css/main.css">-->
+
+    <!-- Gsap -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js" integrity="sha512-UxP+UhJaGRWuMG2YC6LPWYpFQnsSgnor0VUF3BHdD83PS/pOpN+FYbZmrYN+ISX8jnvgVUciqP/fILOXDjZSwg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- JS -->
+    <script defer th:src="@{/js/main.js}"></script>
+<!--    <script defer src="../static/js/main.js"></script>-->
+
+</head>
+<body>
+    <!-- Side Bar -->
+    <header th:replace="fragments/common :: side-bar">
+<!--        <div class="side-bar">-->
+<!--            <div class="side-bar__inner">-->
+
+<!--                <div class="side-bar__top-container">-->
+<!--                    <div class="logo"></div>-->
+<!--                    <div class="website-name">SJSWJEON</div>-->
+<!--                    <div class="material-icons" id="side-bar-close-btn">west</div>-->
+<!--                </div>-->
+
+<!--                <div class="side-bar__bottom-container">-->
+<!--                    <div class="side-bar__container active">-->
+<!--                        <div class="material-icons">home</div>-->
+<!--                        <div class="menu-name">Home</div>-->
+<!--                        <div class="toggle-btn material-icons">arrow_drop_down</div>-->
+<!--                    </div>-->
+<!--                    <div class="side-bar__container">-->
+<!--                        <div class="material-icons">assignment</div>-->
+<!--                        <div class="menu-name">Board</div>-->
+<!--                        <div class="toggle-btn material-icons">arrow_drop_down</div>-->
+<!--                    </div>-->
+<!--                    <div class="side-bar__container">-->
+<!--                        <div class="material-icons">chat_bubble</div>-->
+<!--                        <div class="menu-name">Message</div>-->
+<!--                        <div class="toggle-btn material-icons">arrow_drop_down</div>-->
+<!--                    </div>-->
+<!--                    <div class="side-bar__container">-->
+<!--                        <div class="material-icons">star</div>-->
+<!--                        <div class="menu-name">Rewards</div>-->
+<!--                        <div class="toggle-btn material-icons">arrow_drop_down</div>-->
+<!--                    </div>-->
+<!--                    <div class="side-bar__container">-->
+<!--                        <div class="material-icons">account_circle</div>-->
+<!--                        <div class="menu-name">My Page</div>-->
+<!--                        <div class="toggle-btn material-icons">arrow_drop_down</div>-->
+<!--                    </div>-->
+<!--                    <div class="side-bar__container">-->
+<!--                        <div class="material-icons">people</div>-->
+<!--                        <div class="menu-name">Members</div>-->
+<!--                        <div class="toggle-btn material-icons">arrow_drop_down</div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+    </header>
+
+    <!-- Top Header -->
+    <header th:replace="fragments/common :: top-header">
+<!--        <div class="top-header">-->
+<!--            <div class="top-header__top-container">-->
+<!--                <div class="website-name">SJSWJEON</div>-->
+<!--            </div>-->
+<!--            <div class="top-header__bottom-container">-->
+<!--                <div class="left-box">-->
+<!--                    <div class="website-name">SJSWJEON</div>-->
+<!--                    <div class="website-name__add">CREATIVITY</div>-->
+<!--                </div>-->
+<!--                <div class="right-box">-->
+<!--                    <div class="material-icons">stars</div>-->
+<!--                    <div class="material-icons">stars</div>-->
+<!--                    <div class="material-icons">stars</div>-->
+<!--                    <div class="material-icons">stars</div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+    </header>
+
+    <!-- Top nav bar -->
+    <nav th:replace="fragments/common :: top-navbar">
+<!--        <div class="nav-inner">-->
+<!--            <div class="nav__left-container">-->
+<!--                <div class="nav__menu" id="nav-menu-btn">-->
+<!--                    <div class="material-icons">menu</div>-->
+<!--                    <div class="left-container__name">Menu</div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+    </nav>
+
+    <!-- Darkening -->
+    <div class="darkening">
+
+    </div>
+</body>
+</html>
