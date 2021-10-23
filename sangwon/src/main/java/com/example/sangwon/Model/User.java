@@ -23,6 +23,10 @@ public class User {
     private String date;
     private String level;
 
+    @ManyToOne
+    @JoinColumn(name = "board_id")
+    private Board likedBoard;
+
     @ManyToMany
     @JoinTable(
             name = "user_role",
@@ -36,10 +40,6 @@ public class User {
 //    @ManyToMany
 //    @JoinColumn(name = "likedUsers")
 //    private List<Board> likedBoards;
-    @ManyToOne
-    @JoinColumn(name = "board_id")
-    private Board likedBoard;
-//
 
     @ManyToMany
     @JoinColumn(name = "likedUsers")
