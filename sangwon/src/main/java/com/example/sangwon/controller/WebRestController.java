@@ -1,11 +1,10 @@
 package com.example.sangwon.controller;
 
-import com.example.sangwon.dto.PostsSaveRequestDto;
+import com.example.sangwon.Model.Posts;
 import com.example.sangwon.service.PostsService;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -20,7 +19,7 @@ public class WebRestController {
     }
 
     @PostMapping("/posts")
-    public void savePosts(@RequestBody PostsSaveRequestDto dto) {
-        postsService.save(dto);
+    public void savePosts(Posts posts) {
+        postsService.save(posts);
     }
 }
