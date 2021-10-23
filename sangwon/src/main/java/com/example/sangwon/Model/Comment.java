@@ -19,6 +19,7 @@ public class Comment {
     private String content;
     private Long commentid;
     private String date;
+    private int likes = 0;
 
     @ManyToOne
     @JoinColumn(name = "boardid", insertable = false, updatable = false)

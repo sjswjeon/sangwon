@@ -76,6 +76,7 @@ public class CommentService {
         } else {
             comment.getLikedUsers().add(user);
         }
+        comment.setLikes(comment.getLikedUsers().size());
 
         return commentRepository.save(comment);
     }

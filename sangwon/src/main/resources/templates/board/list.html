@@ -207,7 +207,7 @@
 <!--                                                            <div class="material-icons likes" th:unless="${#lists.contains(comment.likedUsers, user)}">favorite</div>-->
                                                             <div class="material-icons likes">favorite</div>
                                                         </div>
-<!--                                                        <div class="like-count" th:text="${#lists.size(comment.likedUsers)}">13</div>-->
+                                                        <div class="like-count" th:text="${comment.likes}">13</div>
                                                         <div>
                                                             <div class="material-icons" style="margin-left: 5px;">chat_bubble</div>
                                                         </div>
@@ -244,7 +244,7 @@
 <!--                                                                        <div class="material-icons likes" th:unless="${#lists.contains(secondcomment.likedUsers, user)}">favorite</div>-->
                                                                         <div class="material-icons likes">favorite</div>
                                                                     </div>
-<!--                                                                    <div class="like-count" th:text="${#lists.size(secondcomment.likedUsers)}">13</div>-->
+                                                                    <div class="like-count" th:text="${secondcomment.likes}">13</div>
                                                                 </div>
                                                                 <div class="bottom-line">
                                                                     <div class="content" th:text="${secondcomment.content}">this is a comis is a comis is a comis is a comis is a comis is a comis is a comis is a comis is a comis is a comis is a comis is a comis is a comment.</div>
