@@ -20,6 +20,8 @@ public class Board {
     private Long view;
     private Long likes;
 
+    private List<User> likedUsers;
+
     @ManyToOne
     @JoinColumn(name = "user_id")
     private User user;

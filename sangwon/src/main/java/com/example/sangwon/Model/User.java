@@ -23,6 +23,8 @@ public class User {
     private String date;
     private String level;
 
+    private List<Board> likedBoards;
+
     @ManyToMany
     @JoinTable(
             name = "user_role",
