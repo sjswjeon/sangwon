@@ -23,7 +23,9 @@ public class User {
     private String date;
     private String level;
 
-    private Long likedboardid;
+    @ManyToOne
+    @JoinColumn(name = "liked_board_id")
+    private Board likedBoard;
 
     @ManyToMany
     @JoinTable(
@@ -38,12 +40,6 @@ public class User {
 //    @ManyToMany
 //    @JoinColumn(name = "likedUsers")
 //    private List<Board> likedBoards;
-
-    @ManyToOne
-    @JoinColumn(name = "likedboardid", insertable = false, updatable = false)
-    private Board likedBoard;
-
-//
 
     @ManyToMany
     @JoinColumn(name = "likedUsers")
