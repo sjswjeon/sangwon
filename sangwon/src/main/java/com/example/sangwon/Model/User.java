@@ -30,7 +30,7 @@ public class User {
             inverseJoinColumns = @JoinColumn(name = "role_id"))
     List<Role> roles = new ArrayList<>();
 
-    @OneToMany(mappedBy = "user")
+    @OneToMany(mappedBy = "user", fetch = FetchType.EAGER)
     private List<Board> boards = new ArrayList<>();
 
     @ManyToMany
