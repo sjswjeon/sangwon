@@ -48,6 +48,8 @@ public class BoardController {
         User user = userRepository.findByUsername(authenticationName);
         model.addAttribute("user", user);
 
+        model.addAttribute("userLikedBoards", user.getLikedBoards());
+
         return "board/list";
     }
 
