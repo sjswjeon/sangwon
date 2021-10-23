@@ -31,10 +31,13 @@ public class Comment {
     @OneToMany(mappedBy = "parentComment", fetch = FetchType.EAGER)
     private List<Comment> secondComments = new ArrayList<>();
 
-    @ManyToMany
-    @JoinTable(
-            name = "user_comment",
-            joinColumns = @JoinColumn(name = "comment_id"),
-            inverseJoinColumns = @JoinColumn(name = "user_id"))
-    List<User> likedUsers = new ArrayList<>();
+    @OneToMany(mappedBy = "commentLikedUser", fetch = FetchType.EAGER)
+    private List<User> LikedUsers = new ArrayList<>();
+
+//    @ManyToMany
+//    @JoinTable(
+//            name = "user_comment",
+//            joinColumns = @JoinColumn(name = "comment_id"),
+//            inverseJoinColumns = @JoinColumn(name = "user_id"))
+//    List<User> likedUsers = new ArrayList<>();
 }
