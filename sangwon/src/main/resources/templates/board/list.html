@@ -176,7 +176,7 @@
 <!--                                        <div class="material-icons" th:onclick="|likePost(${board.id})|" th:if="${#lists.contains(board.likedUsers, user)}" style="color:red;">favorite</div>-->
 <!--                                        <div class="material-icons likes" th:onclick="|likePost(${board.id})|" th:unless="${#lists.contains(board.likedUsers, user)}">favorite</div>-->
                                         <div class="material-icons likes" th:onclick="|likePost(${board.id})|">favorite</div>
-<!--                                        <div class="post-like-number" th:text="${#lists.size(board.likedUsers)}">13333</div>-->
+                                        <div class="post-like-number" th:text="${#lists.size(board.likedUsers)}">13333</div>
                                         <div class="material-icons comment">chat_bubble</div>
                                         <div class="post-comment-number" th:with="filtered=${board.comments.?[depth == 0]}" th:text="${#lists.size(filtered)}">12333</div>
                                     </div>
