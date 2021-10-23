@@ -20,14 +20,14 @@ public class Board {
     private Long view;
     private Long likes;
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne
     @JoinColumn(name = "user_id")
     private User user;
 
     @OneToMany(mappedBy = "board", fetch = FetchType.EAGER)
     private List<Comment> comments = new ArrayList<>();
 
-    @ManyToMany(fetch = FetchType.EAGER)
+    @ManyToMany
     @JoinTable(
             name = "user_board",
             joinColumns = @JoinColumn(name = "board_id"),
