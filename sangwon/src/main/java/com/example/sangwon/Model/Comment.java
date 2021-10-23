@@ -28,7 +28,7 @@ public class Comment {
     @JoinColumn(name = "commentid", insertable = false, updatable = false)
     private Comment parentComment;
 
-    @OneToMany(mappedBy = "parentComment")
+    @OneToMany(mappedBy = "parentComment", fetch = FetchType.EAGER)
     private List<Comment> secondComments = new ArrayList<>();
 
     @ManyToMany
