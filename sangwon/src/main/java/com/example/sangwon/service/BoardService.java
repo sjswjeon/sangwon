@@ -53,8 +53,10 @@ public class BoardService {
 
         if (board.getLikedUsers().contains(user)) {
             board.getLikedUsers().remove(user);
+            board.setLikes(board.getLikes()-1L);
         } else {
             board.getLikedUsers().add(user);
+            board.setLikes(board.getLikes()+1L);
         }
 
         return boardRepository.save(board);
