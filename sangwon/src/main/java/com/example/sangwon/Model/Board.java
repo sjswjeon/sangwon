@@ -32,5 +32,5 @@ public class Board {
             name = "user_board",
             joinColumns = @JoinColumn(name = "board_id"),
             inverseJoinColumns = @JoinColumn(name = "user_id"))
-    List<User> likedUsers;
+    List<User> likedUsers = new ArrayList<>();
 }
