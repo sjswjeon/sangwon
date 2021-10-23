@@ -27,7 +27,7 @@ public class Board {
     @OneToMany(mappedBy = "board", fetch = FetchType.EAGER)
     private List<Comment> comments = new ArrayList<>();
 
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
             name = "user_board",
             joinColumns = @JoinColumn(name = "board_id"),
