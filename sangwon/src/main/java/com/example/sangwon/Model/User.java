@@ -33,16 +33,9 @@ public class User {
     @OneToMany(mappedBy = "user", fetch = FetchType.EAGER)
     private List<Board> boards = new ArrayList<>();
 
-//    @ManyToMany
-//    @JoinColumn(name = "likedUsers")
-//    private List<Board> likedBoards;
     @ManyToMany
-    @JoinTable(
-            name = "user_board",
-            joinColumns = @JoinColumn(name = "user_id"),
-            inverseJoinColumns = @JoinColumn(name = "board_id")
-    )
-    List<Board> likedBoards = new ArrayList<>();
+    @JoinColumn(name = "likedUsers")
+    private List<Board> likedBoards;
 
     @ManyToMany
     @JoinColumn(name = "likedUsers")
