@@ -18,7 +18,7 @@ public class WebRestController {
         return "HelloWorld";
     }
 
-    @PostMapping("/posts")
+    @PostMapping("/main")
     public void savePosts(Posts posts) {
         postsService.save(posts);
     }
