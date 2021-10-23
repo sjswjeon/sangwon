@@ -7,6 +7,7 @@ import com.example.sangwon.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
@@ -20,6 +21,7 @@ public class MessageService {
     @Autowired
     private UserRepository userRepository;
 
+    @Transactional
     public Message sendNewMessage(Message message, String username) {
         String date = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date());
         User user = userRepository.findByUsername(username);

@@ -7,6 +7,7 @@ import com.example.sangwon.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -19,6 +20,7 @@ public class BoardService {
     @Autowired
     private UserRepository userRepository;
 
+    @Transactional
     public Board save(Board board, String username) {
         String date = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date());
         User user = userRepository.findByUsername(username);
@@ -37,12 +39,14 @@ public class BoardService {
         return boardRepository.save(board);
     }
 
+    @Transactional
     public Board read(Long boardId) {
         Board board = boardRepository.findById(boardId).orElse(null);
         board.setView(board.getView()+1L);
         return boardRepository.save(board);
     }
 
+    @Transactional
     public Board likeBoard(Long id, String username) {
         Board board = boardRepository.findById(id).orElse(null);
         User user = userRepository.findByUsername(username);

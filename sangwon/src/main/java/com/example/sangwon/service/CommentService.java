@@ -43,6 +43,7 @@ public class CommentService {
         return commentRepository.save(comment);
     }
 
+    @Transactional
     public Comment saveSecondComment(Comment comment, String username) {
         String date = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date());
         User user = userRepository.findByUsername(username);
@@ -53,6 +54,7 @@ public class CommentService {
         return commentRepository.save(comment);
     }
 
+    @Transactional
     public List<Comment> findAllFirstComments(Board board) {
         List<Comment> comments = board.getComments();
         List<Comment> firstComments = new ArrayList<>();
@@ -64,6 +66,7 @@ public class CommentService {
         return firstComments;
     }
 
+    @Transactional
     public Comment likeComment(Long id, String username) {
         Comment comment = commentRepository.findById(id).orElse(null);
         User user = userRepository.findByUsername(username);

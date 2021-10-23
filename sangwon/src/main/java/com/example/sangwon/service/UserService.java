@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -19,6 +20,7 @@ public class UserService {
     @Autowired
     private PasswordEncoder passwordEncoder;
 
+    @Transactional
     public User save(User user) {
         String date = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date());
         String encodedPassword = passwordEncoder.encode(user.getPassword());
