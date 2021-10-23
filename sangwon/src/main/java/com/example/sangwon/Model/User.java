@@ -33,19 +33,13 @@ public class User {
     @OneToMany(mappedBy = "user", fetch = FetchType.EAGER)
     private List<Board> boards = new ArrayList<>();
 
-    @OneToMany(mappedBy = "likedBoard", fetch = FetchType.EAGER)
-    private List<Board> likedBoards = new ArrayList<>();
+    @ManyToMany
+    @JoinColumn(name = "likedUsers")
+    private List<Board> likedBoards;
 
-    @OneToMany(mappedBy = "likedComment", fetch = FetchType.EAGER)
-    private List<Comment> likedComments = new ArrayList<>();
-
-//    @ManyToMany
-//    @JoinColumn(name = "likedUsers")
-//    private List<Board> likedBoards;
-//
-//    @ManyToMany
-//    @JoinColumn(name = "likedUsers")
-//    private List<Comment> likedComments;
+    @ManyToMany
+    @JoinColumn(name = "likedUsers")
+    private List<Comment> likedComments;
 
     @OneToMany(mappedBy = "senderUser")
     private List<Message> sentMessages = new ArrayList<>();
