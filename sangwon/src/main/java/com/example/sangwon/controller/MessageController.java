@@ -45,7 +45,7 @@ public class MessageController {
         model.addAttribute("sentMessages", allSentMessages);
         model.addAttribute("receivedMessages", allReceivedMessages);
 
-        return "/message/message";
+        return "message/message";
     }
 
     @PostMapping("/new")
@@ -71,6 +71,6 @@ public class MessageController {
 
         model.addAttribute("sentMessages", allSentMessages);
         model.addAttribute("receivedMessages", allReceivedMessages);
-        return "/message/message-read";
+        return "message/message-read";
     }
 }
