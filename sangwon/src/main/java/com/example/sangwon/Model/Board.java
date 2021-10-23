@@ -35,6 +35,6 @@ public class Board {
 //            inverseJoinColumns = @JoinColumn(name = "user_id"))
 //    List<User> likedUsers = new ArrayList<>();
 
-    @OneToMany(mappedBy = "likedBoard", fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "likedBoard")
     private List<User> likedUsers = new ArrayList<>();
 }
