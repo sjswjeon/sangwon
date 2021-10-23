@@ -17,13 +17,10 @@ spring:
     username: admin
     password: tkddnjs2
     driver-class-name: org.mariadb.jdbc.Driver
-    initialization-mode: always
+    initialization-mode: never
   jpa:
     database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
     show-sql: true
     open-in-view: false
     hibernate:
-      ddl-auto: create-drop
-#  h2:
-#    console:
-#      enabled: true
+      ddl-auto: update
