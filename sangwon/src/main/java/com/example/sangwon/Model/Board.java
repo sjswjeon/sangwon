@@ -27,11 +27,14 @@ public class Board {
     @OneToMany(mappedBy = "board", fetch = FetchType.EAGER)
     private List<Comment> comments = new ArrayList<>();
 
+    @ManyToMany
+    @JoinColumn(name = "likedBoards")
+    private List<User> likedUsers;
 
-    @ManyToMany(cascade = CascadeType.ALL)
-    @JoinTable(
-            name = "user_board",
-            joinColumns = @JoinColumn(name = "board_id"),
-            inverseJoinColumns = @JoinColumn(name = "user_id"))
-    List<User> likedUsers = new ArrayList<>();
+//    @ManyToMany(cascade = CascadeType.ALL)
+//    @JoinTable(
+//            name = "user_board",
+//            joinColumns = @JoinColumn(name = "board_id"),
+//            inverseJoinColumns = @JoinColumn(name = "user_id"))
+//    List<User> likedUsers = new ArrayList<>();
 }
