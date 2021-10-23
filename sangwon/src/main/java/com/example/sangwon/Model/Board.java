@@ -28,10 +28,10 @@ public class Board {
     private List<Comment> comments = new ArrayList<>();
 
 
-    @ManyToMany(cascade = CascadeType.ALL)
-    @JoinTable(
-            name = "user_board",
-            joinColumns = @JoinColumn(name = "board_id"),
-            inverseJoinColumns = @JoinColumn(name = "user_id"))
-    List<User> likedUsers = new ArrayList<>();
+//    @ManyToMany(cascade = CascadeType.ALL)
+//    @JoinTable(
+//            name = "user_board",
+//            joinColumns = @JoinColumn(name = "board_id"),
+//            inverseJoinColumns = @JoinColumn(name = "user_id"))
+//    List<User> likedUsers = new ArrayList<>();
 }
