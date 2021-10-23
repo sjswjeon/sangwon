@@ -29,8 +29,8 @@ public class Board {
 
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(
-            name = "user_liked_boards",
-            joinColumns = @JoinColumn(name = "liked_boards_id"),
+            name = "user_board",
+            joinColumns = @JoinColumn(name = "board_id"),
             inverseJoinColumns = @JoinColumn(name = "user_id"))
     List<User> likedUsers = new ArrayList<>();
 }
