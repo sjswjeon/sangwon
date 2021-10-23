@@ -173,7 +173,7 @@
                             <div class="content-group">
                                 <div class="read-container__content-inner" th:classappend="${board != null} ? 'replacement' + ${board.id}">
                                     <div class="post-like-icon" th:classappend="${board != null} ? 'postlike' + ${board.id}">
-                                        <div class="material-icons" th:onclick="|likePost(${board.id})|" th:if="${#lists.contains(board.likedUsers, user)}" style="color:red;">favorite</div>
+<!--                                        <div class="material-icons" th:onclick="|likePost(${board.id})|" th:if="${#lists.contains(board.likedUsers, user)}" style="color:red;">favorite</div>-->
                                         <div class="material-icons likes" th:onclick="|likePost(${board.id})|" th:unless="${#lists.contains(board.likedUsers, user)}">favorite</div>
                                         <div class="post-like-number" th:text="${#lists.size(board.likedUsers)}">13333</div>
                                         <div class="material-icons comment">chat_bubble</div>
