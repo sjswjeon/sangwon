@@ -50,9 +50,6 @@ public class BoardController {
         User user = userRepository.findByUsername(authenticationName);
         model.addAttribute("user", user);
 
-        List<Board> likedBoards = user.getLikedBoards();
-        model.addAttribute("likedboards", likedBoards);
-
         return "board/list";
     }
 
