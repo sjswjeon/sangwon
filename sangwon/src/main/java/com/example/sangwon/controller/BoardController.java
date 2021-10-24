@@ -17,6 +17,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @Controller
 @RequestMapping("/board")
 public class BoardController {
@@ -47,6 +49,9 @@ public class BoardController {
         String authenticationName = authentication.getName();
         User user = userRepository.findByUsername(authenticationName);
         model.addAttribute("user", user);
+
+        List<Board> likedBoards = user.getLikedBoards();
+        model.addAttribute("likedboards", likedBoards);
 
         return "board/list";
     }
