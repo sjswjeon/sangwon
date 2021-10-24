@@ -24,11 +24,11 @@ public class Board {
     @JoinColumn(name = "user_id")
     private User user;
 
-    @OneToMany(mappedBy = "board", fetch =FetchType.LAZY)
+    @OneToMany(mappedBy = "board", fetch =FetchType.EAGER)
     private List<Comment> comments = new ArrayList<>();
 
 
-    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(
             name = "user_board",
             joinColumns = @JoinColumn(name = "board_id"),

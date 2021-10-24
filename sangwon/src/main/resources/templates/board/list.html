@@ -173,12 +173,12 @@
                             <div class="content-group">
                                 <div class="read-container__content-inner" th:classappend="${board != null} ? 'replacement' + ${board.id}">
                                     <div class="post-like-icon" th:classappend="${board != null} ? 'postlike' + ${board.id}">
-                                        <div class="material-icons" th:onclick="|likePost(${board.id})|" th:if="${#lists.contains(board.likedUsers, user)}" style="color:red;">favorite</div>
-                                        <div class="material-icons likes" th:onclick="|likePost(${board.id})|" th:unless="${#lists.contains(board.likedUsers, user)}">favorite</div>
+<!--                                        <div class="material-icons" th:onclick="|likePost(${board.id})|" th:if="${#lists.contains(board.likedUsers, user)}" style="color:red;">favorite</div>-->
+<!--                                        <div class="material-icons likes" th:onclick="|likePost(${board.id})|" th:unless="${#lists.contains(board.likedUsers, user)}">favorite</div>-->
                                         <div class="material-icons likes" th:onclick="|likePost(${board.id})|">favorite</div>
                                         <div class="post-like-number" th:text="${board.likes}">13333</div>
                                         <div class="material-icons comment">chat_bubble</div>
-<!--                                        <div class="post-comment-number" th:with="filtered=${board.comments.?[depth == 0]}" th:text="${#lists.size(filtered)}">12333</div>-->
+                                        <div class="post-comment-number" th:with="filtered=${board.comments.?[depth == 0]}" th:text="${#lists.size(filtered)}">12333</div>
                                     </div>
     
                                     <div class="read-container__content" th:text="${board.content}">
@@ -211,7 +211,7 @@
                                                         <div>
                                                             <div class="material-icons" style="margin-left: 5px;">chat_bubble</div>
                                                         </div>
-<!--                                                        <div class="comment-count" style="margin-right: 23px" th:text="${#lists.size(comment.secondComments) - 1}">143</div>-->
+                                                        <div class="comment-count" style="margin-right: 23px" th:text="${#lists.size(comment.secondComments) - 1}">143</div>
                                                     </div>
                                                     <div class="bottom-line">
                                                         <div class="content">
@@ -596,7 +596,7 @@
                                             <div class="material-icons">favorite</div>
                                             <div th:classappend="${board != null} ? 'list-like-count' + ${board.id}" th:text="${board.likes}">123</div>
                                             <div class="material-icons comment" style="margin-left: 5px">txtsms</div>
-<!--                                            <div th:classappend="${board != null} ? 'list-comment-count' + ${board.id}" th:with="filtered=${board.comments.?[depth == 0]}" th:text="${#lists.size(filtered)}">123</div>-->
+                                            <div th:classappend="${board != null} ? 'list-comment-count' + ${board.id}" th:with="filtered=${board.comments.?[depth == 0]}" th:text="${#lists.size(filtered)}">123</div>
                                         </div>
                                     </div>
                                     <div class="board-list__user-photo">
