@@ -297,6 +297,26 @@ body .second-page .board__left-container > .left-container__inner .board__left-c
     transition: .4s;
 }
 
+/*  */
+body .second-page .board__left-container > .left-container__inner .board__left-container__btn-group .board__search.focused .material-icons {
+    display: none;
+    transition: .4s;
+}
+
+body .second-page .board__left-container > .left-container__inner .board__left-container__btn-group .board__search.focused button {
+    display: block;
+    left: 120px;
+    transition: .4s;
+}
+
+body .second-page .board__left-container > .left-container__inner .board__left-container__btn-group .board__search.focused input {
+    width: 150px;
+    border-radius: 5px;
+    padding-right: 27px;
+    transition: .4s;
+}
+
+/*  */
 body .second-page .board__left-container > .left-container__inner .board__left-container__btn-group .board__search input:focus {
     width: 150px;
     border-radius: 5px;

@@ -1,3 +1,4 @@
+
 // side menu Animation
 var sideMenuBtn = document.querySelector('.side-menu-btn');
 var sideMenuPage = document.querySelector('.side-menu');
@@ -84,7 +85,7 @@ var boardSearchInputEl = boardSearchEl.querySelector('input');
 var boardSearchBtn = boardSearchEl.querySelector('div.material-icons');
 var boardSearchSubmitBtn = boardSearchEl.querySelector('button');
 
-boardSearchBtn.addEventListener('click', function() {
+boardSearchEl.addEventListener('click', function() {
     boardSearchInputEl.focus();
     gsap.to(boardSearchBtn, 0, {
         display: 'none'
@@ -96,6 +97,8 @@ boardSearchBtn.addEventListener('click', function() {
 })
 
 boardSearchInputEl.addEventListener('blur', function() {
+    boardSearchEl.classList.remove('focused');
+
     gsap.to(boardSearchBtn, 0, {
         delay: .4,
         display: 'block'
