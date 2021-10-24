@@ -30,6 +30,8 @@ content TEXT(65535),
 username VARCHAR(50),
 date DATETIME,
 user_id BIGINT,
+likes BIGINT,
+view BIGINT,
 FOREIGN KEY (user_id) REFERENCES user(id)
 );
 
@@ -41,6 +43,7 @@ content TEXT(65535),
 date DATETIME,
 depth BIGINT,
 username VARCHAR(50),
+likes BIGINT,
 FOREIGN KEY (boardid) REFERENCES board(id),
 FOREIGN KEY (commentid) REFERENCES comment(id)
 );
