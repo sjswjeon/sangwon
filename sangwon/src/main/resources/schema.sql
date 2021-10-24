@@ -62,6 +62,7 @@ FOREIGN KEY (senderid) REFERENCES user(id)
 );
 
 create table user_board (
+id BIGINT AUTO_INCREMENT PRIMARY KEY,
 board_id BIGINT,
 user_id BIGINT,
 PRIMARY KEY(board_id, user_id),
