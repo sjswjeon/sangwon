@@ -24,7 +24,7 @@ public class Board {
     @JoinColumn(name = "user_id")
     private User user;
 
-    @OneToMany(mappedBy = "board")
+    @OneToMany(mappedBy = "board", fetch =FetchType.LAZY)
     private List<Comment> comments = new ArrayList<>();
 
 
