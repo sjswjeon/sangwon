@@ -38,9 +38,4 @@ public class UserService {
         return userRepository.save(user);
     }
 
-    @Transactional
-    public List<Board> getLikedBoards (User user) {
-        List<Board> likedBoards = user.getLikedBoards();
-        return likedBoards;
-    }
 }

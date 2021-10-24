@@ -36,9 +36,6 @@ public class BoardController {
     @Autowired
     private CommentService commentService;
 
-    @Autowired
-    private UserService userService;
-
     @GetMapping("/list")
     public String list(Model model, @RequestParam(required = false, defaultValue = "") String searchText, @PageableDefault(size = 10, sort = "date", direction = Sort.Direction.DESC) Pageable pageable, Authentication authentication) {
         Page<Board> boards = boardRepository.findByTitleContainingOrContentContaining(searchText, searchText, pageable);
@@ -53,9 +50,6 @@ public class BoardController {
         String authenticationName = authentication.getName();
         User user = userRepository.findByUsername(authenticationName);
         model.addAttribute("user", user);
-
-        List<Board> likedBoards = userService.getLikedBoards(user);
-        model.addAttribute("likedBoards", likedBoards);
 
         return "board/list";
     }
