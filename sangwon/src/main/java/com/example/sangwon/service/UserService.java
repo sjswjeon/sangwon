@@ -1,5 +1,6 @@
 package com.example.sangwon.service;
 
+import com.example.sangwon.Model.Board;
 import com.example.sangwon.Model.Role;
 import com.example.sangwon.Model.User;
 import com.example.sangwon.repository.UserRepository;
@@ -10,6 +11,7 @@ import org.springframework.stereotype.Service;
 import javax.transaction.Transactional;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
 @Service
 public class UserService {
@@ -34,5 +36,11 @@ public class UserService {
         user.getRoles().add(role);
 
         return userRepository.save(user);
+    }
+
+    @Transactional
+    public List<Board> getLikedBoards (User user) {
+        List<Board> likedBoards = user.getLikedBoards();
+        return likedBoards;
     }
 }
