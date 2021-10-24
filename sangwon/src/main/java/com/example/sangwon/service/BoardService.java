@@ -2,7 +2,6 @@ package com.example.sangwon.service;
 
 import com.example.sangwon.Model.Board;
 import com.example.sangwon.Model.User;
-import com.example.sangwon.Model.UserBoard;
 import com.example.sangwon.repository.BoardRepository;
 import com.example.sangwon.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,7 +10,6 @@ import org.springframework.stereotype.Service;
 import javax.transaction.Transactional;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.List;
 
 @Service
 public class BoardService {
@@ -53,24 +51,13 @@ public class BoardService {
         Board board = boardRepository.findById(id).orElse(null);
         User user = userRepository.findByUsername(username);
 
-        UserBoard userBoard = board.getUserBoards().stream().filter(t -> t.getLikedUser() == user).findFirst().orElse(null);
-
-        if (userBoard != null) {
-            board.getUserBoards().remove(userBoard);
+        if (board.getLikedUsers().contains(user)) {
+            board.getLikedUsers().remove(user);
             board.setLikes(board.getLikes()-1L);
         } else {
-            userBoard.setLikedUser(user);
-            userBoard.setLikedBoard(board);
-            board.getUserBoards().add(userBoard);
+            board.getLikedUsers().add(user);
             board.setLikes(board.getLikes()+1L);
         }
-//        if (board.getLikedUsers().contains(user)) {
-//            board.getLikedUsers().remove(user);
-//            board.setLikes(board.getLikes()-1L);
-//        } else {
-//            board.getLikedUsers().add(user);
-//            board.setLikes(board.getLikes()+1L);
-//        }
 
         return boardRepository.save(board);
     }
