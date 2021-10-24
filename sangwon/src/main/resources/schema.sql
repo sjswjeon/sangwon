@@ -40,7 +40,7 @@ commentid BIGINT,
 content TEXT(65535),
 date DATETIME,
 depth BIGINT,
-username VARCHAR(50)
+username VARCHAR(50),
 FOREIGN KEY (boardid) REFERENCES board(id),
 FOREIGN KEY (commentid) REFERENCES comment(id)
 );
