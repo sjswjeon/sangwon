@@ -723,6 +723,18 @@ body .second-page .inner .board__left-container .read-container__inner .read-con
     background-color: rgba(0,0,0,.96);
 }
 
+body .second-page .inner .board__left-container .read-container__inner .read-container__content-inner::-webkit-scrollbar {
+    width: 5px;
+}
+
+body .second-page .inner .board__left-container .read-container__inner .read-container__content-inner::-webkit-scrollbar-thumb {
+    background-color: orange;
+}
+
+body .second-page .inner .board__left-container .read-container__inner .read-container__content-inner::-webkit-scrollbar-track {
+    background-color: #333;
+}
+
 body .second-page .inner .board__left-container .read-container__inner .read-container__content-inner .post-like-icon {
     position: absolute;
     display: flex;
