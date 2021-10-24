@@ -248,24 +248,24 @@ function clickNewWritePostBtn() {
 }
 
 // Main Write Post Btn
-var mainPageWriteBtn = document.querySelector('.bottom-nav__write-btn');
-mainPageWriteBtn.addEventListener('click', function () {
-    page = 2;
-    if(mHtml.is(":animated")) return;
-    var posTop = (page-1) * $(window).height();
-    mHtml.animate({scrollTop : posTop}, 100);
+// var mainPageWriteBtn = document.querySelector('.bottom-nav__write-btn');
+// mainPageWriteBtn.addEventListener('click', function () {
+//     page = 2;
+//     if(mHtml.is(":animated")) return;
+//     var posTop = (page-1) * $(window).height();
+//     mHtml.animate({scrollTop : posTop}, 100);
     
-    gsap.to(writeNewPostPage, 0, {
-        top: 0,
-        display: 'block'
-    })
-    gsap.to(boardListPage, 0, {
-        top: '-100%',
-        display: 'none'
-    })
+//     gsap.to(writeNewPostPage, 0, {
+//         top: 0,
+//         display: 'block'
+//     })
+//     gsap.to(boardListPage, 0, {
+//         top: '-100%',
+//         display: 'none'
+//     })
 
-    isWritePageOpen = true;
-})
+//     isWritePageOpen = true;
+// })
 
 // preview received Message
 var messageGroup = document.querySelectorAll('.received-message-page .message-li');

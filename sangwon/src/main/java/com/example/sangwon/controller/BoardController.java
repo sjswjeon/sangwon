@@ -8,6 +8,7 @@ import com.example.sangwon.repository.UserRepository;
 import com.example.sangwon.service.BoardService;
 import com.example.sangwon.service.CommentService;
 import com.example.sangwon.service.UserService;
+import com.example.sangwon.validator.BoardValidator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -16,6 +17,7 @@ import org.springframework.data.web.PageableDefault;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -35,6 +37,9 @@ public class BoardController {
 
     @Autowired
     private CommentService commentService;
+
+    @Autowired
+    private BoardValidator boardValidator;
 
     @GetMapping("/list")
     public String list(Model model, @RequestParam(required = false, defaultValue = "") String searchText, @PageableDefault(size = 10, sort = "date", direction = Sort.Direction.DESC) Pageable pageable, Authentication authentication) {
@@ -73,14 +78,31 @@ public class BoardController {
     }
 
     @PostMapping("/list")
-    public String savePost(@ModelAttribute Board board, Authentication authentication) {
+    public String savePost(@ModelAttribute Board board, BindingResult bindingResult, Authentication authentication) {
+        boardValidator.validate(board, bindingResult);
         String authenticationName = authentication.getName();
+        if (bindingResult.hasErrors()) {
+            return "redirect:/board/list";
+        }
         boardService.save(board, authenticationName);
         return "redirect:/board/list";
     }
 
     @GetMapping("/form")
     public String form(Model model, @RequestParam(required = false, defaultValue = "") String searchText, @PageableDefault(size = 10, sort = "date", direction = Sort.Direction.DESC) Pageable pageable, Authentication authentication) {
+        Page<Board> boards = boardRepository.findByTitleContainingOrContentContaining(searchText, searchText, pageable);
+        model.addAttribute("boards", boards);
+        model.addAttribute("board", new Board());
+
+        String authenticationName = authentication.getName();
+        User user = userRepository.findByUsername(authenticationName);
+        model.addAttribute("user", user);
+
+        return "board/write";
+    }
+
+    @GetMapping("/write")
+    public String writeForm(Model model, @RequestParam(required = false, defaultValue = "") String searchText, @PageableDefault(size = 10, sort = "date", direction = Sort.Direction.DESC) Pageable pageable, Authentication authentication) {
         Page<Board> boards = boardRepository.findByTitleContainingOrContentContaining(searchText, searchText, pageable);
         model.addAttribute("boards", boards);
         model.addAttribute("board", new Board());

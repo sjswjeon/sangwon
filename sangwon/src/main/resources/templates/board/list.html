@@ -672,9 +672,15 @@
                             <input type="hidden" th:field="*{id}">
                             <div class="board-write__title">
                                 <input type="text" th:field="*{title}" placeholder="Title">
+                                <div class="invalid-feedback" th:if="${#fields.hasErrors('title')}" th:errors="*{title}" style="color: rgb(255, 97, 97);">
+                                    Please provide a valid title.
+                                </div>
                             </div>
                             <div class="board-write__content">
                                 <textarea th:field="*{content}" placeholder="Type what you want to say to the world, the world is your oyster :)"></textarea>
+                                <div class="invalid-feedback" th:if="${#fields.hasErrors('content')}" th:errors="*{content}" style="color: rgb(255, 97, 97)">
+                                    Please provide a valid content.
+                                </div>
                             </div>
                             <div class="board-write__btn-group">
                                 <a class="btn" type="button" onclick="clickNewWritePostBtn()">Back to list</a>

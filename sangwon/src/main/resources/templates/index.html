@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -90,11 +90,23 @@
                         <div class="material-icons toggle-btn">arrow_drop_down</div>
                     </div>
                 </li>
-                <li>
+                <li sec:authorize="!isAuthenticated()">
                     <div class="side-menu__container">
                         <a th:href="@{/account/login}">
                             <div class="material-icons">login</div>
                             <div class="side-menu__name sign-in">Sign in / Register</div>
+                        </a>
+                    </div>
+                </li>
+                <li sec:authorize="isAuthenticated()">
+                    <div class="side-menu__container">
+                        <a th:href="@{/account/login}">
+                            <div class="material-icons">logout</div>
+                            <div class="side-menu__name logout">
+                                <form th:action="@{/logout}" method="post">
+                                    <button type="submit" class="btn btn-dark" href="#">Logout</button>
+                                </form>
+                            </div>
                         </a>
                     </div>
                 </li>
@@ -138,7 +150,7 @@
     
             <div class="bottom-nav">
                 <div class="bottom-nav__container">
-                    <a th:href="@{/board/form}">
+                    <a th:href="@{/board/list}">
                         <div class="bottom-nav__write-btn">Write a new post</div>
                     </a>
                 </div>

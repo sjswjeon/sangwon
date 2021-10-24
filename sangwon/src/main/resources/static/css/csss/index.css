@@ -119,6 +119,20 @@ body .side-menu .side-menu__inner > ul > li .side-menu__container .side-menu__na
     padding-right: 30px;
 }
 
+body .side-menu .side-menu__inner > ul > li .side-menu__container .side-menu__name.logout {
+    
+}
+
+body .side-menu .side-menu__inner > ul > li .side-menu__container .side-menu__name.logout form button {
+    background-color: transparent;
+    color:rgb(255, 232, 189);
+    font-size: 16px;
+    position: absolute;
+    left: 34px;
+    top: -11px;
+}
+
+
 body .side-menu .side-menu__inner > ul > li .side-menu__container .toggle-btn {
     position: absolute;
     height: 24px;

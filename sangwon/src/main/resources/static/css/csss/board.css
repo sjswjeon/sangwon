@@ -548,7 +548,6 @@ body .second-page .board__right-container .board-write__container {
     position: absolute;
     top: 100%;
     left: 0;
-    /* background-color: pink; */
     padding: 20% 5% 10% 5%;
     opacity: 0.9;
     width: 100%;

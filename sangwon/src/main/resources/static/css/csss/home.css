@@ -118,6 +118,15 @@ body .side-menu .side-menu__inner > ul > li .side-menu__container .side-menu__na
     padding-right: 30px;
 }
 
+body .side-menu .side-menu__inner > ul > li .side-menu__container .side-menu__name.sign-in.logout {
+    height: 100px;
+    background-color: pink;
+}
+
+body .side-menu .side-menu__inner > ul > li .side-menu__container .side-menu__name.sign-in.logout form button {
+    
+}
+
 body .side-menu .side-menu__inner > ul > li .side-menu__container .toggle-btn {
     position: absolute;
     height: 24px;
