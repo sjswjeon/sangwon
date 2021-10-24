@@ -143,7 +143,7 @@
                         </div>
                     </div>
                     <div class="board__left-container__btn-group">
-                        <form class="board__search" th:action="@{/board/list/mypost}" method="get">
+                        <form class="board__search" th:action="@{/board/list}" method="get" th:classappend="${param.searchText != null} ? 'focused'">
                             <input type="text" name="searchText" th:value="${param.searchText}">
                             <div class="material-icons">search</div>
                             <button type="submit" class="material-icons">search</button>

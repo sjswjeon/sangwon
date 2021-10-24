@@ -106,8 +106,8 @@ function previewMessage(id,messageType) {
             } else {
                 eval("var prev" + m + "= messageGroup[k]");
             }
+            eval("previousMessage = prev" + m);
         }
-        eval("previousMessage = prev" + m);
     };
 
     var nextMessage = currentMessage;
@@ -120,8 +120,8 @@ function previewMessage(id,messageType) {
                 } else {
                     eval("var next" + (m-5) + "= messageGroup[0]");
                 }
+                eval("nextMessage = next" + (m-5));
             }
-            eval("nextMessage = next" + (m-5));
         };
     };
 
@@ -131,7 +131,42 @@ function previewMessage(id,messageType) {
         scale: .6,
         opacity: 1
     })
+
+    gsap.to(prev1, .2, {
+        left: '-20%',
+        scale: .47,
+        zIndex: 5,
+        opacity: .9
+    })
+
+    gsap.to(prev2, .2, {
+        left: '-33%',
+        zIndex: 4,
+        scale: .43,
+        opacity: .7
+    })
+
+    gsap.to(prev3, .2, {
+        left: '-42%',
+        zIndex: 3,
+        scale: .4,
+        opacity: .4
+    })
+            
+    gsap.to(prev4, .2, {
+        left: '-51%',
+        zIndex: 2,
+        scale: .35,
+        opacity: .3
+    })
     
+    gsap.to(prev5, .2, {
+        left: '-58%',
+        zIndex: 1,
+        scale: .3,
+        opacity: .2
+    })
+
     gsap.to(next1, .2, {
         left: '20%',
         zIndex: 5,
@@ -165,41 +200,6 @@ function previewMessage(id,messageType) {
         scale: .3,
         zIndex: 1,
         opacity: .2
-    })
-
-    gsap.to(prev5, .2, {
-        left: '-58%',
-        zIndex: 1,
-        scale: .3,
-        opacity: .2
-    })
-        
-    gsap.to(prev4, .2, {
-        left: '-51%',
-        zIndex: 2,
-        scale: .35,
-        opacity: .3
-    })
-
-    gsap.to(prev3, .2, {
-        left: '-42%',
-        zIndex: 3,
-        scale: .4,
-        opacity: .4
-    })
-
-    gsap.to(prev2, .2, {
-        left: '-33%',
-        zIndex: 4,
-        scale: .43,
-        opacity: .7
-    })
-
-    gsap.to(prev1, .2, {
-        left: '-20%',
-        scale: .47,
-        zIndex: 5,
-        opacity: .9
     })
 
     currentMessage.classList.add('focused');
