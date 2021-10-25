@@ -208,6 +208,12 @@ var writeNewPostPage = document.querySelector('.board-write__container');
 var boardListPage = document.querySelector('.board-list__container');
 var isWritePageOpen = false;
 
+var boardWriteTitle = writeNewPostPage.querySelector('.board-write__title input');
+var boardWriteContent = writeNewPostPage.querySelector('.board-write__content textarea');
+var boardWriteId = writeNewPostPage.querySelector('#board-write-id');
+var boardWriteUsername = writeNewPostPage.querySelector('#board-write-username');
+
+
 function clickNewWritePostBtn() {
     isWritePageOpen = !isWritePageOpen;
     if (isWritePageOpen) {
@@ -228,7 +234,19 @@ function clickNewWritePostBtn() {
             top: 0,
             display: 'block'
         })
+        boardWriteId.value = '';
+        boardWriteTitle.value = '';
+        boardWriteContent.value = '';
     }
+}
+
+// Modify Post
+
+function modifyPost(id, title, content) {
+    boardWriteId.value = id;
+    boardWriteTitle.value = title;
+    boardWriteContent.value = content;
+    clickNewWritePostBtn();
 }
 
 // like post
@@ -396,15 +414,15 @@ function sendMessage(id) {
     })
 }
 
-
-// Modify Post
-var boardWriteTitle = writeNewPostPage.querySelector('.board-write__title input');
-var boardWriteContent = writeNewPostPage.querySelector('.board-write__content textarea');
-var boardWriteId = writeNewPostPage.querySelector('#board-write-id');
-
-function modifyPost(id, title, content) {
-    boardWriteId.value = id;
-    boardWriteTitle.value = title;
-    boardWriteContent.value = content;
-    clickNewWritePostBtn();
+// Delete Post
+function deleteBoard(id) {
+    $.ajax({
+    url: '/api/boards/' + id,
+    type: 'DELETE',
+    success: function(result) {
+        console.log('result', result);
+        alert('deleted');
+        window.location.href = '/board/list';
+        }
+    });
 }

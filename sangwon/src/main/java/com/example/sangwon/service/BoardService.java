@@ -23,7 +23,7 @@ public class BoardService {
     @Transactional
     public Board save(Board board, String username) {
 
-        if (boardRepository.findById(board.getId()).orElse(null) == null) {
+        if (board.getId() == null) {
             String date = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date());
             User user = userRepository.findByUsername(username);
             board.setUser(user);
@@ -43,10 +43,6 @@ public class BoardService {
             board.setLikedUsers(originalPost.getLikedUsers());
             board.setDate(originalPost.getDate());
         }
-//        if (board.getDate().isEmpty()) {
-//            board.setDate(date);
-//            user.setPoint(user.getPoint()+100L);
-//        }
 
         return boardRepository.save(board);
     }
