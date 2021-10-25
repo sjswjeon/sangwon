@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:sec="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -170,7 +170,8 @@
                                         <div style="font-size: 13px; margin-top:-3px" th:text="${board.username}">user0123</div>
                                         <div style="font-size: 10px; " th:text="${board.date}">2012.33.33 33:33:33</div>
                                     </div>
-                                <div class="material-icons direct-message" th:onclick="|openDirectMessageForm(${board.id})|">email</div>
+                                <div class="material-icons direct-message" th:unless="${user.username == board.username}" th:onclick="|openDirectMessageForm(${board.id})|">email</div>
+                                <div class="material-icons modify-post" th:if="${user.username == board.username}" th:onclick="modifyPost( [[${board.id} ]] , [[${board.title}]] , [[${board.content}]] )">edit</div>
                             </div>
                             <div class="content-group">
                                 <div class="read-container__content-inner" th:classappend="${board != null} ? 'replacement' + ${board.id}">
@@ -669,7 +670,7 @@
                     <div class="board__right-container-title">NEW POST</div>
                     <div class="board-write__inner">
                         <form th:action="@{/board/list}" th:object="${board}" method="post">
-                            <input type="hidden" th:field="*{id}">
+                            <input id="board-write-id" type="hidden" th:field="*{id}">
                             <div class="board-write__title">
                                 <input type="text" th:field="*{title}" placeholder="Title">
                                 <div class="invalid-feedback" th:if="${#fields.hasErrors('title')}" th:errors="*{title}" style="color: rgb(255, 97, 97);">

@@ -395,3 +395,16 @@ function sendMessage(id) {
            }
     })
 }
+
+
+// Modify Post
+var boardWriteTitle = writeNewPostPage.querySelector('.board-write__title input');
+var boardWriteContent = writeNewPostPage.querySelector('.board-write__content textarea');
+var boardWriteId = writeNewPostPage.querySelector('#board-write-id');
+
+function modifyPost(id, title, content) {
+    boardWriteId.value = id;
+    boardWriteTitle.value = title;
+    boardWriteContent.value = content;
+    clickNewWritePostBtn();
+}

@@ -22,15 +22,27 @@ public class BoardService {
 
     @Transactional
     public Board save(Board board, String username) {
-        String date = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date());
-        User user = userRepository.findByUsername(username);
-        board.setUser(user);
-        board.setUsername(username);
-        board.setView(0L);
-        board.setLikes(0L);
-        board.setDate(date);
 
-        user.setPoint(user.getPoint() + 100L);
+        if (boardRepository.findById(board.getId()).orElse(null) == null) {
+            String date = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date());
+            User user = userRepository.findByUsername(username);
+            board.setUser(user);
+            board.setUsername(username);
+            board.setView(0L);
+            board.setLikes(0L);
+            board.setDate(date);
+
+            user.setPoint(user.getPoint() + 100L);
+        } else {
+            Board originalPost = boardRepository.findById(board.getId()).orElse(null);
+            board.setUser(originalPost.getUser());
+            board.setUsername(originalPost.getUsername());
+            board.setLikes(originalPost.getLikes());
+            board.setView(originalPost.getView());
+            board.setComments(originalPost.getComments());
+            board.setLikedUsers(originalPost.getLikedUsers());
+            board.setDate(originalPost.getDate());
+        }
 //        if (board.getDate().isEmpty()) {
 //            board.setDate(date);
 //            user.setPoint(user.getPoint()+100L);
