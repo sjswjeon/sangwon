@@ -37,8 +37,8 @@ public class MessageController {
         model.addAttribute("receivedStartPage", receivedStartPage);
         model.addAttribute("receivedEndPage", receivedEndPage);
 
-        int sentStartPage = Math.max(1, allReceivedMessages.getPageable().getPageNumber() - 4);
-        int sentEndPage = Math.min(allReceivedMessages.getTotalPages(), allReceivedMessages.getPageable().getPageNumber() + 4);
+        int sentStartPage = Math.max(1, allSentMessages.getPageable().getPageNumber() - 4);
+        int sentEndPage = Math.min(allSentMessages.getTotalPages(), allSentMessages.getPageable().getPageNumber() + 4);
         model.addAttribute("sentStartPage", sentStartPage);
         model.addAttribute("sentEndPage", sentEndPage);
 
