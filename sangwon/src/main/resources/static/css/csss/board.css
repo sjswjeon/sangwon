@@ -640,6 +640,7 @@ body .second-page .inner .board__left-container .read-container__inner {
     left: 70px;
     top: -500px;
     display: none;
+
     overflow: hidden;
     padding-top: 10px;
 }
@@ -832,6 +833,18 @@ body .second-page .inner .board__left-container .read-container__inner .read-con
     text-align: end;
 }
 
+body .second-page .inner .board__left-container .read-container__inner .read-container__content-inner .bottom-container .upper-line > span {
+    position: absolute;
+    top: 0px;
+    right: -8px;
+    color: rgb(255, 168, 168);
+    transition: .2s;
+}
+
+body .second-page .inner .board__left-container .read-container__inner .read-container__content-inner .bottom-container .upper-line > span:hover {
+    color: red;
+}
+
 body .second-page .inner .board__left-container .read-container__inner .read-container__content-inner .bottom-container .bottom-line {
     position: relative;
 }
@@ -891,6 +904,23 @@ body .second-page .inner .board__left-container .read-container__inner .read-con
 body .second-page .inner .board__left-container .read-container__inner .read-container__content-inner .bottom-container ul li .single-comment ul li.second-comment {
     margin-top: 10px;
     margin-left: 40px;
+}
+
+
+body .second-page .inner .board__left-container .read-container__inner .read-container__content-inner .bottom-container ul li .single-comment ul li.second-comment .upper-line {
+    position: relative;
+}
+
+body .second-page .inner .board__left-container .read-container__inner .read-container__content-inner .bottom-container ul li .single-comment ul li.second-comment .upper-line > span {
+    position: absolute;
+    top: 0px;
+    right: -8px;
+    color: rgb(255, 168, 168);
+    transition: .2s;
+}
+
+body .second-page .inner .board__left-container .read-container__inner .read-container__content-inner .bottom-container ul li .single-comment ul li.second-comment .upper-line > span:hover {
+    color: red;
 }
 
 body .second-page .inner .board__left-container .read-container__inner .read-container__content-inner .bottom-container ul li .single-comment ul li.second-comment .favorite .material-icons.likes {

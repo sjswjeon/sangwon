@@ -81,4 +81,21 @@ public class CommentService {
         return commentRepository.save(comment);
     }
 
+    @Transactional
+    public void deleteById(Long id) {
+        Comment comment = commentRepository.findById(id).orElse(null);
+        comment.setBoardid(null);
+        comment.setCommentid(null);
+        comment.getLikedUsers().clear();
+
+        for (Comment secondComment : commentRepository.findAllByCommentid(id)) {
+            secondComment.setCommentid(null);
+            secondComment.setBoardid(null);
+            secondComment.getLikedUsers().clear();
+            commentRepository.delete(secondComment);
+        }
+        comment.getSecondComments().clear();
+        commentRepository.delete(comment);
+    }
+
 }

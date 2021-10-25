@@ -427,3 +427,16 @@ function deleteBoard() {
         }
     });
 }
+
+// Delete Comment
+function deleteComment(id, boardid) {
+    $.ajax({
+    url: '/api/comment/' + id,
+    type: 'DELETE',
+    success: function(result) {
+        console.log('result', result);
+        alert('deleted');
+        $(".readpost"+boardid+" .content-group").load(location.href + " .replacement"+boardid);
+        }
+    });
+}

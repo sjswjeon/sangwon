@@ -215,6 +215,7 @@
                                                             <div class="material-icons" style="margin-left: 5px;">chat_bubble</div>
                                                         </div>
                                                         <div class="comment-count" style="margin-right: 23px" th:text="${#lists.size(comment.secondComments) - 1}">143</div>
+                                                        <span class="material-icons" th:onclick="|deleteComment(${comment.id}, ${board.id})|">close</span>
                                                     </div>
                                                     <div class="bottom-line">
                                                         <div class="content">
@@ -248,6 +249,7 @@
                                                                         <div class="material-icons likes">favorite</div>
                                                                     </div>
                                                                     <div class="like-count" th:text="${secondcomment.likes}">13</div>
+                                                                    <span class="material-icons" th:onclick="|deleteComment(${secondcomment.id}, ${board.id})|">close</span>
                                                                 </div>
                                                                 <div class="bottom-line">
                                                                     <div class="content" th:text="${secondcomment.content}">this is a comis is a comis is a comis is a comis is a comis is a comis is a comis is a comis is a comis is a comis is a comis is a comis is a comment.</div>
