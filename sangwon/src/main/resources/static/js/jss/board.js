@@ -247,6 +247,7 @@ function modifyPost(id, title, content) {
     boardWriteTitle.value = title;
     boardWriteContent.value = content;
     clickNewWritePostBtn();
+    console.log(id);
 }
 
 // like post
@@ -415,9 +416,9 @@ function sendMessage(id) {
 }
 
 // Delete Post
-function deleteBoard(id) {
+function deleteBoard() {
     $.ajax({
-    url: '/api/boards/' + id,
+    url: '/api/board/' + boardWriteId.value,
     type: 'DELETE',
     success: function(result) {
         console.log('result', result);

@@ -1,8 +1,10 @@
 package com.example.sangwon.service;
 
 import com.example.sangwon.Model.Board;
+import com.example.sangwon.Model.Comment;
 import com.example.sangwon.Model.User;
 import com.example.sangwon.repository.BoardRepository;
+import com.example.sangwon.repository.CommentRepository;
 import com.example.sangwon.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -10,6 +12,7 @@ import org.springframework.stereotype.Service;
 import javax.transaction.Transactional;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
 @Service
 public class BoardService {
@@ -19,6 +22,9 @@ public class BoardService {
 
     @Autowired
     private UserRepository userRepository;
+
+    @Autowired
+    private CommentRepository commentRepository;
 
     @Transactional
     public Board save(Board board, String username) {
@@ -68,6 +74,38 @@ public class BoardService {
         }
 
         return boardRepository.save(board);
+    }
+
+    @Transactional
+    public void deleteById(Long id) {
+        Board board = boardRepository.findById(id).orElse(null);
+        board.getLikedUsers().clear();
+        List<Comment> Comments = commentRepository.findAllByBoardid(id);
+        for (Comment comment : Comments) {
+            comment.setCommentid(null);
+            comment.setBoardid(null);
+            comment.getLikedUsers().clear();
+            commentRepository.save(comment);
+        }
+        commentRepository.deleteAllByCommentid(null);
+        board.getComments().clear();
+
+//        for (Comment comment : board.getComments()) {
+//            for (Comment secondComment : comment.getSecondComments()) {
+//                secondComment.setCommentid(null);
+//                secondComment.setBoardid(null);
+//                secondComment.getLikedUsers().clear();
+//                commentRepository.save(secondComment);
+//            }
+//            comment.setCommentid(null);
+//            comment.setBoardid(null);
+//            comment.getLikedUsers().clear();
+//            commentRepository.save(comment);
+//        }
+//        commentRepository.deleteAllByCommentid(null);
+//        board.getComments().clear();
+
+        boardRepository.deleteById(id);
     }
 
 }

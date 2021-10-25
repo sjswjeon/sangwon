@@ -15,7 +15,7 @@ import java.util.List;
 public class BoardApiController {
 
     @Autowired
-    private com.example.sangwon.repository.BoardRepository BoardRepository;
+    private com.example.sangwon.repository.BoardRepository boardRepository;
 
     @Autowired
     private BoardService boardService;
@@ -26,12 +26,12 @@ public class BoardApiController {
 
     @GetMapping("/board")
     List<Board> all() {
-        return BoardRepository.findAll();
+        return boardRepository.findAll();
     }
 
     @PostMapping("/board")
     Board newBoard(@RequestBody Board newBoard) {
-        return BoardRepository.save(newBoard);
+        return boardRepository.save(newBoard);
     }
 
     @PutMapping("/board/read/{id}")
@@ -53,6 +53,6 @@ public class BoardApiController {
 
     @DeleteMapping("/board/{id}")
     void deleteBoard(@PathVariable Long id) {
-        BoardRepository.deleteById(id);
+        boardService.deleteById(id);
     }
 }
