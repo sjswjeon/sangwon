@@ -17,6 +17,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.util.List;
+
 @Controller
 @RequestMapping("/mypage")
 public class MyPageController {
@@ -34,13 +36,18 @@ public class MyPageController {
     public String main(Model model, Authentication authentication, @PageableDefault(size = 6, sort = "date", direction = Sort.Direction.DESC) Pageable pageable) {
         String authenticationName = authentication.getName();
         User user = userRepository.findByUsername(authenticationName);
+        int totalBoardSize = user.getBoards().size();
+        Page<Message> receivedMessages = messageRepository.findAllByReceiver(authenticationName, pageable);
+        long totalReceivedMessages = receivedMessages.getTotalElements();
+
         model.addAttribute("user", user);
+        model.addAttribute("totalBoardSize", totalBoardSize);
+        model.addAttribute("totalReceivedMessages", totalReceivedMessages);
 
         Page<Board> boards = boardRepository.findByUsername(authenticationName, pageable);
         model.addAttribute("boards", boards);
         model.addAttribute("board", new Board());
 
-        Page<Message> receivedMessages = messageRepository.findAllByReceiver(authenticationName, pageable);
         model.addAttribute("receivedMessages", receivedMessages);
 
         return "mypage/main";

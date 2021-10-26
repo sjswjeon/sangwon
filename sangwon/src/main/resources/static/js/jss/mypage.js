@@ -507,3 +507,34 @@ function showReplyForm(id) {
     }
     isReplyFormOpened = !isReplyFormOpened;
 }
+
+// ReplyMessage
+
+function sendMessage(id) {
+    var formData = new FormData(document.querySelector('.direct-message' + id));
+    $.ajax({
+        url: "/message/new",
+        data: formData,
+        type: 'POST',
+        processData: false,
+        contentType: false,
+        success: function(result) {
+            closeDirectMessageForm();
+            // window.location.href = '/mypage/main';
+        }, error:function(request,status,error){
+            console.log("error:"+error);
+           }
+    })
+}
+
+// function sendMessageAnimation () {
+//     var replyForm = document.querySelector('.replyForm');
+//     gsap.to(replyForm, .3, {
+//         top: '33%'
+//     }).then(() => {
+//         gsap.to(replyForm, .3, {
+//             top: '-45%'
+//         })
+//     })
+//     messageDarkening();
+// }

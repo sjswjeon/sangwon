@@ -259,7 +259,7 @@
                             <div id="posts" class="posts">
                                 <div class="material-icons">note_alt</div>
                                 <div>
-                                    <div class="count">1</div>
+                                    <div class="count" th:text="${totalBoardSize}">1</div>
                                     <div>Posts</div>
                                 </div>
                             </div>
@@ -269,7 +269,7 @@
                                     <div class="unread-count">3</div>
                                 </div>
                                 <div>
-                                    <div class="count">1</div>
+                                    <div class="count" th:text="${totalReceivedMessages}">1</div>
                                     <div>Messages</div>
     
                                 </div>
@@ -277,7 +277,7 @@
                             <div id="points" class="points">
                                 <div class="material-icons">star_outline</div>
                                 <div>
-                                    <div class="count">1000</div>
+                                    <div class="count" th:text=${user.point}>1000</div>
                                     <div>Points</div>
                                 </div>
                             </div>
@@ -376,8 +376,8 @@
             </div>
         </div>
 
-        <div>
-            <ul>
+        <div id="message-list">
+            <ul class="message-list-ul">
                 <li th:each="receivedMessage : ${receivedMessages}">
                     <div class="direct-message-form single-message" th:classappend = "${receivedMessage != null} ? 'single-received' + ${receivedMessage.id}">
                         <div class="line"></div>
@@ -400,7 +400,7 @@
                         </div>
                         <input type="hidden" name="receiver" th:value="${receivedMessage.sender}">
                         <textarea name="content" placeholder="Type message"></textarea>
-                        <div class="send-btn">Send</div>
+                        <div class="send-btn" th:onclick="|sendMessage(${receivedMessage.id})|">Send</div>
                     </form>
                 </li>
             </ul>
