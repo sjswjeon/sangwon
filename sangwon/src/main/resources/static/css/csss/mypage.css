@@ -1,0 +1,1068 @@
+/* COMMON */
+html {
+    background-image: url(/image/main-background-image.jpg);
+    background-image: url(/sangwon/src/main/resources/static/image/main-background-image.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    color: #333;
+    font-size: 16px;
+    line-height: 1.4;
+    font-weight: 400;
+    font-family: 'Jost', sans-serif;
+    width: 100%;
+    height: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+    font-family: 'Jost', sans-serif;
+    cursor: pointer;
+}
+
+textarea {
+    resize: none;
+    border: none;
+    background-color: rgba(187,187,187, 0.5);
+    padding: 10px;
+    box-sizing: border-box;
+    outline: none;
+    font-family: 'Jost', sans-serif;
+}
+
+button {
+    font-family: 'Jost', sans-serif;
+    color: #333;
+    border: 1px solid #333;
+}
+
+.inner {
+    /* width: 1260px; */
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.btn {
+    text-align: center;
+    border: 1px solid #333;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.material-icons {
+    cursor: pointer;
+}
+
+input {
+    outline: none;
+    border: none;
+    padding: 10px;
+    color: #333;
+    box-sizing: border-box;
+    font-family: 'Jost', sans-serif;
+}
+
+/* Side Menu Bar */
+body .side-menu {
+    height: 100%;
+    width: 250px;
+    background-color: rgba(0,0,0,.8);
+    position: fixed;
+    left: -250px;
+    z-index: 10;
+    padding-top: 90px;
+    color:rgb(210, 246, 255);
+}
+
+body .side-menu .side-menu__inner {
+    /* background-color: rgba(187,187,187,.2); */
+    height: 100%;
+    width: 100%;
+}
+
+body .side-menu .side-menu__inner > ul > li {
+    padding: 20px 20px 20px 20px;
+
+}
+
+body .side-menu .side-menu__inner > ul > li .side-menu__container {
+    display: flex;
+    position: relative;
+}
+
+body .side-menu .side-menu__inner > ul > li .side-menu__container > a {
+    display: flex;
+    text-decoration: none;
+    color:rgb(210, 246, 255);
+}
+
+body .side-menu .side-menu__inner > ul > li .side-menu__container .material-icons {
+    margin-right: 20px;
+}
+
+body .side-menu .side-menu__inner > ul > li .side-menu__container .side-menu__name {
+    padding-right: 100%;
+}
+
+body .side-menu .side-menu__inner > ul > li .side-menu__container .side-menu__name.mypage {
+    padding-right: 80px;
+}
+
+body .side-menu .side-menu__inner > ul > li .side-menu__container .side-menu__name.sign-in {
+    padding-right: 30px;
+}
+
+body .side-menu .side-menu__inner > ul > li .side-menu__container .toggle-btn {
+    position: absolute;
+    height: 24px;
+    width: 24px;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    right: 0;
+}
+
+/* Top Nav */
+
+    /* website-name */
+body .main-page .top-nav .website-name {
+    z-index: 100;
+    position: fixed;
+    left: 20px;
+    top: 20px;
+    color: rgb(3, 8, 37);
+}
+
+body .main-page .top-nav .website-name .website-name__title {
+   position: relative;
+}
+
+body .main-page .top-nav .website-name .website-name__title .creativity {
+    font-size: 25px;
+    font-family: 'Archivo Black', sans-serif;
+    font-weight: bold;
+}
+
+body .main-page .top-nav .website-name .website-name__title .material-icons {
+    position: absolute;
+    top: 6px;
+    left: 135px;
+    cursor: auto;
+}
+
+
+body .main-page .top-nav .website-name .website-name__description {
+    font-size: 12px;
+    font-weight: bold;
+    padding-left: 30px;
+}
+
+    /* website-menu */
+body .main-page .top-nav .website-menu {
+    position: fixed;
+    top: 27px;
+    right: 20px;
+    z-index: 100;
+}
+
+body .main-page .top-nav .website-menu .material-icons {
+    border-radius: 50%;
+    border: 1px solid rgb(210, 246, 255);
+    padding: 10px;
+    color: rgb(210, 246, 255);
+}
+
+/* Second Page */
+body .second-page {
+    height: 100vh;
+}
+
+body .second-page .inner {
+    display: grid;
+    grid-template-columns: 1.5fr 2fr;
+}
+
+body .second-page .inner .mypage-left-container {
+    background-color: rgba(210, 246, 255, 0.7);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Read Posts */
+
+body .second-page .inner .mypage-left-container .single-posts {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(3, 8, 37, .7);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+body .second-page .inner .mypage-left-container .read-container__inner {
+    color: rgb(210, 246, 255);
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    padding-top: 90px;
+    top: 0;
+    left: 100%;
+}
+
+body .second-page .inner .mypage-left-container .read-container__inner .close-btn {
+    position: absolute;
+    top: 80px;
+    height: 24px;
+    width: 24px;
+    left: 0;
+    right: 0;
+    border-radius: 50%;
+    background-color: rgba(3, 8, 37, .5);
+    color: white;
+    margin: auto;
+    transition: 3s;
+}
+
+body .second-page .inner .mypage-left-container .read-container__inner .close-btn:hover {
+    transform: rotate(1440deg);
+}
+
+body .second-page .inner .mypage-left-container .read-container__inner .read-container__user-info {
+    display: grid;
+    grid-template-columns: 1fr .1fr .4fr .1fr;
+    height: 50px;
+    background-color: rgba(0,0,0, .25);
+}
+
+body .second-page .inner .mypage-left-container .read-container__inner .read-container__user-info .board-read__user-photo {
+    height: 24px;
+    width: 24px;
+    border-radius: 50%;
+    overflow: hidden;
+    top: 0;
+    margin: auto 0;
+}
+
+body .second-page .inner .mypage-left-container .read-container__inner .read-container__user-info .board-read__user-photo > img {
+    height: 24px;
+    width: 24px;
+    object-fit: cover;
+}
+
+body .second-page .inner .mypage-left-container .read-container__inner .read-container__user-info .board-read__username {
+    top: 0;
+    margin: auto 0;
+    width: 216px;
+    margin-left: 15px;
+    word-break: break-all;
+}
+
+body .second-page .inner .mypage-left-container .read-container__inner .read-container__user-info .board-read__date {
+    top: 0;
+    margin: auto 0;
+    padding-left: 5px;
+    width: 95px;
+}
+
+body .second-page .inner .mypage-left-container .read-container__inner .read-container__user-info .material-icons {
+    height: 24px;
+    width: 24px;
+    top: 0;
+    bottom: 0;
+    padding-right: 5px;
+    margin: auto 0;
+    transition: .1s;
+}
+
+body .second-page .inner .mypage-left-container .read-container__inner .read-container__user-info .material-icons:hover {
+    color: white;
+}
+
+body .second-page .inner .mypage-left-container .read-container__inner .read-container__content-inner {
+    height: 450px;
+    overflow: auto;
+    padding: 20px;
+    box-sizing: border-box;
+    font-size: 13px;
+    position: relative;
+    background-color: rgba(0,0,0,.2);
+}
+
+body .second-page .inner .mypage-left-container .read-container__inner .read-container__content-inner .post-like-icon {
+    position: absolute;
+    display: flex;
+    top: 65%;
+    right: 5%;
+}
+
+body .second-page .inner .mypage-left-container .read-container__inner .read-container__content-inner .material-icons.likes {
+    color: gray;
+    transition: .2s;
+}
+
+body .second-page .inner .mypage-left-container .read-container__inner .read-container__content-inner .material-icons.likes:hover {
+    color: rgba(255, 0, 0, 0.3);
+}
+
+body .second-page .inner .mypage-left-container .read-container__inner .read-container__content-inner .read-container__content {
+    height: 300px;
+    /* background-color: black; */
+    overflow: auto;
+}
+
+body .second-page .inner .mypage-left-container .read-container__inner .read-container__content-inner::-webkit-scrollbar {
+    width: 5px;
+}
+
+body .second-page .inner .mypage-left-container .read-container__inner .read-container__content-inner::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 22, 73, 0.788);
+}
+
+body .second-page .inner .mypage-left-container .read-container__inner .read-container__content-inner::-webkit-scrollbar-track {
+    background-color: #333;
+}
+
+body .second-page .inner .mypage-left-container .read-container__inner .read-container__content-inner .bottom-container {
+    /* background-color: rgba(0, 0, 0, .8); */
+    padding: 5px;
+    font-size: 11px;
+}
+
+
+body .second-page .inner .mypage-left-container .read-container__inner .read-container__content-inner .bottom-container > form {
+    position: relative;
+}
+
+body .second-page .inner .mypage-left-container .read-container__inner .read-container__content-inner .bottom-container form .material-icons {
+    color: rgb(210, 246, 255);
+}
+
+body .second-page .inner .mypage-left-container .read-container__inner .read-container__content-inner .bottom-container > form > textarea{
+    font-size: 11px;
+    width: 94%;
+    color: rgb(210, 246, 255);
+}
+
+body .second-page .inner .mypage-left-container .read-container__inner .read-container__content-inner .bottom-container > form > button {
+    border: none;
+    background-color: transparent;
+    font-size: 11px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+}
+
+body .second-page .inner .mypage-left-container .read-container__inner .read-container__content-inner .bottom-container ul li {
+    margin-bottom: 20px;
+}
+
+body .second-page .inner .mypage-left-container .read-container__inner .read-container__content-inner .bottom-container ul li .single-comment {
+    position: relative;
+}
+
+body .second-page .inner .mypage-left-container .read-container__inner .read-container__content-inner .bottom-container .upper-line {
+    font-size: 11px;
+    display: grid;
+    grid-template-columns: .1fr 3fr .1fr .1fr .1fr .1fr;
+}
+
+body .second-page .inner .mypage-left-container .read-container__inner .read-container__content-inner .bottom-container .upper-line .material-icons {
+    font-size: 13px;
+}
+
+body .second-page .inner .mypage-left-container .read-container__inner .read-container__content-inner .bottom-container .upper-line .material-icons.likes {
+    color:gray;
+    transition: .2s;
+}
+
+body .second-page .inner .mypage-left-container .read-container__inner .read-container__content-inner .bottom-container .upper-line .material-icons.likes:hover {
+    color:rgba(255, 0, 0, 0.3);
+}
+
+body .second-page .inner .mypage-left-container .read-container__inner .read-container__content-inner .bottom-container .user-photo {
+    height: 18px;
+    width: 18px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+body .second-page .inner .mypage-left-container .read-container__inner .read-container__content-inner .bottom-container .user-photo > img {
+    height: 18px;
+    width: 18px;
+    object-fit: cover;
+}
+
+body .second-page .inner .mypage-left-container .read-container__inner .read-container__content-inner .bottom-container .like-count {
+    text-align: end;
+}
+
+body .second-page .inner .mypage-left-container .read-container__inner .read-container__content-inner .bottom-container .upper-line > span {
+    position: absolute;
+    top: 0px;
+    right: -8px;
+    color: rgb(255, 168, 168);
+    transition: .2s;
+}
+
+body .second-page .inner .mypage-left-container .read-container__inner .read-container__content-inner .bottom-container .upper-line > span:hover {
+    color: red;
+}
+
+body .second-page .inner .mypage-left-container .read-container__inner .read-container__content-inner .bottom-container .bottom-line {
+    position: relative;
+}
+
+body .second-page .inner .mypage-left-container .read-container__inner .read-container__content-inner .bottom-container .bottom-line .content {
+    width: 200px;
+    word-break: break-all;
+    position: relative;
+}
+
+body .second-page .inner .mypage-left-container .read-container__inner .read-container__content-inner .bottom-container .bottom-line .content .material-icons {
+    position: absolute;
+    width: 13px;
+    height: 13px;
+    top: 0;
+    bottom: 0;
+    left: 340px;
+    margin: auto;
+    font-size: 13px;
+}
+
+body .second-page .inner .mypage-left-container .read-container__inner .read-container__content-inner .bottom-container .bottom-line .comment-date {
+    position: absolute;
+    bottom: 0;
+    right: 23px;
+    color: rgb(145, 184, 194);
+}
+
+/* double comment */
+body .second-page .inner .mypage-left-container .read-container__inner .read-container__content-inner .bottom-container ul li .single-comment > form {
+    margin-top: 10px;
+    margin-left: 40px;
+    position: relative;
+    height: 0px;
+    overflow: hidden;
+}
+
+body .second-page .inner .mypage-left-container .read-container__inner .read-container__content-inner .bottom-container ul li .single-comment > form > textarea {
+    width: 285px;
+    color: rgb(210, 246, 255);
+    font-size: 11px;
+}
+
+body .second-page .inner .mypage-left-container .read-container__inner .read-container__content-inner .bottom-container ul li .single-comment > form > button {
+    background-color: transparent;
+    border: none;
+    position: absolute;
+    height: 15px;
+    width: 15px;
+    top: 14px;
+}
+
+body .second-page .inner .mypage-left-container .read-container__inner .read-container__content-inner .bottom-container ul li .single-comment ul {
+    color: rgb(145, 184, 194);
+}
+
+body .second-page .inner .mypage-left-container .read-container__inner .read-container__content-inner .bottom-container ul li .single-comment ul li.second-comment {
+    margin-top: 10px;
+    margin-left: 40px;
+}
+
+
+body .second-page .inner .mypage-left-container .read-container__inner .read-container__content-inner .bottom-container ul li .single-comment ul li.second-comment .upper-line {
+    position: relative;
+}
+
+body .second-page .inner .mypage-left-container .read-container__inner .read-container__content-inner .bottom-container ul li .single-comment ul li.second-comment .upper-line > span {
+    position: absolute;
+    top: 0px;
+    right: -8px;
+    color: rgb(255, 168, 168);
+    transition: .2s;
+}
+
+body .second-page .inner .mypage-left-container .read-container__inner .read-container__content-inner .bottom-container ul li .single-comment ul li.second-comment .upper-line > span:hover {
+    color: red;
+}
+
+body .second-page .inner .mypage-left-container .read-container__inner .read-container__content-inner .bottom-container ul li .single-comment ul li.second-comment .favorite .material-icons.likes {
+    color: gray;
+    transition: .2s;
+}
+
+body .second-page .inner .mypage-left-container .read-container__inner .read-container__content-inner .bottom-container ul li .single-comment ul li.second-comment .favorite .material-icons.likes:hover {
+    color:rgba(255, 0, 0, 0.3);
+}
+
+body .second-page .inner .mypage-left-container .read-container__inner .read-container__content-inner .bottom-container ul li .single-comment ul li.second-comment .bottom-line .content {
+    width: 160px;
+}
+
+
+/*  */
+
+body .second-page .inner .mypage-right-container {
+    background-color: rgba(3, 8, 37, 0.8);
+    color: white;
+    position: relative;
+}
+
+/* Board Write Page */
+
+body .second-page .inner .mypage-right-container .board-write__container {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    padding: 20% 5% 10% 5%;
+    opacity: 0.9;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+body .second-page .inner .mypage-right-container .board-write__container .board__right-container-title {
+    position: absolute;
+    top: 4%;
+    left: 5%;
+    font-weight: bold;
+    font-size: 70px;
+}
+
+body .second-page .inner .mypage-right-container .board-write__container .board-write__inner {
+    /* background-color: orange; */
+    height: 100%;
+    width: 100%;
+}
+
+body .second-page .inner .mypage-right-container .board-write__container .board-write__inner form {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+body .second-page .inner .mypage-right-container .board-write__container .board-write__inner form .board-write__title input {
+    width: 100%;
+    border-radius: 5px;
+}
+
+body .second-page .inner .mypage-right-container .board-write__container .board-write__inner form .board-write__content {
+    margin-top: 10px;
+    width: 100%;
+    height: 100%;
+}
+
+body .second-page .inner .mypage-right-container .board-write__container .board-write__inner form .board-write__content textarea {
+    border-radius: 5px;
+    width: 100%;
+    height: 80%;
+}
+
+body .second-page .inner .mypage-right-container .board-write__container .board-write__inner form .board-write__btn-group {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+body .second-page .inner .mypage-right-container .board-write__container .board-write__inner form .board-write__btn-group .btn {
+    padding: 0px 15px;
+    background-color: rgb(255, 232, 189);
+    border: none;
+    box-sizing: border-box;
+    transition: .2s;
+} 
+
+body .second-page .inner .mypage-right-container .board-write__container .board-write__inner form .board-write__btn-group .btn:hover {
+    background-color: white;
+    color: black;
+}
+
+body .second-page .inner .mypage-right-container .board-write__container .board-write__inner form .board-write__btn-group button {
+    padding: 0px 15px;
+    font-size: 15px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    outline: none;
+    margin-left: 5px;
+    cursor: pointer;
+    background-color: rgb(255, 189, 67);
+    border: none;
+    transition: .2s;
+}
+
+body .second-page .inner .mypage-right-container .board-write__container .board-write__inner form .board-write__btn-group button:hover {
+    background-color:rgb(255, 255, 255);
+    color: black;
+}
+
+/*  */
+
+body .second-page .inner .mypage-right-container .mypage-main {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+body .second-page .inner .mypage-right-container .upper-container {
+    /* background-color: black; */
+    height: 40%;
+    width: 100%;
+    display: flex;
+}
+body .second-page .inner .mypage-right-container .upper-container .left-box {
+    height: 100%;
+    width: 60%;
+    /* background-color: red; */
+}
+
+body .second-page .inner .mypage-right-container .upper-container .left-box .username {
+    font-size: 80px;
+    /* text-align: center; */
+    /* background-color: white; */
+    margin-top: 40px;
+    margin-left: 70px;
+}
+
+body .second-page .inner .mypage-right-container .upper-container .left-box .level {
+    font-size: 40px;
+    /* background-color: pink; */
+    margin-left: 75px;
+}
+
+body .second-page .inner .mypage-right-container .upper-container .right-box {
+    height: 100%;
+    width: 40%;
+    /* background-color: pink; */
+    position: relative;
+}
+
+body .second-page .inner .mypage-right-container .upper-container .right-box .user {
+    position: relative;
+    /* background-color: pink; */
+    height: 240px;
+}
+
+body .second-page .inner .mypage-right-container .upper-container .right-box .user-photo {
+    border-radius: 50%;
+    width: 230px;
+    height: 230px;
+    position: absolute;
+    bottom: 0;
+    right: 20%;
+    overflow: hidden;
+}
+
+body .second-page .inner .mypage-right-container .upper-container .right-box .user-photo img {
+    height: 230px;
+    width: 230px;
+    object-fit: cover;
+}
+
+body .second-page .inner .mypage-right-container .upper-container .right-box .user .material-icons {
+    position: absolute;
+    /* bottom: 10px;
+    right: 65px; */
+    bottom: 5%;
+    right: 22%;
+    font-size: 60px;
+    color:rgb(12, 27, 112);
+    border-radius: 50%;
+    background-color: white;
+    box-sizing: border-box;
+    height: 60px;
+    width: 60px;
+    transition: .4s;
+}
+
+body .second-page .inner .mypage-right-container .upper-container .right-box .user .material-icons:hover {
+    color: rgb(43, 128, 226);
+    transform: rotate(-220deg);
+}
+
+body .second-page .inner .mypage-right-container .bottom-container {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+body .second-page .inner .mypage-right-container .bottom-container .upper-line {
+    height: 15%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1.3fr;
+}
+
+body .second-page .inner .mypage-right-container .bottom-container .upper-line > div {
+    /* border: 1px solid rgb(7, 18, 63); */
+    position: relative;
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+}
+
+body .second-page .inner .mypage-right-container .bottom-container .upper-line > div .material-icons {
+    top: 0;
+    bottom: 0;
+    width: 50px;
+    height: 50px;
+    margin: auto;
+    font-size: 50px;
+}
+
+body .second-page .inner .mypage-right-container .bottom-container .upper-line > div > div {
+    height: 50px;
+    margin-top: 22px;
+    cursor: pointer;
+}
+
+body .second-page .inner .mypage-right-container .bottom-container .upper-line > div .container {
+    position: relative;
+}
+
+body .second-page .inner .mypage-right-container .bottom-container .upper-line > div > div .unread-count {
+    background-color: red;
+    width: 22px;
+    height: 22px;
+    text-align: center;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 0;
+    left: 44%;
+}
+
+body .second-page .inner .mypage-right-container .bottom-container .border {
+    height: 2%;
+    background-color:rgba(5, 98, 175, 0.8);
+}
+
+body .second-page .inner .mypage-right-container .bottom-container .bottom-line {
+    /* background-color: blue; */
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+
+/* Board */
+
+body .second-page .inner .mypage-right-container .bottom-container .bottom-line .posts {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+
+body .second-page .inner .mypage-right-container .bottom-container .bottom-line .board__list {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+body .second-page .inner .mypage-right-container .bottom-container .bottom-line .board__list li .board-list__single-post {
+    border-radius: 5px;
+    border: 1px solid black;
+    margin-top: 5px;
+    padding: 5px;
+    display: grid;
+    grid-template-columns: .3fr 1.5fr .1fr .5fr .05fr .2fr .7fr;
+
+    transition: .1s;
+}
+
+    /* hover */
+    body .second-page .inner .mypage-right-container .bottom-container .bottom-line .board__list li .board-list__single-post:hover {
+    background-color: rgba(6, 26, 82, 0.8);
+    border-color: rgba(6, 26, 82, 0.8);
+    color: white;
+}
+    /*  */
+
+    body .second-page .inner .mypage-right-container .bottom-container .bottom-line .board__list li .board-list__single-post > div {
+    text-align: center;
+    font-size: 12px;
+    height: 21px;
+}
+
+body .second-page .inner .mypage-right-container .bottom-container .bottom-line .board__list li .board-list__single-post > .material-icons {
+    font-size: 10px;
+    height: 10px;
+    width: 10px;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+body .second-page .inner .mypage-right-container .bottom-container .bottom-line .board__list li .board-list__single-post .board-list__title {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    cursor: pointer;
+}
+
+body .second-page .inner .mypage-right-container .bottom-container .bottom-line .board__list li .board-list__single-post .board-list__title .board-list__title-title {
+    text-align: start;
+    padding-right: 5px;
+    overflow: hidden;
+}
+
+body .second-page .inner .mypage-right-container .bottom-container .bottom-line .board__list li .board-list__single-post .board-list__title .icons {
+    display: grid;
+    grid-template-columns: .1fr .6fr .1fr .3fr;
+    font-size: 12px;
+}
+
+body .second-page .inner .mypage-right-container .bottom-container .bottom-line .board__list li .board-list__single-post .board-list__title .icons > div {
+    text-align: start;
+}
+
+body .second-page .inner .mypage-right-container .bottom-container .bottom-line .board__list li .board-list__single-post .board-list__title .icons > .material-icons {
+    font-size: 10px;
+    height: 10px;
+    width: 10px;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+body .second-page .inner .mypage-right-container .bottom-container .bottom-line .board__list li .board-list__single-post .board-list__title .icons > .material-icons.comment {
+    transform: translateX(-30px);
+}
+
+body .second-page .inner .mypage-right-container .bottom-container .bottom-line .board__list li .board-list__single-post .board-list__user-photo {
+    height: 18px;
+    width: 18px;
+    background-color: white;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+body .second-page .inner .mypage-right-container .bottom-container .bottom-line .board__list li .board-list__single-post .board-list__user-photo img {
+    height: 18px;
+    width: 18px;
+    object-fit: cover;
+}
+
+body .second-page .inner .mypage-right-container .bottom-container .bottom-line .board__list li .board-list__single-post .board-list__username {
+    text-align: start;
+    padding-left: 5px;
+    cursor: pointer;
+}
+
+body .second-page .inner .mypage-right-container .bottom-container .bottom-line .board__list li .board-list__single-post .board-list__view {
+    text-align: start;
+}
+
+/* Message */
+body .second-page .inner .mypage-right-container .bottom-container .bottom-line .messages {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 100%;
+}
+
+body .second-page .inner .mypage-right-container .bottom-container .bottom-line .messages ul {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+body .second-page .inner .mypage-right-container .bottom-container .bottom-line .messages ul li {
+    margin-top: 5px;
+    font-size: 12px;
+}
+
+body .second-page .inner .mypage-right-container .bottom-container .bottom-line .messages ul li .message-list__single-message {
+    display: grid;
+    grid-template-columns: .1fr .3fr 1fr .6fr;
+    border: 1px solid rgba(6, 26, 82, 0.8);
+    padding: 3px 5px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    height: 27px;
+    overflow: hidden;
+    transition: .2s;
+    cursor: pointer;
+}
+
+body .second-page .inner .mypage-right-container .bottom-container .bottom-line .messages ul li .message-list__single-message:hover {
+    background-color: rgba(6, 26, 82, 0.8);
+    color: white;
+}
+
+body .second-page .inner .mypage-right-container .bottom-container .bottom-line .messages ul li .message-list__single-message .user-photo {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #fff;
+    overflow: hidden;
+}
+
+body .second-page .inner .mypage-right-container .bottom-container .bottom-line .messages ul li .message-list__single-message .user-photo img {
+    width: 20px;
+    height: 20px;
+    object-fit: cover;
+}
+
+body .second-page .inner .mypage-right-container .bottom-container .bottom-line .messages ul li .message-list__single-message .username {
+    margin-left: 5px;
+}
+
+body .second-page .inner .mypage-right-container .bottom-container .bottom-line .messages li .message-list__single-message .content {
+    margin-right: 5px;
+}
+
+/* points */
+body .second-page .inner .mypage-right-container .bottom-container .bottom-line .points {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 200%;
+    /* background-color: white; */
+}
+
+/* freinds */
+body .second-page .inner .mypage-right-container .bottom-container .bottom-line .friends {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 300%;
+    /* background-color: red; */
+}
+/* Darkening */
+body .darkening {
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    background-color: rgba(0,0,0,0.5);
+    opacity: 0;
+}
+
+/* Message Darkening */
+body .message-darkening {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 42.85vw;
+    height: 100vh;
+    z-index: -1;
+    background-color: rgba(0,0,0,0.3);
+    opacity: 0;
+}
+
+/* Message */
+body .direct-message-form {
+    height: 45%;
+    width: 16%;
+    position: fixed;
+    background-color: rgb(122, 170, 126);
+    left: 170px;
+    border-radius: 10px;
+    padding: 20px;
+    box-sizing: border-box;
+    z-index: 10;
+    opacity: 1;
+}
+
+body .direct-message-form.single-message {
+    background-color: white;
+    top: -45%;
+    /* top: 30%; */
+    backface-visibility: hidden;
+    transform: perspective(300px) rotateY(0deg);
+    transition-property: transform;
+    transition-duration: 1s;
+}
+
+body .direct-message-form.single-message.activeMessage {
+    transform: perspective(300px) rotateY(180deg);
+}
+
+body .direct-message-form.reply-box {
+    background-color: white;
+    top: 30%;
+    backface-visibility: hidden;
+    transform: perspective(300px) rotateY(-180deg);
+    transition-property: transform;
+    transition-duration: 1s;
+    /* display: none; */
+}
+
+body .direct-message-form.reply-box.replyForm {
+    transform: perspective(300px) rotateY(0deg);
+    /* display: block; */
+}
+
+body .direct-message-form .line {
+    background-color: black;
+    width: 2px;
+    height: 708px;
+    border-radius: 30%;
+    position: absolute;
+    top: -700px;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+body .direct-message-form .ring {
+    position: absolute;
+    font-size: 10px;
+    font-weight: bold;
+    left: 0;
+    right: 0;
+    height: 10px;
+    width: 10px;
+    margin: auto;
+    top: 6px;
+    background-color: rgba(6, 26, 82, 0.7);
+    border-radius: 50%;
+}
+
+body .direct-message-form .close {
+    font-size: 10px;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+
+body .direct-message-form textarea {
+    width: 100%;
+    height: 80%;
+    margin-top: 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    color: #333;
+}
+
+body .direct-message-form .send-btn {
+    border-radius: 10px;
+    /* background-color: #333; */
+    border: 1px solid #333;
+    color: #333;
+    text-align: center;
+    font-size: 12px;
+    margin-top: 10px;
+    cursor: pointer;
+    box-sizing: border-box;
+    transition: .2s;
+}
+
+body .direct-message-form .send-btn:hover {
+    background-color: #333;
+    color: white;
+}

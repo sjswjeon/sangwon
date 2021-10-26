@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:sec="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- Reset Css -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css">
+    <!-- Google Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;700&display=swap" rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" th:href="@{/css/csss/mypage.css}">
+   <link rel="stylesheet" href="/sangwon/src/main/resources/static/css/csss/mypage.css">
+
+    <!-- Gsap -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js" integrity="sha512-UxP+UhJaGRWuMG2YC6LPWYpFQnsSgnor0VUF3BHdD83PS/pOpN+FYbZmrYN+ISX8jnvgVUciqP/fILOXDjZSwg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- JS -->
+    <script defer th:src="@{/js/jss/mypage.js}"></script>
+   <script defer src="/sangwon/src/main/resources/static/js/jss/mypage.js"></script>
+
+   <!-- JQuery CDN -->
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+   <!-- Lodash CDN -->
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js" integrity="sha512-WFN04846sdKMIP5LKNphMaWzU7YpMyCU245etK3g/2ARYbPK9Ub18eG+ljU96qKRCWh+quCY7yefSmlkQw1ANQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+</head>
+<body>
+    <!-- Side Menu Bar -->
+    <nav class="side-menu">
+        <div class="side-menu__inner">
+            <ul>
+                <li>
+                    <div class="side-menu__container">
+                        <a th:href="@{/}">
+                            <div class="material-icons">home</div>
+                            <div class="side-menu__name">Home</div>
+                        </a>
+                        <div class="material-icons toggle-btn">arrow_drop_down</div>
+                    </div>
+                </li>
+                <li>
+                    <div class="side-menu__container">
+                        <a th:href="@{/board/list}">
+                            <div class="material-icons">assignment</div>
+                            <div class="side-menu__name">Post</div>
+                        </a>
+                        <div class="material-icons toggle-btn">arrow_drop_down</div>
+                    </div>
+                </li>
+                <li>
+                    <div class="side-menu__container">
+                        <a th:href="@{/message/list}">
+                            <div class="material-icons">chat_bubble</div>
+                            <div class="side-menu__name">Message</div>
+                        </a>
+                        <div class="material-icons toggle-btn">arrow_drop_down</div>
+                    </div>
+                </li>
+                <li>
+                    <div class="side-menu__container">
+                        <a href="">
+                            <div class="material-icons">star</div>
+                            <div class="side-menu__name">Reward</div>
+                        </a>
+                        <div class="material-icons toggle-btn">arrow_drop_down</div>
+                    </div>
+                </li>
+                <li>
+                    <div class="side-menu__container">
+                        <a href="">
+                            <div class="material-icons">account_circle</div>
+                            <div class="side-menu__name mypage">My page</div>
+                        </a>
+                        <div class="material-icons toggle-btn">arrow_drop_down</div>
+                    </div>
+                </li>
+                <li>
+                    <div class="side-menu__container">
+                        <a href="">
+                            <div class="material-icons">people</div>
+                            <div class="side-menu__name">Members</div>
+                        </a>
+                        <div class="material-icons toggle-btn">arrow_drop_down</div>
+                    </div>
+                </li>
+                <li>
+                    <div class="side-menu__container">
+                        <a th:href="@{/account/login}">
+                            <div class="material-icons">login</div>
+                            <div class="side-menu__name sign-in">Sign in / Register</div>
+                        </a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Top Nav -->
+    <div class="main-page">
+        <div class="top-nav">
+            <a th:href="@{/}">
+                <div class="website-name" style="cursor: pointer;">
+                    <div class="website-name__title">
+                        <div class="creativity">Creativity</div>
+                        <div class="material-icons">tungsten</div>
+                    </div>
+                    <div class="website-name__description">The world is your oyster</div>
+                </div>
+            </a>
+            <div class="website-menu">
+                <div>
+                    <div class="material-icons side-menu-btn">menu</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="second-page">
+        <div class="inner">
+            <div class="mypage-left-container">
+                <!-- Posts -->
+                <div class="single-posts">
+                    <ul>
+                        <li th:each="board : ${boards}">
+                            <div class="read-container__inner" th:classappend="${board != null} ? 'readpost' + ${board.id}">
+                                <div class="material-icons close-btn" onclick="closeReadPost()">close</div>
+                                <div class="read-container__user-info">
+                                    <div class="board-read__username">
+                                        <div style="font-weight: bold; font-size: 11px;" th:text="${board.title}">this is a title</div>
+                                        </div>
+                                        <div class="board-read__user-photo">
+                                            <img src="/image/user-icon.jpg">
+                                        </div>
+                                        <div class="board-read__date">
+                                            <div style="font-size: 13px; margin-top:-3px" th:text="${board.username}">user0123</div>
+                                            <div style="font-size: 10px; " th:text="${board.date}">2012.33.33 33:33:33</div>
+                                        </div>
+                                    <div class="material-icons direct-message" th:unless="${user.username == board.username}" th:onclick="|openDirectMessageForm(${board.id})|">email</div>
+                                    <div class="material-icons modify-post" th:if="${user.username == board.username}" th:onclick="modifyPost( [[${board.id} ]] , [[${board.title}]] , [[${board.content}]] )">edit</div>
+                                </div>
+                                <div class="content-group">
+                                    <div class="read-container__content-inner" th:classappend="${board != null} ? 'replacement' + ${board.id}">
+                                        <div class="post-like-icon" th:classappend="${board != null} ? 'postlike' + ${board.id}">
+                                            <div class="material-icons likes" th:onclick="|likePost(${board.id})|">favorite</div>
+                                            <div class="post-like-number" th:text="${board.likes}">13333</div>
+                                            <div class="material-icons comment">chat_bubble</div>
+                                            <div class="post-comment-number" th:with="filtered=${board.comments.?[depth == 0]}" th:text="${#lists.size(filtered)}">12333</div>
+                                        </div>
+        
+                                        <div class="read-container__content" th:text="${board.content}">
+                                            this is a content.
+                                        </div>
+                                        <div class="bottom-container">
+                                            <form th:classappend="${board != null} ? 'first-comment' + ${board.id}" th:action="@{/board/read/firstcomment}" method="post">
+                                                <input type="hidden" name="boardid" th:value="${board.id}">
+                                                <textarea name="content"></textarea>
+                                                <button type="button" th:onclick="|firstComment(${board.id})|">
+                                                    <div class="material-icons" style="font-size: 15px;">edit</div>
+                                                </button>
+                                            </form>
+                                            <ul>
+                                                <li th:each="comment : ${board.comments}" th:if="${comment.depth == 0 and comment.boardid == board.id}">
+                                                    <div class="single-comment" th:classappend="${comment != null} ? 'like-comment-count' + ${comment.id}">
+                                                        <div class="upper-line">
+                                                            <div class="user-photo">
+                                                                <img src="/image/user-icon.jpg">
+                                                            </div>
+                                                            <div class="username">
+                                                                <div th:text="${comment.username}">user0123</div>
+                                                            </div>
+                                                            <div class="favorite" th:onclick="|likeComment(${comment.id})|">
+                                                                <div class="material-icons likes">favorite</div>
+                                                            </div>
+                                                            <div class="like-count" th:text="${comment.likes}">13</div>
+                                                            <div>
+                                                                <div class="material-icons" style="margin-left: 5px;">chat_bubble</div>
+                                                            </div>
+                                                            <div class="comment-count" style="margin-right: 23px" th:text="${#lists.size(comment.secondComments) - 1}">143</div>
+                                                            <span class="material-icons" th:onclick="|deleteComment(${comment.id}, ${board.id})|">close</span>
+                                                        </div>
+                                                        <div class="bottom-line">
+                                                            <div class="content">
+                                                                <div th:text="${comment.content}">this is a commet.</div>
+                                                                <div class="material-icons" th:onclick="|openReplyComment(${comment.id})|">reply</div>
+                                                            </div>
+                                                            <div class="comment-date" th:text="${comment.date}">2013.33.33 33:33:33</div>
+                                                        </div>
+                                                        <form th:classappend="${comment != null} ? 'reply-comment-form' + ${comment.id}" th:action="@{/board/read/secondcomment}" method="post">
+                                                            <input type="hidden" name="commentid" th:value="${comment.commentid}">
+                                                            <input type="hidden" name="boardid" th:value="${comment.boardid}"></input>
+                                                            <input type="hidden" name="depth" th:value="${comment.depth}">
+                                                            <textarea name="content"></textarea>
+                                                            <button type="button" th:onclick="|secondComment(${comment.id},${board.id})|">
+                                                                <div class="material-icons" style="font-size: 15px;">edit</div>
+                                                            </button>
+                                                        </form>
+                                                        <ul>
+                                                            <li class="second-comment" th:each="secondcomment : ${board.comments}" th:if="${secondcomment.depth == 1 and secondcomment.boardid == board.id and secondcomment.commentid == comment.id}">
+                                                                <div class="single-second-comment"  th:classappend="${secondcomment != null} ? 'second-comment-count' + ${secondcomment.id}">
+                                                                    <div class="upper-line">
+                                                                        <div class="user-photo">
+                                                                            <img src="/image/user-icon.jpg">
+                                                                        </div>
+                                                                        <div class="username">
+                                                                            <div th:text="${secondcomment.username}">user0123</div>
+                                                                        </div>
+                                                                        <div class="favorite" th:onclick="|likeSecondComment(${secondcomment.id})|">
+                                                                            <div class="material-icons likes">favorite</div>
+                                                                        </div>
+                                                                        <div class="like-count" th:text="${secondcomment.likes}">13</div>
+                                                                        <span class="material-icons" th:onclick="|deleteComment(${secondcomment.id}, ${board.id})|">close</span>
+                                                                    </div>
+                                                                    <div class="bottom-line">
+                                                                        <div class="content" th:text="${secondcomment.content}">this is a comis is a comis is a comis is a comis is a comis is a comis is a comis is a comis is a comis is a comis is a comis is a comis is a comment.</div>
+                                                                        <div class="comment-date" th:text="${secondcomment.date}">2013.33.33 33:33:33</div>
+                                                                    </div>
+                                                                </div>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+
+            <div class="mypage-right-container">
+                <div class="mypage-main">
+                    <div class="upper-container">
+                        <div class="left-box">
+                            <div class="username" th:text=${user.username}>user1234</div>
+                            <div class="level" th:text=${user.level}>Level1</div>
+                        </div>
+                        <div class="right-box">
+                            <div class="user">
+                                <div class="user-photo">
+                                    <img src="/sangwon/src/main/resources/static/image/user-icon.jpg" alt="">
+                                </div>
+                                <div class="material-icons">change_circle</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bottom-container">
+                        <div class="upper-line">
+                            <div id="posts" class="posts">
+                                <div class="material-icons">note_alt</div>
+                                <div>
+                                    <div class="count">1</div>
+                                    <div>Posts</div>
+                                </div>
+                            </div>
+                            <div id="messages" class="messages">
+                                <div class="container">
+                                    <div class="material-icons">local_post_office</div>
+                                    <div class="unread-count">3</div>
+                                </div>
+                                <div>
+                                    <div class="count">1</div>
+                                    <div>Messages</div>
+    
+                                </div>
+                            </div>
+                            <div id="points" class="points">
+                                <div class="material-icons">star_outline</div>
+                                <div>
+                                    <div class="count">1000</div>
+                                    <div>Points</div>
+                                </div>
+                            </div>
+                            <div id="friends" class="friends">
+                                <div class="container">
+                                    <div class="material-icons">people</div>
+                                    <div class="unread-count">3</div>
+                                </div>
+                                <div>
+                                    <div class="count">100</div>
+                                    <div>Friends</div>
+                                </div>
+                            </div>
+                            <div></div>
+                        </div>
+                        <div class="border"></div>
+                        <div id="bottom-line" class="bottom-line">
+                            <div class="posts">
+                                <ul class="board__list">
+                                    <li th:each="board : ${boards}">
+                                        <div class="board-list__single-post">
+                                            <div class="board-list__id">
+                                                <span th:text="${board.id}">00</span>
+                                            </div>
+                                            <div class="board-list__title">
+                                                <div class="board-list__title-title" th:onclick="|readPost(${board.id})|" th:text="${board.title}">this is a title</div>
+                                                <div class="icons">
+                                                    <div class="material-icons">favorite</div>
+                                                    <div th:classappend="${board != null} ? 'list-like-count' + ${board.id}" th:text="${board.likes}">123</div>
+                                                    <div class="material-icons comment" style="margin-left: 5px">txtsms</div>
+                                                    <div th:classappend="${board != null} ? 'list-comment-count' + ${board.id}" th:with="filtered=${board.comments.?[depth == 0]}" th:text="${#lists.size(filtered)}">123</div>
+                                                </div>
+                                            </div>
+                                            <div class="board-list__user-photo">
+                                                <img src="/image/user-icon.jpg">
+                                            </div>
+                                            <div class="board-list__username">
+                                                <span th:text="${board.username}">user0123</span>
+                                            </div>
+                                            <div class="material-icons">visibility</div>
+                                            <div class="board-list__view">
+                                                <span th:classappend="${board != null} ? 'list-view-count' + ${board.id}" th:text="${board.view}">23111</span>
+                                            </div>
+                                            <div class="board-list__date">
+                                                <span th:text="${board.date}">2022.33.33, 33:33:33</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="messages">
+                                <ul class="received-page">
+                                    <li th:each="receivedMessage : ${receivedMessages}">
+                                        <div class="message-list__single-message" th:onclick="|readMessage(${receivedMessage.id})|">
+                                            <div class="user-photo">
+                                                <img src="/image/user-icon.jpg">
+                                            </div>
+                                            <div class="username" th:text="${receivedMessage.sender}">user1332</div>
+                                            <div class="content" th:text="${receivedMessage.content}">this is his is his is his is is a content</div>
+                                            <div class="date" th:text="${receivedMessage.date}">2022.22.22 33:33:33</div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="points"></div>
+                            <div class="friends"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- New Write -->
+                <div class="board-write__container">
+                    <div class="board__right-container-title">NEW POST</div>
+                    <div class="board-write__inner">
+                        <form th:action="@{/board/list}" th:object="${board}" method="post">
+                            <input id="board-write-id" type="hidden" th:field="*{id}">
+                            <div class="board-write__title">
+                                <input type="text" th:field="*{title}" placeholder="Title">
+                                <div class="invalid-feedback" th:if="${#fields.hasErrors('title')}" th:errors="*{title}" style="color: rgb(255, 97, 97);">
+                                    Please provide a valid title.
+                                </div>
+                            </div>
+                            <div class="board-write__content">
+                                <textarea th:field="*{content}" placeholder="Type what you want to say to the world, the world is your oyster :)"></textarea>
+                                <div class="invalid-feedback" th:if="${#fields.hasErrors('content')}" th:errors="*{content}" style="color: rgb(255, 97, 97)">
+                                    Please provide a valid content.
+                                </div>
+                            </div>
+                            <div class="board-write__btn-group">
+                                <button type="button" th:onclick="|deleteBoard()|">Delete</button>
+                                <a class="btn" type="button" onclick="clickNewWritePostBtn()">Back to list</a>
+                                <button type="submit">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <ul>
+                <li th:each="receivedMessage : ${receivedMessages}">
+                    <div class="direct-message-form single-message" th:classappend = "${receivedMessage != null} ? 'single-received' + ${receivedMessage.id}">
+                        <div class="line"></div>
+                        <div class="material-icons ring">radio_button_unchecked</div>
+                        <div class="material-icons close" th:onclick="closeDirectMessageForm()">close</div>
+                        <div style="font-size: 12px; text-align: center;">
+                            <span>Message from</span>
+                            <span style="font-weight: bold;" th:text=${receivedMessage.sender}>user1234</span>
+                        </div>
+                        <textarea th:text=${receivedMessage.content} disabled></textarea>
+                        <div class="send-btn" th:onclick="|showReplyForm(${receivedMessage.id})|">Reply</div>
+                    </div>
+                    <form class="direct-message-form reply-box" th:action="@{/message/new}" th:classappend="${board != null} ? 'direct-message' + ${receivedMessage.id}" method="post">
+                        <div class="line"></div>
+                        <div class="material-icons ring">radio_button_unchecked</div>
+                        <div class="material-icons close" th:onclick="closeDirectMessageForm()">close</div>
+                        <div style="font-size: 12px; text-align: center;">
+                            <span>Reply to</span>
+                            <span style="font-weight: bold;" th:text=${receivedMessage.sender}>user1234</span>
+                        </div>
+                        <input type="hidden" name="receiver" th:value="${receivedMessage.sender}">
+                        <textarea name="content" placeholder="Type message"></textarea>
+                        <div class="send-btn">Send</div>
+                    </form>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="message-darkening">
+
+    </div>
+
+    <div class="darkening">
+
+    </div>
+
+</body>
+</html>

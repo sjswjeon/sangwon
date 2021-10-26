@@ -39,6 +39,20 @@ public class BoardService {
             board.setDate(date);
 
             user.setPoint(user.getPoint() + 100L);
+            if (user.getPoint() >= 1000L) {
+                user.setLevel("Level2");
+            }
+            if (user.getPoint() >= 2000L) {
+                user.setLevel("level3");
+            }
+            if (user.getPoint() >= 3000L) {
+                user.setLevel("level4");
+            }
+            if (user.getPoint() >= 4000L) {
+                user.setLevel("level5");
+            }
+
+            userRepository.save(user);
         } else {
             Board originalPost = boardRepository.findById(board.getId()).orElse(null);
             board.setUser(originalPost.getUser());
