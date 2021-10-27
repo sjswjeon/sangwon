@@ -13,7 +13,7 @@ spring:
   profiles:
     activate: prod
   datasource:
-    url: jdbc:mariadb://database-1.cwmns3xrahu0.ap-northeast-2.rds.amazonaws.com:3306/webservice
+    url: jdbc:mariadb://database-1.cwmns3xrahu0.ap-northeast-2.rds.amazonaws.com:3306/webservice?characterEncoding=UTF-8&serverTimezone=Asia/Seoul
     username: admin
     password: tkddnjs2
     driver-class-name: org.mariadb.jdbc.Driver
