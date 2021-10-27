@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
+<head th:fragment="head(title)">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:text="${title}">Welcome to Creativity WebSite!</title>
+
+    <!-- Reset Css -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css">
+    <!-- Google Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+          rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;700&display=swap" rel="stylesheet">
+    <link th:if="${title == 'Login'}" href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link th:if="${title == 'Creativity'}" rel="stylesheet" th:href="@{/css/csss/index.css}">
+    <link th:if="${title == 'Post'}" rel="stylesheet" th:href="@{/css/csss/board.css}">
+    <link th:if="${title == 'Message'}" rel="stylesheet" th:href="@{/css/csss/message.css}">
+    <link th:if="${title == 'Login'}" rel="stylesheet" th:href="@{/css/csss/login2.css}">
+    <link th:if="${title == 'MyPage'}" rel="stylesheet" th:href="@{/css/csss/mypage.css}">
+
+    <!-- Gsap -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js" integrity="sha512-UxP+UhJaGRWuMG2YC6LPWYpFQnsSgnor0VUF3BHdD83PS/pOpN+FYbZmrYN+ISX8jnvgVUciqP/fILOXDjZSwg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- JS -->
+    <script th:if="${title == 'Creativity'}" defer th:src="@{/js/jss/index.js}"></script>
+    <script th:if="${title == 'Post'}" defer th:src="@{/js/jss/board.js}"></script>
+    <script th:if="${title == 'Message'}" defer th:src="@{/js/jss/message.js}"></script>
+    <script th:if="${title == 'Login'}" defer th:src="@{/js/jss/login2.js}"></script>
+    <script th:if="${title == 'MyPage'}" defer th:src="@{/js/jss/mypage.js}"></script>
+
+    <!-- JQuery CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Lodash CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js" integrity="sha512-WFN04846sdKMIP5LKNphMaWzU7YpMyCU245etK3g/2ARYbPK9Ub18eG+ljU96qKRCWh+quCY7yefSmlkQw1ANQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+</head>
+<body>
+<!-- Side Menu Bar -->
+<nav class="side-menu" th:fragment="side-menu(menu)">
+    <div class="side-menu__inner">
+        <ul>
+            <li>
+                <div class="side-menu__container" th:classappend="${menu == 'home'} ? 'active'">
+                    <a th:href="@{/}">
+                        <div class="material-icons">home</div>
+                        <div class="side-menu__name">Home</div>
+                    </a>
+                    <div class="material-icons toggle-btn">arrow_drop_down</div>
+                </div>
+            </li>
+            <li>
+                <div class="side-menu__container" th:classappend="${menu == 'post'} ? 'active'">
+                    <a th:href="@{/board/list}">
+                        <div class="material-icons">assignment</div>
+                        <div class="side-menu__name">Post</div>
+                    </a>
+                    <div class="material-icons toggle-btn">arrow_drop_down</div>
+                </div>
+            </li>
+            <li>
+                <div class="side-menu__container" th:classappend="${menu == 'message'} ? 'active'">
+                    <a th:href="@{/message/list}">
+                        <div class="material-icons">chat_bubble</div>
+                        <div class="side-menu__name">Message</div>
+                    </a>
+                    <div class="material-icons toggle-btn">arrow_drop_down</div>
+                </div>
+            </li>
+            <li>
+                <div class="side-menu__container" th:classappend="${menu == 'reward'} ? 'active'">
+                    <a href="">
+                        <div class="material-icons">star</div>
+                        <div class="side-menu__name">Reward</div>
+                    </a>
+                    <div class="material-icons toggle-btn">arrow_drop_down</div>
+                </div>
+            </li>
+            <li>
+                <div class="side-menu__container" th:classappend="${menu == 'mypage'} ? 'active'">
+                    <a th:href="@{/mypage/main}">
+                        <div class="material-icons">account_circle</div>
+                        <div class="side-menu__name mypage">My page</div>
+                    </a>
+                    <div class="material-icons toggle-btn">arrow_drop_down</div>
+                </div>
+            </li>
+            <li>
+                <div class="side-menu__container" th:classappend="${menu == 'members'} ? 'active'">
+                    <a href="">
+                        <div class="material-icons">people</div>
+                        <div class="side-menu__name">Members</div>
+                    </a>
+                    <div class="material-icons toggle-btn">arrow_drop_down</div>
+                </div>
+            </li>
+            <li sec:authorize="!isAuthenticated()">
+                <div class="side-menu__container" th:classappend="${menu == 'signin'} ? 'active'">
+                    <a th:href="@{/account/login}">
+                        <div class="material-icons">login</div>
+                        <div class="side-menu__name sign-in">Sign in / Register</div>
+                    </a>
+                </div>
+            </li>
+            <li sec:authorize="isAuthenticated()">
+                <div class="side-menu__container">
+                    <a th:href="@{/account/login}">
+                        <div class="material-icons">logout</div>
+                        <div class="side-menu__name logout">
+                            <form th:action="@{/logout}" method="post">
+                                <button type="submit" class="btn btn-dark" href="#">Logout</button>
+                            </form>
+                        </div>
+                    </a>
+                </div>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<!-- Main-Page -->
+<div class="main-page">
+    <div class="inner">
+        <div class="top-nav" th:fragment="top-nav">
+            <a th:href="@{/}">
+                <div class="website-name" style="cursor: pointer;">
+                    <div class="website-name__title">
+                        <div class="creativity">Creativity</div>
+                        <div class="material-icons">tungsten</div>
+                    </div>
+                    <div class="website-name__description">The world is your oyster</div>
+                </div>
+            </a>
+            <div class="website-menu">
+                <div>
+                    <div class="material-icons side-menu-btn">menu</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="darkening">
+
+</div>
+
+</body>
+</html>

@@ -71,7 +71,7 @@ public class BoardController {
         model.addAttribute("startPage", startPage);
         model.addAttribute("endPage", endPage);
 
-        return "board/mypost";
+        return "board/list";
     }
 
     @PostMapping("/list")

@@ -1,112 +1,124 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+<head th:replace="fragments/common :: head('Message')">
+<!--    <meta charset="UTF-8">-->
+<!--    <meta http-equiv="X-UA-Compatible" content="IE=edge">-->
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+<!--    <title>Document</title>-->
 
-    <!-- Reset Css -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css">
-    <!-- Google Material Icons -->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;700&display=swap" rel="stylesheet">
-    <!-- CSS -->
-    <link rel="stylesheet" th:href="@{/css/csss/message.css}">
-   <link rel="stylesheet" href="/sangwon/src/main/resources/static/css/csss/message.css">
+<!--    &lt;!&ndash; Reset Css &ndash;&gt;-->
+<!--    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css">-->
+<!--    &lt;!&ndash; Google Material Icons &ndash;&gt;-->
+<!--    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"-->
+<!--      rel="stylesheet">-->
+<!--    &lt;!&ndash; Google Fonts &ndash;&gt;-->
+<!--    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">-->
+<!--    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;700&display=swap" rel="stylesheet">-->
+<!--    &lt;!&ndash; CSS &ndash;&gt;-->
+<!--    <link rel="stylesheet" th:href="@{/css/csss/message.css}">-->
+<!--   <link rel="stylesheet" href="/sangwon/src/main/resources/static/css/csss/message.css">-->
+<!--    -->
+<!--    &lt;!&ndash; Gsap &ndash;&gt;-->
+<!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js" integrity="sha512-UxP+UhJaGRWuMG2YC6LPWYpFQnsSgnor0VUF3BHdD83PS/pOpN+FYbZmrYN+ISX8jnvgVUciqP/fILOXDjZSwg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>-->
+<!--    &lt;!&ndash; JS &ndash;&gt;-->
+<!--    <script defer th:src="@{/js/jss/message.js}"></script>-->
+<!--    <script defer src="/sangwon/src/main/resources/static/js/jss/message.js"></script>-->
+
+<!--    &lt;!&ndash; JQuery CDN &ndash;&gt;-->
+<!--    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>-->
+
+<!--    &lt;!&ndash; Lodash CDN &ndash;&gt;-->
+<!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js" integrity="sha512-WFN04846sdKMIP5LKNphMaWzU7YpMyCU245etK3g/2ARYbPK9Ub18eG+ljU96qKRCWh+quCY7yefSmlkQw1ANQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>-->
 
 </head>
 <body>
     <!-- Side Menu Bar -->
-    <nav class="side-menu">
-        <div class="side-menu__inner">
-            <ul>
-                <li>
-                    <div class="side-menu__container">
-                        <a th:href="@{/}">
-                            <div class="material-icons">home</div>
-                            <div class="side-menu__name">Home</div>
-                        </a>
-                        <div class="material-icons toggle-btn">arrow_drop_down</div>
-                    </div>
-                </li>
-                <li>
-                    <div class="side-menu__container">
-                        <a th:href="@{/board/list}">
-                            <div class="material-icons">assignment</div>
-                            <div class="side-menu__name">Post</div>
-                        </a>
-                        <div class="material-icons toggle-btn">arrow_drop_down</div>
-                    </div>
-                </li>
-                <li>
-                    <div class="side-menu__container">
-                        <a th:href="@{/message/list}">
-                            <div class="material-icons">chat_bubble</div>
-                            <div class="side-menu__name">Message</div>
-                        </a>
-                        <div class="material-icons toggle-btn">arrow_drop_down</div>
-                    </div>
-                </li>
-                <li>
-                    <div class="side-menu__container">
-                        <a href="">
-                            <div class="material-icons">star</div>
-                            <div class="side-menu__name">Reward</div>
-                        </a>
-                        <div class="material-icons toggle-btn">arrow_drop_down</div>
-                    </div>
-                </li>
-                <li>
-                    <div class="side-menu__container">
-                        <a href="">
-                            <div class="material-icons">account_circle</div>
-                            <div class="side-menu__name mypage">My page</div>
-                        </a>
-                        <div class="material-icons toggle-btn">arrow_drop_down</div>
-                    </div>
-                </li>
-                <li>
-                    <div class="side-menu__container">
-                        <a href="">
-                            <div class="material-icons">people</div>
-                            <div class="side-menu__name">Members</div>
-                        </a>
-                        <div class="material-icons toggle-btn">arrow_drop_down</div>
-                    </div>
-                </li>
-                <li>
-                    <div class="side-menu__container">
-                        <a th:href="@{/account/login}">
-                            <div class="material-icons">login</div>
-                            <div class="side-menu__name sign-in">Sign in / Register</div>
-                        </a>
-                    </div>
-                </li>
-            </ul>
-        </div>
+    <nav class="side-menu" th:replace="fragments/common :: side-menu('message')">
+<!--        <div class="side-menu__inner">-->
+<!--            <ul>-->
+<!--                <li>-->
+<!--                    <div class="side-menu__container">-->
+<!--                        <a th:href="@{/}">-->
+<!--                            <div class="material-icons">home</div>-->
+<!--                            <div class="side-menu__name">Home</div>-->
+<!--                        </a>-->
+<!--                        <div class="material-icons toggle-btn">arrow_drop_down</div>-->
+<!--                    </div>-->
+<!--                </li>-->
+<!--                <li>-->
+<!--                    <div class="side-menu__container">-->
+<!--                        <a th:href="@{/board/list}">-->
+<!--                            <div class="material-icons">assignment</div>-->
+<!--                            <div class="side-menu__name">Post</div>-->
+<!--                        </a>-->
+<!--                        <div class="material-icons toggle-btn">arrow_drop_down</div>-->
+<!--                    </div>-->
+<!--                </li>-->
+<!--                <li>-->
+<!--                    <div class="side-menu__container">-->
+<!--                        <a th:href="@{/message/list}">-->
+<!--                            <div class="material-icons">chat_bubble</div>-->
+<!--                            <div class="side-menu__name">Message</div>-->
+<!--                        </a>-->
+<!--                        <div class="material-icons toggle-btn">arrow_drop_down</div>-->
+<!--                    </div>-->
+<!--                </li>-->
+<!--                <li>-->
+<!--                    <div class="side-menu__container">-->
+<!--                        <a href="">-->
+<!--                            <div class="material-icons">star</div>-->
+<!--                            <div class="side-menu__name">Reward</div>-->
+<!--                        </a>-->
+<!--                        <div class="material-icons toggle-btn">arrow_drop_down</div>-->
+<!--                    </div>-->
+<!--                </li>-->
+<!--                <li>-->
+<!--                    <div class="side-menu__container">-->
+<!--                        <a href="">-->
+<!--                            <div class="material-icons">account_circle</div>-->
+<!--                            <div class="side-menu__name mypage">My page</div>-->
+<!--                        </a>-->
+<!--                        <div class="material-icons toggle-btn">arrow_drop_down</div>-->
+<!--                    </div>-->
+<!--                </li>-->
+<!--                <li>-->
+<!--                    <div class="side-menu__container">-->
+<!--                        <a href="">-->
+<!--                            <div class="material-icons">people</div>-->
+<!--                            <div class="side-menu__name">Members</div>-->
+<!--                        </a>-->
+<!--                        <div class="material-icons toggle-btn">arrow_drop_down</div>-->
+<!--                    </div>-->
+<!--                </li>-->
+<!--                <li>-->
+<!--                    <div class="side-menu__container">-->
+<!--                        <a th:href="@{/account/login}">-->
+<!--                            <div class="material-icons">login</div>-->
+<!--                            <div class="side-menu__name sign-in">Sign in / Register</div>-->
+<!--                        </a>-->
+<!--                    </div>-->
+<!--                </li>-->
+<!--            </ul>-->
+<!--        </div>-->
     </nav>
 
     <!-- Top Nav -->
     <div class="main-page">
-        <div class="top-nav">
-            <a th:href="@{/}">
-                <div class="website-name" style="cursor: pointer;">
-                    <div class="website-name__title">
-                        <div class="creativity">Creativity</div>
-                        <div class="material-icons">tungsten</div>
-                    </div>
-                    <div class="website-name__description">The world is your oyster</div>
-                </div>
-            </a>
-            <div class="website-menu">
-                <div>
-                    <div class="material-icons side-menu-btn">menu</div>
-                </div>
-            </div>
+        <div class="top-nav" th:replace="fragments/common :: top-nav">
+<!--            <a th:href="@{/}">-->
+<!--                <div class="website-name" style="cursor: pointer;">-->
+<!--                    <div class="website-name__title">-->
+<!--                        <div class="creativity">Creativity</div>-->
+<!--                        <div class="material-icons">tungsten</div>-->
+<!--                    </div>-->
+<!--                    <div class="website-name__description">The world is your oyster</div>-->
+<!--                </div>-->
+<!--            </a>-->
+<!--            <div class="website-menu">-->
+<!--                <div>-->
+<!--                    <div class="material-icons side-menu-btn">menu</div>-->
+<!--                </div>-->
+<!--            </div>-->
         </div>
     </div>
     
@@ -137,106 +149,6 @@
                             <div class="date" th:text="${receivedMessage.date}">2022.22.22 33:33:33</div>
                         </div>
                     </li>
-<!--                    <li>-->
-<!--                        <div class="message-list__single-message" onmouseenter="previewMessage(2)">-->
-<!--                            <div class="user-photo">-->
-<!--                                <img src="../static/image/user-icon.jpg">-->
-<!--                            </div>-->
-<!--                            <div class="username">user1332</div>-->
-<!--                            <div class="content">this is his is his is his is is a content</div>-->
-<!--                            <div class="date">2022.22.22 33:33:33</div>-->
-<!--                        </div>-->
-<!--                    </li>-->
-<!--                    <li>-->
-<!--                        <div class="message-list__single-message" onmouseenter="previewMessage(3)">-->
-<!--                            <div class="user-photo">-->
-<!--                                <img src="../static/image/user-icon.jpg">-->
-<!--                            </div>-->
-<!--                            <div class="username">user1332</div>-->
-<!--                            <div class="content">this is his is his is his is is a content</div>-->
-<!--                            <div class="date">2022.22.22 33:33:33</div>-->
-<!--                        </div>-->
-<!--                    </li>-->
-<!--                    <li>-->
-<!--                        <div class="message-list__single-message" onmouseenter="previewMessage(4)">-->
-<!--                            <div class="user-photo">-->
-<!--                                <img src="../static/image/user-icon.jpg">-->
-<!--                            </div>-->
-<!--                            <div class="username">user1332</div>-->
-<!--                            <div class="content">this is his is his is his is is a content</div>-->
-<!--                            <div class="date">2022.22.22 33:33:33</div>-->
-<!--                        </div>-->
-<!--                    </li>-->
-<!--                    <li>-->
-<!--                        <div class="message-list__single-message" onmouseenter="previewMessage(5)">-->
-<!--                            <div class="user-photo">-->
-<!--                                <img src="../static/image/user-icon.jpg">-->
-<!--                            </div>-->
-<!--                            <div class="username">user1332</div>-->
-<!--                            <div class="content">this is his is his is his is is a content</div>-->
-<!--                            <div class="date">2022.22.22 33:33:33</div>-->
-<!--                        </div>-->
-<!--                    </li>-->
-<!--                    <li>-->
-<!--                        <div class="message-list__single-message" onmouseenter="previewMessage(6)">-->
-<!--                            <div class="user-photo">-->
-<!--                                <img src="../static/image/user-icon.jpg">-->
-<!--                            </div>-->
-<!--                            <div class="username">user1332</div>-->
-<!--                            <div class="content">this is his is his is his is is a content</div>-->
-<!--                            <div class="date">2022.22.22 33:33:33</div>-->
-<!--                        </div>-->
-<!--                    </li>-->
-<!--                    <li>-->
-<!--                        <div class="message-list__single-message" onmouseenter="previewMessage(7)">-->
-<!--                            <div class="user-photo">-->
-<!--                                <img src="../static/image/user-icon.jpg">-->
-<!--                            </div>-->
-<!--                            <div class="username">user1332</div>-->
-<!--                            <div class="content">this is his is his is his is is a content</div>-->
-<!--                            <div class="date">2022.22.22 33:33:33</div>-->
-<!--                        </div>-->
-<!--                    </li>-->
-<!--                    <li>-->
-<!--                        <div class="message-list__single-message" onmouseenter="previewMessage(8)">-->
-<!--                            <div class="user-photo">-->
-<!--                                <img src="../static/image/user-icon.jpg">-->
-<!--                            </div>-->
-<!--                            <div class="username">user1332</div>-->
-<!--                            <div class="content">this is his is his is his is is a content</div>-->
-<!--                            <div class="date">2022.22.22 33:33:33</div>-->
-<!--                        </div>-->
-<!--                    </li>-->
-<!--                    <li>-->
-<!--                        <div class="message-list__single-message" onmouseenter="previewMessage(9)">-->
-<!--                            <div class="user-photo">-->
-<!--                                <img src="../static/image/user-icon.jpg">-->
-<!--                            </div>-->
-<!--                            <div class="username">user1332</div>-->
-<!--                            <div class="content">this is his is his is his is is a content</div>-->
-<!--                            <div class="date">2022.22.22 33:33:33</div>-->
-<!--                        </div>-->
-<!--                    </li>-->
-<!--                    <li>-->
-<!--                        <div class="message-list__single-message" onmouseenter="previewMessage(10)">-->
-<!--                            <div class="user-photo">-->
-<!--                                <img src="../static/image/user-icon.jpg">-->
-<!--                            </div>-->
-<!--                            <div class="username">user1332</div>-->
-<!--                            <div class="content">this is his is his is his is is a content</div>-->
-<!--                            <div class="date">2022.22.22 33:33:33</div>-->
-<!--                        </div>-->
-<!--                    </li>-->
-<!--                    <li>-->
-<!--                        <div class="message-list__single-message" onmouseenter="previewMessage(11)">-->
-<!--                            <div class="user-photo">-->
-<!--                                <img src="../static/image/user-icon.jpg">-->
-<!--                            </div>-->
-<!--                            <div class="username">user1332</div>-->
-<!--                            <div class="content">this is his is his is his is is a content</div>-->
-<!--                            <div class="date">2022.22.22 33:33:33</div>-->
-<!--                        </div>-->
-<!--                    </li>-->
                     <div class="board__pagination">
                         <ul>
                             <li th:classappend="${receivedMessages.pageable.pageNumber == 0} or ${receivedMessages.totalElements == 0} ? 'disabled'">
@@ -266,106 +178,6 @@
                             <div class="date" th:text="${sentMessage.date}">2022.22.22 33:33:33</div>
                         </div>
                     </li>
-<!--                    <li>-->
-<!--                        <div class="message-list__single-message" onmouseenter="previewSentMessage(2)">-->
-<!--                            <div class="user-photo">-->
-<!--                                <img src="../static/image/user-icon.jpg">-->
-<!--                            </div>-->
-<!--                            <div class="username">user1332</div>-->
-<!--                            <div class="content">this is his is his is his is is a content</div>-->
-<!--                            <div class="date">2022.22.22 33:33:33</div>-->
-<!--                        </div>-->
-<!--                    </li>-->
-<!--                    <li>-->
-<!--                        <div class="message-list__single-message" onmouseenter="previewSentMessage(3)">-->
-<!--                            <div class="user-photo">-->
-<!--                                <img src="../static/image/user-icon.jpg">-->
-<!--                            </div>-->
-<!--                            <div class="username">user1332</div>-->
-<!--                            <div class="content">this is his is his is his is is a content</div>-->
-<!--                            <div class="date">2022.22.22 33:33:33</div>-->
-<!--                        </div>-->
-<!--                    </li>-->
-<!--                    <li>-->
-<!--                        <div class="message-list__single-message" onmouseenter="previewSentMessage(4)">-->
-<!--                            <div class="user-photo">-->
-<!--                                <img src="../static/image/user-icon.jpg">-->
-<!--                            </div>-->
-<!--                            <div class="username">user1332</div>-->
-<!--                            <div class="content">this is his is his is his is is a content</div>-->
-<!--                            <div class="date">2022.22.22 33:33:33</div>-->
-<!--                        </div>-->
-<!--                    </li>-->
-<!--                    <li>-->
-<!--                        <div class="message-list__single-message" onmouseenter="previewSentMessage(5)">-->
-<!--                            <div class="user-photo">-->
-<!--                                <img src="../static/image/user-icon.jpg">-->
-<!--                            </div>-->
-<!--                            <div class="username">user1332</div>-->
-<!--                            <div class="content">this is his is his is his is is a content</div>-->
-<!--                            <div class="date">2022.22.22 33:33:33</div>-->
-<!--                        </div>-->
-<!--                    </li>-->
-<!--                    <li>-->
-<!--                        <div class="message-list__single-message" onmouseenter="previewSentMessage(6)">-->
-<!--                            <div class="user-photo">-->
-<!--                                <img src="../static/image/user-icon.jpg">-->
-<!--                            </div>-->
-<!--                            <div class="username">user1332</div>-->
-<!--                            <div class="content">this is his is his is his is is a content</div>-->
-<!--                            <div class="date">2022.22.22 33:33:33</div>-->
-<!--                        </div>-->
-<!--                    </li>-->
-<!--                    <li>-->
-<!--                        <div class="message-list__single-message" onmouseenter="previewSentMessage(7)">-->
-<!--                            <div class="user-photo">-->
-<!--                                <img src="../static/image/user-icon.jpg">-->
-<!--                            </div>-->
-<!--                            <div class="username">user1332</div>-->
-<!--                            <div class="content">this is his is his is his is is a content</div>-->
-<!--                            <div class="date">2022.22.22 33:33:33</div>-->
-<!--                        </div>-->
-<!--                    </li>-->
-<!--                    <li>-->
-<!--                        <div class="message-list__single-message" onmouseenter="previewSentMessage(8)">-->
-<!--                            <div class="user-photo">-->
-<!--                                <img src="../static/image/user-icon.jpg">-->
-<!--                            </div>-->
-<!--                            <div class="username">user1332</div>-->
-<!--                            <div class="content">this is his is his is his is is a content</div>-->
-<!--                            <div class="date">2022.22.22 33:33:33</div>-->
-<!--                        </div>-->
-<!--                    </li>-->
-<!--                    <li>-->
-<!--                        <div class="message-list__single-message" onmouseenter="previewSentMessage(9)">-->
-<!--                            <div class="user-photo">-->
-<!--                                <img src="../static/image/user-icon.jpg">-->
-<!--                            </div>-->
-<!--                            <div class="username">user1332</div>-->
-<!--                            <div class="content">this is his is his is his is is a content</div>-->
-<!--                            <div class="date">2022.22.22 33:33:33</div>-->
-<!--                        </div>-->
-<!--                    </li>-->
-<!--                    <li>-->
-<!--                        <div class="message-list__single-message" onmouseenter="previewSentMessage(10)">-->
-<!--                            <div class="user-photo">-->
-<!--                                <img src="../static/image/user-icon.jpg">-->
-<!--                            </div>-->
-<!--                            <div class="username">user1332</div>-->
-<!--                            <div class="content">this is his is his is his is is a content</div>-->
-<!--                            <div class="date">2022.22.22 33:33:33</div>-->
-<!--                        </div>-->
-<!--                    </li>-->
-<!--                    <li>-->
-<!--                        <div class="message-list__single-message" onmouseenter="previewSentMessage(11)">-->
-<!--                            <div class="user-photo">-->
-<!--                                <img src="../static/image/user-icon.jpg">-->
-<!--                            </div>-->
-<!--                            <div class="username">user1332</div>-->
-<!--                            <div class="content">this is his is his is his is is a content</div>-->
-<!--                            <div class="date">2022.22.22 33:33:33</div>-->
-<!--                        </div>-->
-<!--                    </li>-->
                     <div class="board__pagination">
                         <ul>
                             <li th:classappend="${sentMessages.pageable.pageNumber == 0} or ${sentMessages.totalElements == 0} ? 'disabled'">
@@ -411,136 +223,6 @@
                                 <div class="content" th:text="${receivedMessage.content}">this is a content.11</div>
                             </div>
                         </li>
-<!--                        <li class="message-li received2" onclick="mouseOverMessage(2)">-->
-<!--                            <div class="single-message">-->
-<!--                                <div class="user-photo">-->
-<!--                                    <img src="../static/image/user-icon.jpg">-->
-<!--                                    <div>-->
-<!--                                        <div class="username">user123444</div>-->
-<!--                                    </div>-->
-<!--                                </div>-->
-<!--                                <div class="date">2033.33.33 33:33:33</div>-->
-<!--                                <div class="material-icons">reply</div>-->
-<!--                                <div class="content">this is a content.22</div>-->
-<!--                            </div>-->
-<!--                        </li>-->
-<!--                        <li class="message-li received3" onclick="mouseOverMessage(3)">-->
-<!--                            <div class="single-message">-->
-<!--                                <div class="user-photo">-->
-<!--                                    <img src="../static/image/user-icon.jpg">-->
-<!--                                    <div>-->
-<!--                                        <div class="username">user123444</div>-->
-<!--                                    </div>-->
-<!--                                </div>-->
-<!--                                <div class="date">2033.33.33 33:33:33</div>-->
-<!--                                <div class="material-icons">reply</div>-->
-<!--                                <div class="content">this is a content.33</div>-->
-<!--                            </div>-->
-<!--                        </li>-->
-<!--                        <li class="message-li received4" onclick="mouseOverMessage(4)">-->
-<!--                            <div class="single-message">-->
-<!--                                <div class="user-photo">-->
-<!--                                    <img src="../static/image/user-icon.jpg">-->
-<!--                                    <div>-->
-<!--                                        <div class="username">user123444</div>-->
-<!--                                    </div>-->
-<!--                                </div>-->
-<!--                                <div class="date">2033.33.33 33:33:33</div>-->
-<!--                                <div class="material-icons">reply</div>-->
-<!--                                <div class="content">this is a content.</div>-->
-<!--                            </div>-->
-<!--                        </li>-->
-<!--                        <li class="message-li received5" onclick="mouseOverMessage(5)">-->
-<!--                            <div class="single-message">-->
-<!--                                <div class="user-photo">-->
-<!--                                    <img src="../static/image/user-icon.jpg">-->
-<!--                                    <div>-->
-<!--                                        <div class="username">user123444</div>-->
-<!--                                    </div>-->
-<!--                                </div>-->
-<!--                                <div class="date">2033.33.33 33:33:33</div>-->
-<!--                                <div class="material-icons">reply</div>-->
-<!--                                <div class="content">this is a content.</div>-->
-<!--                            </div>-->
-<!--                        </li>-->
-<!--                        <li class="message-li received6" onclick="mouseOverMessage(6)">-->
-<!--                            <div class="single-message">-->
-<!--                                <div class="user-photo">-->
-<!--                                    <img src="../static/image/user-icon.jpg">-->
-<!--                                    <div>-->
-<!--                                        <div class="username">user123444</div>-->
-<!--                                    </div>-->
-<!--                                </div>-->
-<!--                                <div class="date">2033.33.33 33:33:33</div>-->
-<!--                                <div class="material-icons">reply</div>-->
-<!--                                <div class="content">this is a content.</div>-->
-<!--                            </div>-->
-<!--                        </li>-->
-<!--                        <li class="message-li received7" onclick="mouseOverMessage(7)">-->
-<!--                            <div class="single-message">-->
-<!--                                <div class="user-photo">-->
-<!--                                    <img src="../static/image/user-icon.jpg">-->
-<!--                                    <div>-->
-<!--                                        <div class="username">user123444</div>-->
-<!--                                    </div>-->
-<!--                                </div>-->
-<!--                                <div class="date">2033.33.33 33:33:33</div>-->
-<!--                                <div class="material-icons">reply</div>-->
-<!--                                <div class="content">this is a content.</div>-->
-<!--                            </div>-->
-<!--                        </li>-->
-<!--                        <li class="message-li received8" onclick="mouseOverMessage(8)">-->
-<!--                            <div class="single-message">-->
-<!--                                <div class="user-photo">-->
-<!--                                    <img src="../static/image/user-icon.jpg">-->
-<!--                                    <div>-->
-<!--                                        <div class="username">user123444</div>-->
-<!--                                    </div>-->
-<!--                                </div>-->
-<!--                                <div class="date">2033.33.33 33:33:33</div>-->
-<!--                                <div class="material-icons">reply</div>-->
-<!--                                <div class="content">this is a content.</div>-->
-<!--                            </div>-->
-<!--                        </li>-->
-<!--                        <li class="message-li received9" onclick="mouseOverMessage(9)">-->
-<!--                            <div class="single-message">-->
-<!--                                <div class="user-photo">-->
-<!--                                    <img src="../static/image/user-icon.jpg">-->
-<!--                                    <div>-->
-<!--                                        <div class="username">user123444</div>-->
-<!--                                    </div>-->
-<!--                                </div>-->
-<!--                                <div class="date">2033.33.33 33:33:33</div>-->
-<!--                                <div class="material-icons">reply</div>-->
-<!--                                <div class="content">this is a content.</div>-->
-<!--                            </div>-->
-<!--                        </li>-->
-<!--                        <li class="message-li received10" onclick="mouseOverMessage(10)">-->
-<!--                            <div class="single-message">-->
-<!--                                <div class="user-photo">-->
-<!--                                    <img src="../static/image/user-icon.jpg">-->
-<!--                                    <div>-->
-<!--                                        <div class="username">user123444</div>-->
-<!--                                    </div>-->
-<!--                                </div>-->
-<!--                                <div class="date">2033.33.33 33:33:33</div>-->
-<!--                                <div class="material-icons">reply</div>-->
-<!--                                <div class="content">this is a content.</div>-->
-<!--                            </div>-->
-<!--                        </li>-->
-<!--                        <li class="message-li received11" onclick="mouseOverMessage(11)">-->
-<!--                            <div class="single-message">-->
-<!--                                <div class="user-photo">-->
-<!--                                    <img src="../static/image/user-icon.jpg">-->
-<!--                                    <div>-->
-<!--                                        <div class="username">user123444</div>-->
-<!--                                    </div>-->
-<!--                                </div>-->
-<!--                                <div class="date">2033.33.33 33:33:33</div>-->
-<!--                                <div class="material-icons">reply</div>-->
-<!--                                <div class="content">this is a content.</div>-->
-<!--                            </div>-->
-<!--                        </li>-->
                     </ul>
 
                     <ul class="sent-message-page">
@@ -557,136 +239,6 @@
                                 <div class="content" th:text="${sentMessage.content}">sent11</div>
                             </div>
                         </li>
-<!--                        <li class="message-li sent2" onclick="mouseOverSentMessage(2)">-->
-<!--                            <div class="single-message">-->
-<!--                                <div class="user-photo">-->
-<!--                                    <img src="../static/image/user-icon.jpg">-->
-<!--                                    <div>-->
-<!--                                        <div class="username">user123444</div>-->
-<!--                                    </div>-->
-<!--                                </div>-->
-<!--                                <div class="date">2033.33.33 33:33:33</div>-->
-<!--                                <div class="material-icons">reply</div>-->
-<!--                                <div class="content">this is a content.22</div>-->
-<!--                            </div>-->
-<!--                        </li>-->
-<!--                        <li class="message-li sent3" onclick="mouseOverSentMessage(3)">-->
-<!--                            <div class="single-message">-->
-<!--                                <div class="user-photo">-->
-<!--                                    <img src="../static/image/user-icon.jpg">-->
-<!--                                    <div>-->
-<!--                                        <div class="username">user123444</div>-->
-<!--                                    </div>-->
-<!--                                </div>-->
-<!--                                <div class="date">2033.33.33 33:33:33</div>-->
-<!--                                <div class="material-icons">reply</div>-->
-<!--                                <div class="content">this is a content.33</div>-->
-<!--                            </div>-->
-<!--                        </li>-->
-<!--                        <li class="message-li sent4" onclick="mouseOverSentMessage(4)">-->
-<!--                            <div class="single-message">-->
-<!--                                <div class="user-photo">-->
-<!--                                    <img src="../static/image/user-icon.jpg">-->
-<!--                                    <div>-->
-<!--                                        <div class="username">user123444</div>-->
-<!--                                    </div>-->
-<!--                                </div>-->
-<!--                                <div class="date">2033.33.33 33:33:33</div>-->
-<!--                                <div class="material-icons">reply</div>-->
-<!--                                <div class="content">this is a content.</div>-->
-<!--                            </div>-->
-<!--                        </li>-->
-<!--                        <li class="message-li sent5" onclick="mouseOverSentMessage(5)">-->
-<!--                            <div class="single-message">-->
-<!--                                <div class="user-photo">-->
-<!--                                    <img src="../static/image/user-icon.jpg">-->
-<!--                                    <div>-->
-<!--                                        <div class="username">user123444</div>-->
-<!--                                    </div>-->
-<!--                                </div>-->
-<!--                                <div class="date">2033.33.33 33:33:33</div>-->
-<!--                                <div class="material-icons">reply</div>-->
-<!--                                <div class="content">this is a content.</div>-->
-<!--                            </div>-->
-<!--                        </li>-->
-<!--                        <li class="message-li sent6" onclick="mouseOverSentMessage(6)">-->
-<!--                            <div class="single-message">-->
-<!--                                <div class="user-photo">-->
-<!--                                    <img src="../static/image/user-icon.jpg">-->
-<!--                                    <div>-->
-<!--                                        <div class="username">user123444</div>-->
-<!--                                    </div>-->
-<!--                                </div>-->
-<!--                                <div class="date">2033.33.33 33:33:33</div>-->
-<!--                                <div class="material-icons">reply</div>-->
-<!--                                <div class="content">this is a content.</div>-->
-<!--                            </div>-->
-<!--                        </li>-->
-<!--                        <li class="message-li sent7" onclick="mouseOverSentMessage(7)">-->
-<!--                            <div class="single-message">-->
-<!--                                <div class="user-photo">-->
-<!--                                    <img src="../static/image/user-icon.jpg">-->
-<!--                                    <div>-->
-<!--                                        <div class="username">user123444</div>-->
-<!--                                    </div>-->
-<!--                                </div>-->
-<!--                                <div class="date">2033.33.33 33:33:33</div>-->
-<!--                                <div class="material-icons">reply</div>-->
-<!--                                <div class="content">this is a content.</div>-->
-<!--                            </div>-->
-<!--                        </li>-->
-<!--                        <li class="message-li sent8" onclick="mouseOverSentMessage(8)">-->
-<!--                            <div class="single-message">-->
-<!--                                <div class="user-photo">-->
-<!--                                    <img src="../static/image/user-icon.jpg">-->
-<!--                                    <div>-->
-<!--                                        <div class="username">user123444</div>-->
-<!--                                    </div>-->
-<!--                                </div>-->
-<!--                                <div class="date">2033.33.33 33:33:33</div>-->
-<!--                                <div class="material-icons">reply</div>-->
-<!--                                <div class="content">this is a content.</div>-->
-<!--                            </div>-->
-<!--                        </li>-->
-<!--                        <li class="message-li sent9" onclick="mouseOverSentMessage(9)">-->
-<!--                            <div class="single-message">-->
-<!--                                <div class="user-photo">-->
-<!--                                    <img src="../static/image/user-icon.jpg">-->
-<!--                                    <div>-->
-<!--                                        <div class="username">user123444</div>-->
-<!--                                    </div>-->
-<!--                                </div>-->
-<!--                                <div class="date">2033.33.33 33:33:33</div>-->
-<!--                                <div class="material-icons">reply</div>-->
-<!--                                <div class="content">this is a content.</div>-->
-<!--                            </div>-->
-<!--                        </li>-->
-<!--                        <li class="message-li sent10" onclick="mouseOverSentMessage(10)">-->
-<!--                            <div class="single-message">-->
-<!--                                <div class="user-photo">-->
-<!--                                    <img src="../static/image/user-icon.jpg">-->
-<!--                                    <div>-->
-<!--                                        <div class="username">user123444</div>-->
-<!--                                    </div>-->
-<!--                                </div>-->
-<!--                                <div class="date">2033.33.33 33:33:33</div>-->
-<!--                                <div class="material-icons">reply</div>-->
-<!--                                <div class="content">this is a content.</div>-->
-<!--                            </div>-->
-<!--                        </li>-->
-<!--                        <li class="message-li sent11" onclick="mouseOverSentMessage(11)">-->
-<!--                            <div class="single-message">-->
-<!--                                <div class="user-photo">-->
-<!--                                    <img src="../static/image/user-icon.jpg">-->
-<!--                                    <div>-->
-<!--                                        <div class="username">user123444</div>-->
-<!--                                    </div>-->
-<!--                                </div>-->
-<!--                                <div class="date">2033.33.33 33:33:33</div>-->
-<!--                                <div class="material-icons">reply</div>-->
-<!--                                <div class="content">this is a content.</div>-->
-<!--                            </div>-->
-<!--                        </li>-->
                     </ul>
                 </div>
             </div>
@@ -696,18 +248,6 @@
     <div class="darkening">
 
     </div>
-
-        <!-- Gsap -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js" integrity="sha512-UxP+UhJaGRWuMG2YC6LPWYpFQnsSgnor0VUF3BHdD83PS/pOpN+FYbZmrYN+ISX8jnvgVUciqP/fILOXDjZSwg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-        <!-- JS -->
-        <script defer th:src="@{/js/jss/message.js}"></script>
-       <script defer src="/sangwon/src/main/resources/static/js/jss/message.js"></script>
-    
-       <!-- JQuery CDN -->
-       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    
-       <!-- Lodash CDN -->
-       <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js" integrity="sha512-WFN04846sdKMIP5LKNphMaWzU7YpMyCU245etK3g/2ARYbPK9Ub18eG+ljU96qKRCWh+quCY7yefSmlkQw1ANQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
        <script>
            // preview received Message
