@@ -7,7 +7,6 @@ import com.example.sangwon.repository.BoardRepository;
 import com.example.sangwon.repository.UserRepository;
 import com.example.sangwon.service.BoardService;
 import com.example.sangwon.service.CommentService;
-import com.example.sangwon.service.UserService;
 import com.example.sangwon.validator.BoardValidator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -19,8 +18,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 @Controller
 @RequestMapping("/board")

@@ -47,4 +47,7 @@ public class User {
     @OneToMany(mappedBy = "receiverUser")
     private List<Message> receivedMessages = new ArrayList<>();
 
+    @OneToMany(mappedBy = "user")
+    private List<UserBoard> userBoards = new ArrayList<>();
+
 }

@@ -731,12 +731,17 @@ body .second-page .inner .board__left-container .read-container__inner .read-con
     right: 5%;
 }
 
-body .second-page .inner .board__left-container .read-container__inner .read-container__content-inner .material-icons.likes {
+body .second-page .inner .board__left-container .read-container__inner .read-container__content-inner .material-icons {
     color: gray;
     transition: .2s;
 }
 
-body .second-page .inner .board__left-container .read-container__inner .read-container__content-inner .material-icons.likes:hover {
+body .second-page .inner .board__left-container .read-container__inner .read-container__content-inner .material-icons.liked {
+    color: red;
+    transition: .2s;
+}
+
+body .second-page .inner .board__left-container .read-container__inner .read-container__content-inner .material-icons:hover {
     color: rgba(255, 0, 0, 0.3);
 }
 

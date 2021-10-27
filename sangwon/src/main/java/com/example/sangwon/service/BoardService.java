@@ -3,10 +3,14 @@ package com.example.sangwon.service;
 import com.example.sangwon.Model.Board;
 import com.example.sangwon.Model.Comment;
 import com.example.sangwon.Model.User;
+import com.example.sangwon.Model.UserBoard;
 import com.example.sangwon.repository.BoardRepository;
 import com.example.sangwon.repository.CommentRepository;
+import com.example.sangwon.repository.UserBoardRepository;
 import com.example.sangwon.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
@@ -15,6 +19,7 @@ import java.util.Date;
 import java.util.List;
 
 @Service
+@Component
 public class BoardService {
 
     @Autowired
@@ -25,6 +30,12 @@ public class BoardService {
 
     @Autowired
     private CommentRepository commentRepository;
+
+    @Autowired
+    private UserBoardRepository userBoardRepository;
+
+    @Autowired
+    private UserBoardService userBoardService;
 
     @Transactional
     public Board save(Board board, String username) {
@@ -60,7 +71,8 @@ public class BoardService {
             board.setLikes(originalPost.getLikes());
             board.setView(originalPost.getView());
             board.setComments(originalPost.getComments());
-            board.setLikedUsers(originalPost.getLikedUsers());
+//            board.setLikedUsers(originalPost.getLikedUsers());
+            board.setUserBoards(originalPost.getUserBoards());
             board.setDate(originalPost.getDate());
         }
 
@@ -79,12 +91,20 @@ public class BoardService {
         Board board = boardRepository.findById(id).orElse(null);
         User user = userRepository.findByUsername(username);
 
-        if (board.getLikedUsers().contains(user)) {
-            board.getLikedUsers().remove(user);
+//        if (board.getLikedUsers().contains(user)) {
+        if (userBoardService.isLikedByUser(board, user))  {
+//            board.getLikedUsers().remove(user);
             board.setLikes(board.getLikes()-1L);
+            userBoardRepository.deleteAllByUserAndBoard(user, board);
         } else {
-            board.getLikedUsers().add(user);
+//            board.getLikedUsers().add(user);
             board.setLikes(board.getLikes()+1L);
+
+//            test
+            UserBoard userBoard = new UserBoard();
+            userBoard.setBoard(board);
+            userBoard.setUser(user);
+            userBoardRepository.save(userBoard);
         }
 
         return boardRepository.save(board);
@@ -93,7 +113,9 @@ public class BoardService {
     @Transactional
     public void deleteById(Long id) {
         Board board = boardRepository.findById(id).orElse(null);
-        board.getLikedUsers().clear();
+//        board.getLikedUsers().clear();
+
+        userBoardRepository.deleteAllByBoard(board);
         List<Comment> Comments = commentRepository.findAllByBoardid(id);
         for (Comment comment : Comments) {
             comment.setCommentid(null);

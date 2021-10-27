@@ -33,4 +33,7 @@ public class Board {
             joinColumns = @JoinColumn(name = "board_id"),
             inverseJoinColumns = @JoinColumn(name = "user_id"))
     List<User> likedUsers = new ArrayList<>();
+
+    @OneToMany(mappedBy = "board")
+    private List<UserBoard> userBoards = new ArrayList<>();
 }
