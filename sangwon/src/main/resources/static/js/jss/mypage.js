@@ -14,7 +14,7 @@ sideMenuBtn.addEventListener('click', function() {
             left: 0
         })
         gsap.to(darkeningPage, .4, {
-            zIndex: 100,
+            zIndex: 90,
             opacity: 1
         })
         gsap.to(sideMenuBtn, .4, {
