@@ -38,4 +38,7 @@ public class Comment {
             joinColumns = @JoinColumn(name = "comment_id"),
             inverseJoinColumns = @JoinColumn(name = "user_id"))
     List<User> likedUsers = new ArrayList<>();
+
+    @OneToMany(mappedBy = "comment")
+    private List<UserComment> userComments = new ArrayList<>();
 }

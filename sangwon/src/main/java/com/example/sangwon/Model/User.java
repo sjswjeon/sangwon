@@ -50,4 +50,7 @@ public class User {
     @OneToMany(mappedBy = "user")
     private List<UserBoard> userBoards = new ArrayList<>();
 
+    @OneToMany(mappedBy = "user")
+    private List<UserComment> userComments = new ArrayList<>();
+
 }

@@ -3,8 +3,10 @@ package com.example.sangwon.service;
 import com.example.sangwon.Model.Board;
 import com.example.sangwon.Model.Comment;
 import com.example.sangwon.Model.User;
+import com.example.sangwon.Model.UserComment;
 import com.example.sangwon.repository.BoardRepository;
 import com.example.sangwon.repository.CommentRepository;
+import com.example.sangwon.repository.UserCommentRepository;
 import com.example.sangwon.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -30,6 +32,12 @@ public class CommentService {
 
     @Autowired
     private EntityManager entityManager;
+
+    @Autowired
+    private UserCommentService userCommentService;
+
+    @Autowired
+    private UserCommentRepository userCommentRepository;
 
     @Transactional
     public Comment save(Comment comment, String username) {
@@ -71,12 +79,20 @@ public class CommentService {
         Comment comment = commentRepository.findById(id).orElse(null);
         User user = userRepository.findByUsername(username);
 
-        if (comment.getLikedUsers().contains(user)) {
-            comment.getLikedUsers().remove(user);
+        if (userCommentService.isLikedByUser(comment, user)) {
+            userCommentRepository.deleteAllByUserAndComment(user, comment);
         } else {
-            comment.getLikedUsers().add(user);
+            UserComment userComment = new UserComment();
+            userComment.setComment(comment);
+            userComment.setUser(user);
+            userCommentRepository.save(userComment);
         }
-        comment.setLikes(comment.getLikedUsers().size());
+//        if (comment.getLikedUsers().contains(user)) {
+//            comment.getLikedUsers().remove(user);
+//        } else {
+//            comment.getLikedUsers().add(user);
+//        }
+//        comment.setLikes(comment.getLikedUsers().size());
 
         return commentRepository.save(comment);
     }
@@ -86,12 +102,14 @@ public class CommentService {
         Comment comment = commentRepository.findById(id).orElse(null);
         comment.setBoardid(null);
         comment.setCommentid(null);
-        comment.getLikedUsers().clear();
+//        comment.getLikedUsers().clear();
+        userCommentRepository.deleteAllByComment(comment);
 
         for (Comment secondComment : commentRepository.findAllByCommentid(id)) {
             secondComment.setCommentid(null);
             secondComment.setBoardid(null);
-            secondComment.getLikedUsers().clear();
+//            secondComment.getLikedUsers().clear();
+            userCommentRepository.deleteAllByComment(secondComment);
             commentRepository.delete(secondComment);
         }
         comment.getSecondComments().clear();

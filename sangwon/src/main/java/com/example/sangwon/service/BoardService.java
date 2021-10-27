@@ -1,13 +1,7 @@
 package com.example.sangwon.service;
 
-import com.example.sangwon.Model.Board;
-import com.example.sangwon.Model.Comment;
-import com.example.sangwon.Model.User;
-import com.example.sangwon.Model.UserBoard;
-import com.example.sangwon.repository.BoardRepository;
-import com.example.sangwon.repository.CommentRepository;
-import com.example.sangwon.repository.UserBoardRepository;
-import com.example.sangwon.repository.UserRepository;
+import com.example.sangwon.Model.*;
+import com.example.sangwon.repository.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
@@ -36,6 +30,9 @@ public class BoardService {
 
     @Autowired
     private UserBoardService userBoardService;
+
+    @Autowired
+    private UserCommentRepository userCommentRepository;
 
     @Transactional
     public Board save(Board board, String username) {
@@ -120,7 +117,8 @@ public class BoardService {
         for (Comment comment : Comments) {
             comment.setCommentid(null);
             comment.setBoardid(null);
-            comment.getLikedUsers().clear();
+//            comment.getLikedUsers().clear();
+            userCommentRepository.deleteAllByComment(comment);
             commentRepository.save(comment);
         }
         commentRepository.deleteAllByCommentid(null);
