@@ -287,7 +287,7 @@ function readSentMessage(id) {
         }
         var focusedMessageEl = document.querySelector('.single-message.focused');
         if (singleMessageEl == focusedMessageEl) {
-            gsap.to(singleMessageEl, .1, {
+            gsap.to(singleMessageEl, .3, {
                 top: '33%'
             }).then(() => {
                 gsap.to(singleMessageEl, .3, {
@@ -333,7 +333,7 @@ function closeDirectMessageForm() {
             showReplyForm();
         }
         var singleMessageEl = document.querySelector('.single-message.focused');
-        gsap.to(singleMessageEl, .1, {
+        gsap.to(singleMessageEl, .3, {
             top: '33%'
         }).then(() => {
             gsap.to(singleMessageEl, .3, {
