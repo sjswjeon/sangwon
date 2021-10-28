@@ -126,6 +126,7 @@ body .side-menu .side-menu__inner > ul > li .side-menu__container .side-menu__na
     position: absolute;
     left: 34px;
     top: -11px;
+    border: none;
 }
 
 
